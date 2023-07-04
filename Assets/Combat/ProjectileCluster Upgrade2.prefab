@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914449
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.13052624
+      value: -0.08715578
       objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1,
         type: 3}
@@ -110,17 +110,17 @@ PrefabInstance:
     - target: {fileID: 1336287827845098355, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914449
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 1336287827845098355, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.13052616
+      value: 0.08715578
       objectReference: {fileID: 0}
     - target: {fileID: 1336287827845098355, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 6718190286907591636, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
       propertyPath: InitialSpeed
-      value: 15
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6898308082709039787, guid: 524b4ea505eea38499fe4082bdf292f0,
         type: 3}
