@@ -1,8 +1,15 @@
 using UnityEngine;
 
+<<<<<<< HEAD
 public class Hurtbox : MonoBehaviour {
-    public GameObject Owner = null;
+  public GameObject Owner;
   public Team Team;
+=======
+namespace Archero {
+  public class Hurtbox : MonoBehaviour {
+    public GameObject Owner = null;
+    public Team Team;
+>>>>>>> d4abd7b370a6880f0c8d45574f24eea186f6d974
 
   void Awake() {
     Owner = Owner ?? transform.parent.gameObject;
