@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Archero {
   public class Hurtbox : MonoBehaviour {
-    public GameObject Owner;
+    public GameObject Owner = null;
     public Team Team;
 
     void Awake() {

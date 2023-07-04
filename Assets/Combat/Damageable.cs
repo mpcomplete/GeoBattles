@@ -44,6 +44,7 @@ namespace Archero {
       if (Health <= 0) {
         OnDeath.Invoke();
         BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
+        Destroy(gameObject);
       }
     }
 
