@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hitbox
+  - Hurtbox
+  - Character
+  - Wall
+  - Projectile
+  - Shield
   - 
   - 
   - 
