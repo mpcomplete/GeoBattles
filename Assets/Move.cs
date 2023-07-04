@@ -5,15 +5,11 @@ public class Move : MonoBehaviour {
   [SerializeField] Controller Controller;
   [SerializeField] float Speed = 10;
   [SerializeField] float RotationSpeed = 180;
-  [SerializeField] float ShotPeriodSeconds = .25f;
 
-  Vector3 Aim;
   Vector3 Velocity;
   Quaternion Rotation;
-  float ShotCooldownSeconds;
 
   void Start() {
-    Time.fixedDeltaTime = 1f/60f;
     InputHandler.OnMove += OnMove;
     Rotation = transform.rotation;
   }
