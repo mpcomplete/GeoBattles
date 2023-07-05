@@ -177,6 +177,7 @@ MonoBehaviour:
   ParticleSystemPrefabs:
   - {fileID: 5332476724379010560, guid: 35d5d8d08b3307645846e351a387a5f6, type: 3}
   - {fileID: 7066294704301986916, guid: 26088752cf2358743bfcc65a03bab327, type: 3}
+  - {fileID: 4279956802509599832, guid: 00ac2df035280524a8424644e9146706, type: 3}
 --- !u!114 &7275440275955707427
 MonoBehaviour:
   m_ObjectHideFlags: 0
