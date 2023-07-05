@@ -1,23 +1,30 @@
 using UnityEngine;
 
 public class Hurtbox : MonoBehaviour {
-  public GameObject Owner = null;
+  public Character Owner;
   public Team Team;
 
-  void Awake() {
-    Owner = Owner ?? transform.parent.gameObject;
-    Team = Team ?? Owner.GetComponent<Team>();
+  void Start() {
+    Owner.OnSpawn += OnSpawn;
+    Owner.OnDying += OnDying;
   }
 
-  public virtual bool CanBeHurtBy(int attackerTeam) {
-    if (!Team.CanBeHurtBy(attackerTeam))
-      return false;
-    return true;
+  void OnDestroy() {
+    Owner.OnSpawn -= OnSpawn;
+    Owner.OnDying -= OnDying;
   }
+
+  void OnSpawn() => enabled = true;
+  void OnDying() => enabled = false;
+
+  public virtual bool CanBeHurtBy(int attackerTeam) => Team.CanBeHurtBy(attackerTeam);
 
   public virtual bool TryAttack(int attackerTeam, float damage) {
-    if (!CanBeHurtBy(attackerTeam)) return false;
-    Owner.SendMessage("OnHurt", damage, SendMessageOptions.DontRequireReceiver);
-    return true;
+    if (enabled && CanBeHurtBy(attackerTeam) && Owner.IsAlive) {
+      Owner.Damage((int)damage);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
