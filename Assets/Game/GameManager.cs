@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
   public UnityAction<Character> MobAlive;
   public UnityAction<Character> MobDying;
   public UnityAction<Character> MobDeath;
+  public UnityAction<Projectile> ProjectileSpawn;
+  public UnityAction<Projectile> ProjectileDeath;
   public UnityAction LevelStart;
   public UnityAction LevelEnd;
   public UnityAction<float> HighScoreChange;
@@ -75,6 +77,13 @@ public class GameManager : MonoBehaviour {
     Mobs.Remove(character);
   }
 
+  void OnProjectileSpawn(Projectile p) {
+    Projectiles.Add(p);
+  }
+  void OnProjectileDeath(Projectile p) {
+    Projectiles.Remove(p);
+  }
+
   void Awake() {
     if (Instance) {
       Destroy(gameObject);
@@ -88,6 +97,8 @@ public class GameManager : MonoBehaviour {
       PlayerDeath += OnPlayerDeath;
       MobSpawn += OnMobSpawn;
       MobDeath += OnMobDeath;
+      ProjectileSpawn += OnProjectileSpawn;
+      ProjectileDeath += OnProjectileDeath;
       DontDestroyOnLoad(gameObject);
     }
   }
