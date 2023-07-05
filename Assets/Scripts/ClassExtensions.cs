@@ -237,6 +237,10 @@ public static class ArrayLikeExtensions {
       (list[k], list[n]) = (list[n], list[k]);
     }
   }
+
+  public static T Random<T>(this IList<T> list) {
+    return list[UnityEngine.Random.Range(0, list.Count)];
+  }
 }
 
 public static class DictionaryExtensions {

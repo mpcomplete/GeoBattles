@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
 
   [Header("Testing/Encounter")]
   public Timeval SpawnPeriod = Timeval.FromSeconds(1);
+  public int MobsSpawnedPerWave = 1;
   int SpawnTicksRemaining;
 
   public float HighScore;
@@ -95,10 +96,12 @@ public class GameManager : MonoBehaviour {
     if (SpawnTicksRemaining > 0) {
       SpawnTicksRemaining--;
     } else {
-      var prefab = MobPrefabs[UnityEngine.Random.Range(0, MobPrefabs.Length)];
-      var position = 10 * UnityEngine.Random.onUnitSphere.XZ();
-      Instantiate(prefab, position, Quaternion.identity);
-      SpawnTicksRemaining = SpawnPeriod.Ticks;
+      for (var i = 0; i < MobsSpawnedPerWave; i++) {
+        var prefab = MobPrefabs.Random();
+        var position = 10 * UnityEngine.Random.onUnitSphere.XZ();
+        Instantiate(prefab, position, Quaternion.identity);
+        SpawnTicksRemaining = SpawnPeriod.Ticks;
+      }
     }
   }
 }
