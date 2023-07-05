@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: m_Name
-      value: Base Mob
+      value: Mob Base
       objectReference: {fileID: 0}
     - target: {fileID: 2834399971941846106, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: Radius
@@ -101,10 +101,40 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4425693703602778098}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2991393538610301684}
   m_SourcePrefab: {fileID: 100100000, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
 --- !u!4 &1650149504989482347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
   m_PrefabInstance: {fileID: 9020725380627829025}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7495383838932506555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+  m_PrefabInstance: {fileID: 9020725380627829025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2991393538610301684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495383838932506555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904c28d8a1676664eb5a22ba3bf4b4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnDuration:
+    Millis: 500
+    FramesPerSecond: 60
+  DyingDuration:
+    Millis: 500
+    FramesPerSecond: 60
+  Health: 1
+  MaxHealth: 1
+  LastAttacker: {fileID: 0}
+  State: 0

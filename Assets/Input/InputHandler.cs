@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour {
 
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
-    OnMove.Invoke(new Vector3(move.x, 0, move.y));
+    OnMove?.Invoke(new Vector3(move.x, 0, move.y));
     var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
     OnAim?.Invoke(new Vector3(aim.x, 0, aim.y));
   }

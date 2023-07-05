@@ -191,6 +191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6242831832753539659}
+    - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6945261370278958281}
   m_SourcePrefab: {fileID: 100100000, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
 --- !u!4 &1650149504989482347 stripped
 Transform:
@@ -262,3 +265,26 @@ MonoBehaviour:
   - Projectile: {fileID: 653805380368401398, guid: 81274d8afc9d17c40815b748f940a44e, type: 3}
     AttacksPerSecond: 8
   CurrentVariant: 1
+--- !u!114 &6945261370278958281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495383838932506555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ae0b350a518cd4eab723473f32675c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Abilities: []
+  SpawnDuration:
+    Millis: 500
+    FramesPerSecond: 60
+  DyingDuration:
+    Millis: 500
+    FramesPerSecond: 60
+  Health: 1
+  MaxHealth: 1
+  LastAttacker: {fileID: 0}
+  State: 0
