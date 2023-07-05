@@ -44,6 +44,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Bomb"",
+                    ""type"": ""Button"",
+                    ""id"": ""dcca2586-e3f3-4c26-bf59-e777fb9b9057"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,28 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2eb1a473-fe20-4ce2-83b5-1f2b671dfe22"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Bomb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca555353-1253-4bd1-86e8-850f195ed0ab"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Bomb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -90,6 +121,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Aim = m_GamePlay.FindAction("Aim", throwIfNotFound: true);
+        m_GamePlay_Bomb = m_GamePlay.FindAction("Bomb", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -153,12 +185,14 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private List<IGamePlayActions> m_GamePlayActionsCallbackInterfaces = new List<IGamePlayActions>();
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Aim;
+    private readonly InputAction m_GamePlay_Bomb;
     public struct GamePlayActions
     {
         private @Inputs m_Wrapper;
         public GamePlayActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Aim => m_Wrapper.m_GamePlay_Aim;
+        public InputAction @Bomb => m_Wrapper.m_GamePlay_Bomb;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -174,6 +208,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Aim.started += instance.OnAim;
             @Aim.performed += instance.OnAim;
             @Aim.canceled += instance.OnAim;
+            @Bomb.started += instance.OnBomb;
+            @Bomb.performed += instance.OnBomb;
+            @Bomb.canceled += instance.OnBomb;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -184,6 +221,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Aim.started -= instance.OnAim;
             @Aim.performed -= instance.OnAim;
             @Aim.canceled -= instance.OnAim;
+            @Bomb.started -= instance.OnBomb;
+            @Bomb.performed -= instance.OnBomb;
+            @Bomb.canceled -= instance.OnBomb;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -214,5 +254,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnBomb(InputAction.CallbackContext context);
     }
 }
