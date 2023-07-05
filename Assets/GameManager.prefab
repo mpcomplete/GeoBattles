@@ -48,6 +48,7 @@ MonoBehaviour:
   MobPrefabs:
   - {fileID: 102748805799235549, guid: 8ce80dd56b09c974ba73953f36c6407e, type: 3}
   - {fileID: 102748805799235549, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
+  - {fileID: 102748805799235549, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
   SpawnPeriod:
     Millis: 1000
     FramesPerSecond: 60
