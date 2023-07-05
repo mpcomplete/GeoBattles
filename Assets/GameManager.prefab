@@ -51,6 +51,7 @@ MonoBehaviour:
   SpawnPeriod:
     Millis: 1000
     FramesPerSecond: 60
+  MobsSpawnedPerWave: 5
   HighScore: 0
   Score:
     Multiplier: 0
