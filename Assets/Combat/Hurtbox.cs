@@ -18,7 +18,6 @@ public class Hurtbox : MonoBehaviour {
   public virtual bool TryAttack(int attackerTeam, float damage) {
     if (!CanBeHurtBy(attackerTeam)) return false;
     Owner.SendMessage("OnHurt", damage, SendMessageOptions.DontRequireReceiver);
-    Debug.Log($"On Try Attack {damage}");
     return true;
   }
 }

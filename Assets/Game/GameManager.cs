@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour {
   [SerializeField] Character PlayerPrefab;
   [SerializeField] Character[] MobPrefabs;
 
+  [Header("Testing/Encounter")]
+  public Timeval SpawnPeriod = Timeval.FromSeconds(1);
+  int SpawnTicksRemaining;
+
   public float HighScore;
   public Score Score;
   public List<Character> Players;
@@ -88,7 +92,14 @@ public class GameManager : MonoBehaviour {
     }
   }
 
-  void Start() {
-    // Instantiate(PlayerPrefab);
+  void FixedUpdate() {
+    if (SpawnTicksRemaining > 0) {
+      SpawnTicksRemaining--;
+    } else {
+      var prefab = MobPrefabs[UnityEngine.Random.Range(0, MobPrefabs.Length)];
+      var position = 10 * UnityEngine.Random.onUnitSphere.XZ();
+      Instantiate(prefab, position, Quaternion.identity);
+      SpawnTicksRemaining = SpawnPeriod.Ticks;
+    }
   }
 }

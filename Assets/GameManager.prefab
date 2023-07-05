@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8111577015653127296
 MonoBehaviour:
@@ -44,3 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc9cb90f7f1a384a8ebe0613e21da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 6945261370278958281, guid: 79384181b0de71241861eb7f2059215d, type: 3}
+  MobPrefabs:
+  - {fileID: 102748805799235549, guid: 8ce80dd56b09c974ba73953f36c6407e, type: 3}
+  HighScore: 0
+  Score:
+    Multiplier: 0
+    CurrentScore: 0
+  Players: []
+  Mobs: []
+  VFX: []
+  Projectiles: []
