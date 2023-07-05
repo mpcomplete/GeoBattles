@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class MoveDiamond : MonoBehaviour {
@@ -6,9 +5,8 @@ public class MoveDiamond : MonoBehaviour {
   [SerializeField] float Acceleration = 2;
   [SerializeField] float MaxSpeed = 2;
 
+  public Vector3 Velocity;
   Transform Target;
-  Vector3 Accel;
-  Vector3 Velocity;
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
@@ -16,8 +14,8 @@ public class MoveDiamond : MonoBehaviour {
   }
 
   void FixedUpdate() {
-    Accel = Acceleration * TargetDelta.normalized;
-    Velocity += MaxSpeed * Time.deltaTime * Accel;
+    var accel = Acceleration * TargetDelta.normalized;
+    Velocity += MaxSpeed * Time.deltaTime * accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
       Velocity = MaxSpeed * Velocity.normalized;
     Controller.Move(Time.deltaTime * Velocity);

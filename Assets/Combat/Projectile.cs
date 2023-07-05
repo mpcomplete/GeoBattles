@@ -19,6 +19,11 @@ public class Projectile : MonoBehaviour {
 
   void Start() {
     GetComponent<Rigidbody>().AddForce(InitialSpeed*transform.forward, ForceMode.Impulse);
+    GameManager.Instance.ProjectileSpawn.Invoke(this);
+  }
+
+  void OnDestroy() {
+    GameManager.Instance.ProjectileDeath.Invoke(this);
   }
 
   void OnTriggerEnter(Collider other) { // MP: This seems to be called for child objects too?
