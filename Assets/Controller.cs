@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour {
     var hit = new BoundHit();
     var didHit = Bounds.Instance.Collide(this, deltaV, ref hit);
     if (didHit) {
+      SendMessage("OnBoundsHit", hit);
       Debug.DrawRay(hit.Point, hit.Normal);
     }
   }

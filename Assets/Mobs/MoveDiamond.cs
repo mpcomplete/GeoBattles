@@ -12,7 +12,7 @@ public class MoveDiamond : MonoBehaviour {
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
-    Target = FindObjectsOfType<Team>().Where(t => t.ID == 0).ToArray()[0].transform;  // TODO
+    Target = FindObjectOfType<Player>().transform;
   }
 
   void FixedUpdate() {
