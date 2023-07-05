@@ -2555,6 +2555,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
   m_PrefabInstance: {fileID: 9020725380627829025}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3224294993544863927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5876901496886653334, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+  m_PrefabInstance: {fileID: 9020725380627829025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5636827830305cf4f9e05c8b18e8408b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6513825953084644731 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2834399971941846106, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
@@ -2635,6 +2646,7 @@ MonoBehaviour:
   Abilities:
   - {fileID: 6242831832753539659}
   - {fileID: 7756840910975469425}
+  Hurtbox: {fileID: 3224294993544863927}
   SpawnDuration:
     Millis: 500
     FramesPerSecond: 60

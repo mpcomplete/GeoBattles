@@ -18,28 +18,27 @@ public abstract class Character : MonoBehaviour {
   public int MaxHealth;
   public GameObject LastAttacker;
   public CharacterState State;
+  public bool IsAlive => State == CharacterState.Spawning || State == CharacterState.Alive;
 
+  // Global channel (provided by GameManager)
   protected UnityAction<Character> GlobalOnSpawn;
   protected UnityAction<Character> GlobalOnAlive;
   protected UnityAction<Character> GlobalOnDying;
   protected UnityAction<Character> GlobalOnDeath;
 
-  protected virtual void OnSpawn() {}
-  protected virtual void OnAlive() {}
-  protected virtual void OnDying() {}
-  protected virtual void OnDeath() {}
+  // Local channel for use by self or others interested in us
+  public UnityAction OnSpawn;
+  public UnityAction OnAlive;
+  public UnityAction OnDying;
+  public UnityAction OnDeath;
 
   public void Spawn() {
     StopAllCoroutines();
     StartCoroutine(SpawnRoutine());
   }
 
-  protected void OnHurt(float damage) {
-    Damage((int)damage);
-  }
-
   public void Damage(int damage) {
-    if (State != CharacterState.Alive)
+    if (!IsAlive)
       return;
     Health -= damage;
     if (Health <= 0) {
@@ -55,12 +54,12 @@ public abstract class Character : MonoBehaviour {
 
   protected virtual IEnumerator SpawnRoutine() {
     State = CharacterState.Spawning;
-    OnSpawn();
+    OnSpawn?.Invoke();
     GlobalOnSpawn?.Invoke(this);
     yield return new WaitForSeconds(SpawnDuration.Seconds);
     State = CharacterState.Alive;
     Abilities.ForEach(a => a.enabled = true);
-    OnAlive();
+    OnAlive?.Invoke();
     GlobalOnAlive?.Invoke(this);
   }
 
@@ -71,11 +70,11 @@ public abstract class Character : MonoBehaviour {
   protected virtual IEnumerator KillRoutine() {
     State = CharacterState.Dying;
     Abilities.ForEach(a => a.enabled = false);
-    OnDying();
+    OnDying?.Invoke();
     GlobalOnDying?.Invoke(this);
     yield return new WaitForSeconds(DyingDuration.Seconds);
     State = CharacterState.Dead;
-    OnDeath();
+    OnDeath?.Invoke();
     GlobalOnDeath?.Invoke(this);
     Destroy(gameObject);
   }
