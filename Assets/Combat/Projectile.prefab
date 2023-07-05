@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745172680376504739}
   m_LocalRotation: {x: 0.70710707, y: -0, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0, y: 1.875, z: 2.4999995}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5371842649124260138}
@@ -375,8 +375,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.8079665}
+  m_Center: {x: 0, y: 0, z: 0.10964282}
 --- !u!1 &6898308082709039787
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,8 +432,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 2.0074384}
+  m_Center: {x: 0, y: 0, z: 0.5037182}
 --- !u!54 &8827523057620614058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &2029417589163891604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,3 +476,4 @@ MonoBehaviour:
   Damage: 10
   InitialSpeed: 40
   AttackerTeamId: 0
+  ParticleSystemPrefab: {fileID: 2658205673329643211, guid: 314ab7f293c4fcb4f813c8073e75c75b, type: 3}

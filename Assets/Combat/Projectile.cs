@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour {
   public float Damage = 10;
   public float InitialSpeed = 10;
   public int AttackerTeamId;
+  public ParticleSystem ParticleSystemPrefab;
 
   void Start() {
     GetComponent<Rigidbody>().AddForce(InitialSpeed*transform.forward, ForceMode.Impulse);
@@ -27,6 +28,10 @@ public class Projectile : MonoBehaviour {
   }
 
   void OnCollisionEnter(Collision collision) {
+    var contact = collision.contacts[0];
+    var position = contact.point;
+    var rotation = Quaternion.LookRotation(-contact.normal); // -normal because particle system is setup this way
+    Instantiate(ParticleSystemPrefab, position, rotation);
     Destroy(gameObject);
   }
 }

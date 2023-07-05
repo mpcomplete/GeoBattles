@@ -15,6 +15,11 @@ public class Bounds : MonoBehaviour {
   public float ZMin;
   public float ZMax;
 
+  public Transform NorthPlane;
+  public Transform SouthPlane;
+  public Transform WestPlane;
+  public Transform EastPlane;
+
   void Awake() {
     Instance = this;
   }
