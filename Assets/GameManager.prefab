@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1941834694859813896}
   - component: {fileID: 8111577015653127296}
-  - component: {fileID: 1697645421340700944}
   - component: {fileID: 7861225774799500460}
+  - component: {fileID: 1697645421340700944}
   - component: {fileID: 2648460088039491855}
   m_Layer: 0
   m_Name: GameManager
@@ -64,6 +64,23 @@ MonoBehaviour:
   Mobs: []
   VFX: []
   Projectiles: []
+--- !u!114 &7861225774799500460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fe193b5e489074ba0c0a62cf034047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighScore: 12000
+  Score: 0
+  Multiplier: 1
+  ThresholdBase: 20
+  Kills: 0
 --- !u!114 &1697645421340700944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,22 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 7080415313766252982, guid: 117a9250af261654f930a7c0de01b9a5, type: 3}
---- !u!114 &7861225774799500460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443710145656081835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fe193b5e489074ba0c0a62cf034047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Score: 0
-  Multiplier: 1
-  KillsPerMultiplierBase: 20
-  Kills: 0
 --- !u!114 &2648460088039491855
 MonoBehaviour:
   m_ObjectHideFlags: 0

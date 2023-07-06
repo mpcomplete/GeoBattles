@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour {
   }
 
   void Awake() {
-    Debug.Log("Game Manager Awake");
     if (Instance) {
       Destroy(gameObject);
     } else {

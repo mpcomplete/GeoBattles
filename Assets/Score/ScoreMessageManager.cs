@@ -4,7 +4,7 @@ public class ScoreMessageManager : MonoBehaviour {
   [SerializeField] WorldSpaceMessage ScoreMessagePrefab;
   [SerializeField] WorldSpaceMessage MultiplierMessagePrefab;
 
-  void Start() {
+  void Awake() {
     ScoreManager.Instance.ScoreChange += ScoreChange;
     ScoreManager.Instance.MultiplierChange += MultiplierChange;
   }
@@ -15,15 +15,14 @@ public class ScoreMessageManager : MonoBehaviour {
   }
 
   void ScoreChange(ScoreEvent scoreEvent) {
-    var score = (scoreEvent.Character as Mob).Score * scoreEvent.Multiplier;
-    var message = score.ToString();
-    var position = scoreEvent.Character.transform.position;
+    var message = scoreEvent.ScoreChange.ToString();
+    var position = scoreEvent.Position;
     WorldSpaceMessageManager.Instance.SpawnMessage(ScoreMessagePrefab, message, position, 1);
   }
 
-  void MultiplierChange(ScoreEvent scoreEvent) {
-    var message = $"MULTIPLIER x{scoreEvent.Multiplier}";
-    var position = scoreEvent.Character.transform.position;
+  void MultiplierChange(MultiplierEvent multiplierEvent) {
+    var message = $"MULTIPLIER x{multiplierEvent.Multiplier}";
+    var position = multiplierEvent.Position;
     WorldSpaceMessageManager.Instance.SpawnMessage(MultiplierMessagePrefab, message, position, 1);
   }
 }
