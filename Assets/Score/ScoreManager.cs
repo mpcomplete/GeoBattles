@@ -24,7 +24,10 @@ public struct MultiplierEvent {
 public class ScoreManager : MonoBehaviour {
   public static ScoreManager Instance;
 
-  public int HighScore;
+  public int HighScore {
+    get => PlayerPrefs.GetInt("HighScore", 0);
+    set => PlayerPrefs.SetInt("HighScore", value);
+  }
   public int Score;
   public int Multiplier;
   public int ThresholdBase = 20;
@@ -36,6 +39,11 @@ public class ScoreManager : MonoBehaviour {
   public UnityAction<MultiplierEvent> MultiplierChange;
   public UnityAction<ScoreEvent> ScoreChange;
   public UnityAction<ScoreEvent> HighScoreChange;
+
+  [ContextMenu("Reset High Score")]
+  void ResetHighScore() {
+    HighScore = 0;
+  }
 
   void Awake() {
     if (Instance) {
@@ -60,6 +68,7 @@ public class ScoreManager : MonoBehaviour {
     Kills += 1;
     ScoreChange?.Invoke(new(position, scoreChange, Score));
     if (Score > HighScore) {
+      HighScore = Score;
       HighScoreChange?.Invoke(new(position, scoreChange, Score));
     }
     if (Kills >= Threshold) {
