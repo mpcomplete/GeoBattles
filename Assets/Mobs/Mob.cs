@@ -1,7 +1,10 @@
 using UnityEngine;
 
 public class Mob : Character {
-  public int BaseScore = 0;
+  [SerializeField] int BaseScore = 0;
+
+  // TODO: BlackHoles are special.
+  public int Score => BaseScore;
 
   void Start() {
     GlobalOnSpawn = GameManager.Instance.MobSpawn;
