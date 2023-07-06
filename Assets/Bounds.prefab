@@ -168,7 +168,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2177726197863643297}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!114 &3504637812956999930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mesh: {fileID: 6715718586033330561}
   GridSpacing: {x: 1, y: 1}
+  SpringK: 20
+  SpringDamping: 4
+  Mass: 1
+  ProjectileFactor: 1
+  ProjectileRange: 1
+  ProjectileForwardBias: 0.25
 --- !u!1 &3903228692698976200
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +363,7 @@ Transform:
   - {fileID: 6929774885019832545}
   - {fileID: 1836942606938893958}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221561932186950712
 MonoBehaviour:

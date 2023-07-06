@@ -17357,14 +17357,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1619986215}
-    - target: {fileID: 6849028679295739003, guid: c7750c479c0d7404cbdd233f0da72084, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1619986215}
-    - target: {fileID: 6849028679295739003, guid: c7750c479c0d7404cbdd233f0da72084, type: 3}
-      propertyPath: m_VersionIndex
-      value: 984
-      objectReference: {fileID: 0}
     - target: {fileID: 7767538393215488591, guid: c7750c479c0d7404cbdd233f0da72084, type: 3}
       propertyPath: m_Name
       value: Bounds
@@ -17432,7 +17424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobsSpawnedPerWave
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: SpawnPeriod.Millis
