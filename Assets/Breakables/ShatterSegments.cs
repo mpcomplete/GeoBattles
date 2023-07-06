@@ -3,6 +3,7 @@ using UnityEngine;
 public class ShatterSegments : MonoBehaviour {
   [SerializeField] float ExplosionForce = 5;
   [SerializeField] Character Character;
+  [SerializeField] GameObject SegmentsRoot;
 
   void Start() {
     Character.OnDying += Shatter;
@@ -13,7 +14,7 @@ public class ShatterSegments : MonoBehaviour {
   }
 
   void Shatter() {
-    foreach (var segment in GetComponentsInChildren<Segment>()) {
+    foreach (var segment in SegmentsRoot.GetComponentsInChildren<Segment>()) {
       segment.Break(ExplosionForce, transform.position);
     }
   }
