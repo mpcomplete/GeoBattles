@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 102748805799235549, guid: b6d3ae0c9d223a94ba5d077180a95807, type: 3}
   - {fileID: 102748805799235549, guid: 3304b4fba1f3b304089ae07eb6f6fcb8, type: 3}
   - {fileID: 102748805799235549, guid: decf58604979e624d8d85281660e71d2, type: 3}
+  - {fileID: 102748805799235549, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
   SpawnPeriod:
     Millis: 1000
     FramesPerSecond: 60

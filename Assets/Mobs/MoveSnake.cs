@@ -1,9 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveSnake : MonoBehaviour {
   [SerializeField] Controller Controller;
   [SerializeField] Transform[] TailBones;
+  [SerializeField] int TailBoneSeparationTicks = 10;
   [SerializeField] float TurnAcceleration = 5f;
   [SerializeField] float MaxTurnSpeed = 25f;
   [SerializeField] float Acceleration = 5f;
@@ -15,6 +17,9 @@ public class MoveSnake : MonoBehaviour {
   public float TurnSpeed = 0;
   Transform Target;
   Vector3 TargetDelta => Target.position - transform.position;
+
+  List<Vector3> TrailPos = new();
+  int MaxTrailLength => TailBoneSeparationTicks * (TailBones.Length + 1);
 
   void Start() {
     Target = FindObjectOfType<Player>().transform;
@@ -35,6 +40,10 @@ public class MoveSnake : MonoBehaviour {
     Speed = Mathf.Min(Speed, MaxSpeed);
     Velocity = Speed * transform.forward;
 
+    TrailPos.Insert(0, transform.position);
+    if (TrailPos.Count > MaxTrailLength)
+      TrailPos.RemoveAt(MaxTrailLength);
+
     var oldPos = transform.position;
     Controller.Move(Time.fixedDeltaTime * Velocity);
     var desired = Quaternion.Euler(0, Angle, 0) * Vector3.forward;
@@ -43,16 +52,14 @@ public class MoveSnake : MonoBehaviour {
     MoveTailBones(transform.position - oldPos);
   }
 
-  public float TailBoneSeparation = 1f;
   void MoveTailBones(Vector3 dp) {
-    var front = transform;
-    var dx = dp.magnitude;
-    foreach (var tb in TailBones) {
-      if ((front.position - tb.position).sqrMagnitude > TailBoneSeparation) {
-        tb.position += dx * tb.forward;
-        tb.forward = Vector3.RotateTowards(tb.forward, front.forward, Time.fixedDeltaTime * Mathf.Deg2Rad * Mathf.Abs(TurnSpeed), 0f);
-      }
-      front = tb;
+    for (int pi = TailBoneSeparationTicks, bi = 0; pi < TrailPos.Count && bi < TailBones.Length; bi++, pi += TailBoneSeparationTicks) {
+      var b = TailBones[bi];
+      var p0 = TrailPos[pi];
+      var p1 = TrailPos[pi-1];
+      b.position = p0;
+      if (p0.TryGetDirection(p1, out var dir))
+        b.forward = dir;
     }
   }
 
