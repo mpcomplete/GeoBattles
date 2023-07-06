@@ -16,9 +16,11 @@ public class Projectile : MonoBehaviour {
   public float InitialSpeed = 10;
   public int AttackerTeamId;
   public ParticleSystem ParticleSystemPrefab;
+  public Rigidbody Rigidbody;
 
   void Start() {
-    GetComponent<Rigidbody>().AddForce(InitialSpeed*transform.forward, ForceMode.Impulse);
+    this.InitComponent(out Rigidbody);
+    Rigidbody.AddForce(InitialSpeed*transform.forward, ForceMode.Impulse);
     GameManager.Instance.ProjectileSpawn.Invoke(this);
   }
 

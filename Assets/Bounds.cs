@@ -14,6 +14,8 @@ public class Bounds : MonoBehaviour {
   public float XMax;
   public float ZMin;
   public float ZMax;
+  public float XSize => XMax - XMin;
+  public float ZSize => ZMax - ZMin;
 
   public Transform NorthPlane;
   public Transform SouthPlane;
