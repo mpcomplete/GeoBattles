@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AvoidProjectiles : MonoBehaviour {
   [SerializeField] Controller Controller;
-  [SerializeField] MoveDiamond MoveBehavior;
   [SerializeField] float AvoidDistance = 2f;
   [SerializeField] float AvoidStrength = 5f;
   [SerializeField] float MaxSpeed = 5f;

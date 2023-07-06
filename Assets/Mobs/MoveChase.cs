@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class MoveDiamond : MonoBehaviour {
+// Chase the player.
+// Used by: Diamond, Redbox+small, Greenbox, Triangle
+public class MoveChase : MonoBehaviour {
   [SerializeField] Controller Controller;
   [SerializeField] float Acceleration = 2;
   [SerializeField] float MaxSpeed = 2;
