@@ -7,7 +7,7 @@ public class Segment : MonoBehaviour {
 
   public void Break(float explosionForce, Vector3 explosionOrigin) {
     Rigidbody.isKinematic = false;
-    Rigidbody.AddExplosionForce(explosionForce, explosionOrigin, 1, 0, ForceMode.Impulse);
+    Rigidbody.AddExplosionForce(Random.Range(0, explosionForce), explosionOrigin, 1, 0, ForceMode.Impulse);
     Rigidbody.AddTorque(0, Random.Range(-explosionForce, explosionForce), 0, ForceMode.Impulse);
     transform.SetParent(null, true);
     StartCoroutine(Shrink());
