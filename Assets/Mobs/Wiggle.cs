@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Wiggle rotation (rocking back and forth).
+// Used by: Redbox, Triangle
 public class Wiggle : MonoBehaviour {
   public float WiggleSpeed = 1f;
   public float WiggleMaxDegrees = 45f;
