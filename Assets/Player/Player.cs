@@ -6,6 +6,6 @@ public class Player : Character {
     GlobalOnAlive = GameManager.Instance.PlayerAlive;
     GlobalOnDying = GameManager.Instance.PlayerDying;
     GlobalOnDeath = GameManager.Instance.PlayerDeath;
-    StartCoroutine(SpawnRoutine());
+    Spawn();
   }
 }

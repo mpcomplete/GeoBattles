@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1941834694859813896}
   - component: {fileID: 8111577015653127296}
+  - component: {fileID: 1697645421340700944}
+  - component: {fileID: 7861225774799500460}
+  - component: {fileID: 2648460088039491855}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,11 +60,50 @@ MonoBehaviour:
     Millis: 1000
     FramesPerSecond: 60
   MobsSpawnedPerWave: 5
-  HighScore: 0
-  Score:
-    Multiplier: 0
-    CurrentScore: 0
   Players: []
   Mobs: []
   VFX: []
   Projectiles: []
+--- !u!114 &1697645421340700944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995ffb4ad7a097845aca38e08c93d70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 7080415313766252982, guid: 117a9250af261654f930a7c0de01b9a5, type: 3}
+--- !u!114 &7861225774799500460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fe193b5e489074ba0c0a62cf034047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 0
+  Multiplier: 1
+  KillsPerMultiplierBase: 20
+  Kills: 0
+--- !u!114 &2648460088039491855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e68405cb15e1d4f9f9dc738270f77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreMessagePrefab: {fileID: 7080415313766252982, guid: da4ebc4995e69e74c89e60b998931737, type: 3}
+  MultiplierMessagePrefab: {fileID: 7080415313766252982, guid: 3d0e3337e1636564289137b56b62cd5f, type: 3}
