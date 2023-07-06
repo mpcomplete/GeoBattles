@@ -15,9 +15,9 @@ public class ScoreManager : MonoBehaviour {
 
   public int Score;
   public int Multiplier;
-  public int KillsPerMultiplierBase = 20;
+  public int ThresholdBase = 20;
   public int Kills;
-  public int Threshold => KillsPerMultiplierBase * (int)Mathf.Pow(2, Multiplier-1);
+  public int Threshold => ThresholdBase * (int)Mathf.Pow(2, Multiplier-1);
 
   public UnityAction<ScoreEvent> MultiplierChange;
   public UnityAction<ScoreEvent> ScoreChange;

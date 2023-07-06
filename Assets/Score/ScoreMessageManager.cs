@@ -24,7 +24,6 @@ public class ScoreMessageManager : MonoBehaviour {
   void MultiplierChange(ScoreEvent scoreEvent) {
     var message = $"MULTIPLIER x{scoreEvent.Multiplier}";
     var position = scoreEvent.Character.transform.position;
-    Debug.Log(message);
     WorldSpaceMessageManager.Instance.SpawnMessage(MultiplierMessagePrefab, message, position, 1);
   }
 }
