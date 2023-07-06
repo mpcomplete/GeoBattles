@@ -810,7 +810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -908,7 +908,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mob Snake
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3265846026471704419, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_AddedGameObjects:
@@ -1019,11 +1020,11 @@ MonoBehaviour:
   - {fileID: 3212141139492706425}
   - {fileID: 3537515489815222859}
   - {fileID: 5194686293261296985}
-  TailBoneSeparationTicks: 10
+  TailBoneSeparationTicks: 6
   TurnAcceleration: 120
   MaxTurnSpeed: 120
   Acceleration: 5
-  MaxSpeed: 4
+  MaxSpeed: 6
   Speed: 0
   Velocity: {x: 0, y: 0, z: 0}
   Angle: 0

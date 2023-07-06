@@ -8923,6 +8923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mob Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 4677667772216431250, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4697882429590519236, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
       propertyPath: m_Mesh
       value: 
