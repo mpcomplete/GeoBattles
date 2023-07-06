@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
 
   [RuntimeInitializeOnLoadMethod]
   public static void Boot() {
-    Debug.LogWarning("GameManager.Boot sets fixed frame rate.");
     Time.fixedDeltaTime = 1f/60f;
   }
 
