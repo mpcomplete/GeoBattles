@@ -46,6 +46,7 @@ public class MoveCharge : MonoBehaviour {
 
   bool Charging = false;
   IEnumerator Charge() {
+    SendMessage("OnCharge", SendMessageOptions.RequireReceiver);
     Charging = true;
     Velocity = Vector3.zero;
     var endTime = ChargeDistance / MaxSpeed;
