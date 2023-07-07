@@ -1,13 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public class BurstCluster : MonoBehaviour {
   public Transform[] Objects;
-  public float BurstForce = 0f;
+  public float BurstForce = 15f;
 
   void Start() {
-    foreach (var t in Objects) {
-      t.SetParent(null, true);
-      t.GetComponent<Controller>().AddPhysicsAccel(BurstForce / Time.fixedDeltaTime * (t.position - transform.position).normalized);
+    foreach (var o in Objects) {
+      o.SetParent(transform.parent, true);
+      o.GetComponent<Controller>().AddPhysicsVelocity(BurstForce * (o.position - transform.position).normalized);
     }
     Destroy(gameObject);
   }

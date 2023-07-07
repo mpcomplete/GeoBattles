@@ -491,7 +491,7 @@ MonoBehaviour:
   - {fileID: 4082667817812840129}
   - {fileID: 7072542188226715192}
   - {fileID: 3535165541440690934}
-  BurstForce: 10
+  BurstForce: 25
 --- !u!1 &8579748819515469144
 GameObject:
   m_ObjectHideFlags: 0

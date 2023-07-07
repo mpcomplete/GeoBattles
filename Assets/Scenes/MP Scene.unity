@@ -17503,6 +17503,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+      propertyPath: Health
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+      propertyPath: MaxHealth
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: Abilities.Array.size
       value: 0
       objectReference: {fileID: 0}
