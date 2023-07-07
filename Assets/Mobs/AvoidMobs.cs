@@ -18,6 +18,6 @@ public class AvoidMobs : MonoBehaviour {
     var velocity = SeparationStrength * nearAvg;
     //if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
     //  Velocity = MaxSpeed * Velocity.normalized;
-    Controller.Move(Time.deltaTime * velocity);
+    Controller.Move(Time.fixedDeltaTime * velocity);
   }
 }
