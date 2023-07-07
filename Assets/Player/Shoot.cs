@@ -1,12 +1,6 @@
-using System;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour {
-  [Serializable]
-  public struct Variant {
-    public GameObject Projectile;
-    public float AttacksPerSecond;
-  }
   static GameObject _Parent;
   static GameObject Parent => _Parent = _Parent ? _Parent : new GameObject("Projectiles");
 
@@ -34,7 +28,7 @@ public class Shoot : MonoBehaviour {
     if (CooldownTicksRemaining > 0) {
       CooldownTicksRemaining--;
     } else {
-      var variant = ProjectileVariants[CurrentVariant];
+      var variant = ShotManager.Instance.ActiveShotVariant;
       if (Aim.sqrMagnitude > 0) {
         CooldownTicksRemaining = Timeval.FromSeconds(1f / variant.AttacksPerSecond).Ticks;
         Spawn(variant, Aim.XZ());

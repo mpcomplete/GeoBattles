@@ -4,8 +4,9 @@ using UnityEngine.Events;
 public class ShipManager : MonoBehaviour {
   public static ShipManager Instance;
 
-  public int BonusShipScoreInterval = 75000;
-  public int ShipCount = 3;
+  [SerializeField] int BonusShipScoreInterval = 75000;
+  [SerializeField] int ShipCount = 3;
+
   public UnityAction<int> ShipCountChange;
 
   void Awake() {

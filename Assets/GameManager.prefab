@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8111577015653127296}
   - component: {fileID: 4946872320246384681}
   - component: {fileID: 8609980512771394986}
+  - component: {fileID: 697199905627995055}
   - component: {fileID: 7861225774799500460}
   - component: {fileID: 1697645421340700944}
   - component: {fileID: 2648460088039491855}
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4464d18e4594c24a8ba50cee6b46127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BonusBombScoreInterval: 100000
   BombCount: 3
 --- !u!114 &8609980512771394986
 MonoBehaviour:
@@ -91,7 +93,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d6ffd182fe6514291028a7abd11772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BonusShipScoreInterval: 75000
   ShipCount: 3
+--- !u!114 &697199905627995055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481364b583153b74685ae84517012123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShotChangeScoreInterval: 10000
+  DefaultShotVariant:
+    Projectile: {fileID: 6898308082709039787, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
+    AttacksPerSecond: 10
+  ShotVariants:
+  - Projectile: {fileID: 653805380368401398, guid: dfbb99e6cfb4793409b7c2e6ce62d636, type: 3}
+    AttacksPerSecond: 10
+  - Projectile: {fileID: 653805380368401398, guid: 81274d8afc9d17c40815b748f940a44e, type: 3}
+    AttacksPerSecond: 16
 --- !u!114 &7861225774799500460
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,8 +4,9 @@ using UnityEngine.Events;
 public class BombManager : MonoBehaviour {
   public static BombManager Instance;
 
-  public int BonusBombScoreInterval = 100000;
-  public int BombCount = 3;
+  [SerializeField] int BonusBombScoreInterval = 100000;
+  [SerializeField] int BombCount = 3;
+
   public UnityAction<int> BombCountChange;
 
   public bool TryDeonateBomb() {
