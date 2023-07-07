@@ -5,6 +5,7 @@ public class Move : MonoBehaviour {
   [SerializeField] Controller Controller;
   [SerializeField] float Speed = 10;
   [SerializeField] float RotationSpeed = 180;
+  [SerializeField] ParticleSystem ThrusterParticles;
 
   Vector3 Velocity;
   Quaternion Rotation;
@@ -18,6 +19,11 @@ public class Move : MonoBehaviour {
   void FixedUpdate() {
     Controller.Move(Time.fixedDeltaTime * Velocity);
     Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Rotation, Time.fixedDeltaTime * RotationSpeed));
+    if (Velocity.sqrMagnitude > 0 && !ThrusterParticles.isPlaying) {
+      ThrusterParticles.Play();
+    } else if (Velocity.sqrMagnitude <= 0 && ThrusterParticles.isPlaying) {
+      ThrusterParticles.Stop();
+    }
   }
 
   void OnMove(Vector3 v) {

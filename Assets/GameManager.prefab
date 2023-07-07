@@ -62,7 +62,7 @@ MonoBehaviour:
   SpawnPeriod:
     Millis: 1000
     FramesPerSecond: 60
-  MobsSpawnedPerWave: 5
+  MobsSpawnedPerWave: 1
   Players: []
   Mobs: []
   VFX: []
