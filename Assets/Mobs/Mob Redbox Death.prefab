@@ -49,6 +49,7 @@ MonoBehaviour:
   Objects:
   - {fileID: 502771226739040734}
   - {fileID: 903805941166374934}
+  BurstForce: 25
 --- !u!1001 &3639732453103700052
 PrefabInstance:
   m_ObjectHideFlags: 0
