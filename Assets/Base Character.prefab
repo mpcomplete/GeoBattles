@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2834399971941846106}
   - component: {fileID: 3447700117406664958}
   - component: {fileID: 5003793679625755804}
+  - component: {fileID: 7712537957615369361}
   m_Layer: 0
   m_Name: Base Character
   m_TagString: Untagged
@@ -49,7 +50,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 0.5
-  MaxScriptMoveSpeed: 0
   GravityVulnerability: 1
   PhysicsVelocityDampening: 0.9
   PhysicsVelocity: {x: 0, y: 0, z: 0}
@@ -81,6 +81,21 @@ MonoBehaviour:
   ExplosionForce: 5
   Character: {fileID: 0}
   SegmentsRoot: {fileID: 2498205534487217578}
+--- !u!114 &7712537957615369361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528125532190443162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559ec0d12187a0442bf16eeaef22af08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 2834399971941846106}
+  Character: {fileID: 0}
+  GravityVulnerability: 1
 --- !u!1 &2498205534487217578
 GameObject:
   m_ObjectHideFlags: 0

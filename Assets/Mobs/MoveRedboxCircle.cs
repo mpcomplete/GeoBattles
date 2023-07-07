@@ -18,10 +18,10 @@ public class MoveRedboxCircle : MonoBehaviour {
     if (Angle > 360f) Angle = 0f;
     var tangent = new Vector3(Mathf.Cos(Angle), 0f, Mathf.Sin(Angle));
     Accel = tangent;
-    //Velocity += CircleMoveSpeed * Time.deltaTime * Accel;
+    //Velocity += CircleMoveSpeed * Time.fixedDeltaTime * Accel;
     Velocity = CircleMoveSpeed * Accel;
     if (Velocity.sqrMagnitude > CircleMoveSpeed.Sqr())
       Velocity = CircleMoveSpeed * Velocity.normalized;
-    Controller.Move(Time.deltaTime * Velocity);
+    Controller.Move(Time.fixedDeltaTime * Velocity);
   }
 }

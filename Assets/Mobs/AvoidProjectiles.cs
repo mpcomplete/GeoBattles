@@ -25,10 +25,10 @@ public class AvoidProjectiles : MonoBehaviour {
 
     var accel = AvoidStrength * avgForce;
     Velocity *= VelocityDampening;
-    Velocity += MaxSpeed * Time.deltaTime * accel;
+    Velocity += MaxSpeed * Time.fixedDeltaTime * accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
       Velocity = MaxSpeed * Velocity.normalized;
-    Controller.Move(Time.deltaTime * Velocity);
+    Controller.Move(Time.fixedDeltaTime * Velocity);
 
     DebugAvgForce = avgForce;
   }

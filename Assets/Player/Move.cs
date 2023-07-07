@@ -17,8 +17,8 @@ public class Move : MonoBehaviour {
   }
 
   void FixedUpdate() {
-    Controller.Move(Time.deltaTime * Velocity);
-    Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Rotation, Time.deltaTime * RotationSpeed));
+    Controller.Move(Time.fixedDeltaTime * Velocity);
+    Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Rotation, Time.fixedDeltaTime * RotationSpeed));
     if (Velocity.sqrMagnitude > 0 && !ThrusterParticles.isPlaying) {
       ThrusterParticles.Play();
     } else if (Velocity.sqrMagnitude <= 0 && ThrusterParticles.isPlaying) {

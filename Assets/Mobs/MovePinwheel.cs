@@ -17,10 +17,10 @@ public class MovePinwheel : MonoBehaviour {
     float turnDegrees = Random.Range(-MaxTurnDegrees, MaxTurnDegrees);
     var accelRight = Vector3.Cross(Accel, Vector3.up);
     Accel = Vector3.RotateTowards(Accel, accelRight * (turnDegrees > 0 ? 1 : -1), Mathf.Abs(turnDegrees) * Mathf.Deg2Rad, 0f);
-    Velocity += MaxSpeed * Time.deltaTime * Accel;
+    Velocity += MaxSpeed * Time.fixedDeltaTime * Accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
       Velocity = MaxSpeed * Velocity.normalized;
-    Controller.Move(Time.deltaTime * Velocity);
+    Controller.Move(Time.fixedDeltaTime * Velocity);
   }
 
   void OnBoundsHit(BoundHit hit) {

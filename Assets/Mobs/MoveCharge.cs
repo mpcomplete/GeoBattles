@@ -39,7 +39,7 @@ public class MoveCharge : MonoBehaviour {
   const float Threshold = .1f;
   IEnumerator FacePlayer() {
     while (Target && (Waiting || (transform.forward - TargetDelta.normalized).sqrMagnitude > Threshold.Sqr())) {
-      Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.deltaTime * WindupTurnSpeed));
+      Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.fixedDeltaTime * WindupTurnSpeed));
       yield return new WaitForFixedUpdate();
     }
   }
@@ -52,9 +52,9 @@ public class MoveCharge : MonoBehaviour {
     var endTime = ChargeDistance / MaxSpeed;
     for (var t = 0f; t < endTime; t += Time.fixedDeltaTime) {
       var accel = Acceleration * transform.forward;
-      Velocity += MaxSpeed * Time.deltaTime * accel;
+      Velocity += MaxSpeed * Time.fixedDeltaTime * accel;
       if (Target)
-        Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.deltaTime * ChargeTurnSpeed));
+        Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.fixedDeltaTime * ChargeTurnSpeed));
       yield return new WaitForFixedUpdate();
     }
     Charging = false;
@@ -66,7 +66,7 @@ public class MoveCharge : MonoBehaviour {
         Velocity = MaxSpeed * Velocity.normalized;
       if (!Charging)
         Velocity *= VelocityDampening;
-      var dx = Time.deltaTime * Velocity;
+      var dx = Time.fixedDeltaTime * Velocity;
       Controller.Move(dx);
     }
   }

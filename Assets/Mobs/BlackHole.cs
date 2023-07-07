@@ -17,7 +17,6 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] GameObject DeathSpawn;
 
   bool Activated = false;
-  IEnumerable<Controller> Bodies => GameManager.Instance.Mobs.Concat(GameManager.Instance.Players).Where(c => c != Character).Select(c => c.GetComponent<Controller>());
   float ExplodePct => (float)Character.Health / ExplodeHealth;
 
   void OnHurt() {
@@ -37,12 +36,14 @@ public class BlackHole : MonoBehaviour {
   }
 
   void Suck() {
-    List<Controller> eaten = new();
-    foreach (var b in Bodies) {
+    List<BlackHoleTarget> eaten = new();
+    foreach (var b in GameManager.Instance.BlackHoleTargets) {
+      if (b.gameObject == gameObject) continue;
+
       var toHole = transform.position - b.transform.position;
       if (toHole.sqrMagnitude < MaxDistance.Sqr()) {
         var r = toHole.magnitude;
-        b.AddPhysicsAccel(b.GravityVulnerability * Gravity  / (r*r) * toHole.normalized);  // g/r^2
+        b.Suck(Gravity  / (r*r) * toHole.normalized);  // g/r^2
       }
       if (toHole.sqrMagnitude < EatDistance.Sqr()) {
         eaten.Add(b);
@@ -54,11 +55,9 @@ public class BlackHole : MonoBehaviour {
   }
 
   // Called when mob/player collides with us.
-  void Eat(Controller c) {
-    if (c.TryGetComponent(out Player p)) {
-      p.Kill();
-    } else if (c.TryGetComponent(out Mob m)) {
-      Destroy(m.gameObject);
+  void Eat(BlackHoleTarget c) {
+    c.OnEaten(this);
+    if (c.TryGetComponent(out Mob m)) {
       Character.Health += 1;
       GetComponent<Mob>().BaseScore += 100;
       if (Character.Health >= ExplodeHealth)
