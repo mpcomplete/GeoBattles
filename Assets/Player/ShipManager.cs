@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ShipManager : MonoBehaviour {
   public static ShipManager Instance;
 
+  [SerializeField] Player PlayerPrefab;
   [SerializeField] int BonusShipScoreInterval = 75000;
   [SerializeField] int ShipCount = 3;
 
@@ -21,6 +23,7 @@ public class ShipManager : MonoBehaviour {
   }
 
   void Start() {
+    Instantiate(PlayerPrefab, Vector3.zero, Quaternion.identity);
     ScoreManager.Instance.ScoreChange += TryAwardExtraShip;
   }
 
@@ -35,9 +38,12 @@ public class ShipManager : MonoBehaviour {
   }
 
   void ShipDeath(Character c) {
-    ShipCount = Mathf.Max(0, ShipCount-1);
     if (ShipCount <= 0) {
       GameManager.Instance.LevelEnd?.Invoke();
+    } else {
+      ShipCount -= 1;
+      ShipCountChange?.Invoke(ShipCount);
+      StartCoroutine(Respawn(c.transform.position, c.transform.rotation));
     }
   }
 
@@ -48,5 +54,10 @@ public class ShipManager : MonoBehaviour {
       ShipCount += 1;
       ShipCountChange?.Invoke(ShipCount);
     }
+  }
+
+  IEnumerator Respawn(Vector3 position, Quaternion rotation) {
+    yield return new WaitForSeconds(2);
+    Instantiate(PlayerPrefab, position, rotation);
   }
 }

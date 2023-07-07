@@ -15,7 +15,7 @@ public class MoveSnake : MonoBehaviour {
   public Vector3 Velocity;
   public float Angle = 0f;
   public float TurnSpeed = 0;
-  Transform Target;
+  Transform Target => GameManager.Instance.Players.Count > 0 ? GameManager.Instance.Players[0].transform : null;
   Vector3 TargetDelta => Target.position - transform.position;
 
   List<Vector3> TrailPos = new();
@@ -23,13 +23,14 @@ public class MoveSnake : MonoBehaviour {
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
-    Target = FindObjectOfType<Player>().transform;
     Angle = transform.rotation.eulerAngles.y;
     TurnSpeed = 0;
     TailBones[0].parent.SetParent(null);  // Detach the tailbone root so they move separately.
   }
 
   void FixedUpdate() {
+    if (!Target)
+      return;
     var targetAngle = Vector3.SignedAngle(Vector3.forward, TargetDelta, Vector3.up);
     var diff = Mathf.DeltaAngle(Angle, targetAngle);
     var turnAccel = TurnAcceleration * Mathf.Sign(diff);

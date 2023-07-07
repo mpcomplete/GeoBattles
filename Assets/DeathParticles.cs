@@ -6,10 +6,12 @@ public class DeathParticles : MonoBehaviour {
 
   void Start() {
     Character.OnDying += SpawnParticles;
+    Character.OnDespawn += SpawnParticles;
   }
 
   void OnDestroy() {
     Character.OnDying -= SpawnParticles;
+    Character.OnDespawn -= SpawnParticles;
   }
 
   void SpawnParticles() {

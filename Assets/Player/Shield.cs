@@ -14,7 +14,7 @@ public class Shield : MonoBehaviour {
   int TicksTillPulse;
   bool IsPulseOn;
 
-  void Start() {
+  void Awake() {
     Character.OnSpawn += Raise;
     Character.OnDeath += Lower;
   }

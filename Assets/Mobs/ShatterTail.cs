@@ -9,6 +9,12 @@ public class ShatterTail : MonoBehaviour {
 
   void Start() {
     Character.OnDying += Shatter;
+    Character.OnDespawn += Shatter;
+  }
+
+  void OnDestroy() {
+    Character.OnDying -= Shatter;
+    Character.OnDespawn -= Shatter;
   }
 
   void Shatter() {

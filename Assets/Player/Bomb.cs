@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour {
 
   void TryDetonate() {
     if (BombManager.Instance.TryDeonateBomb()) {
-      GameManager.Instance.Mobs.ForEach(m => m.Kill());
+      GameManager.Instance.DespawnMobsSafe(c => true);
     }
   }
 }

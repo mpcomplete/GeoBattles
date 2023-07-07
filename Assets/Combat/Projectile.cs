@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour {
   }
 
   void OnTriggerEnter(Collider other) { // MP: This seems to be called for child objects too?
-    if (other.gameObject.TryGetComponent(out Hurtbox hb) && hb.TryAttack(AttackerTeamId, Damage)) {
+    if (other.gameObject.TryGetComponent(out Hurtbox hb) && hb.TryAttack(AttackerTeamId, Damage, null)) {
       Destroy(gameObject);
     }
   }

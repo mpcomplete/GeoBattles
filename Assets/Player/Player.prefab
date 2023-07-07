@@ -4848,7 +4848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseLocal: 1
   Axis: {x: 0, y: 0, z: 1}
-  DegreesPerSecond: 720
+  DegreesPerSecond: 1080
 --- !u!1 &5311720691705076268
 GameObject:
   m_ObjectHideFlags: 0

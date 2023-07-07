@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77c2bca9d91844449d62dfa14e299a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 2991393538610301684}
   Team: {fileID: 5974232773244017119}
 --- !u!1001 &9020725380627829025
 PrefabInstance:
