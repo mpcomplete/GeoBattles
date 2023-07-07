@@ -16,12 +16,11 @@ public class MoveCharge : MonoBehaviour {
   [SerializeField] float VelocityDampening = .9f;
 
   public Vector3 Velocity;
-  Transform Target;
+  Transform Target => GameManager.Instance.Players.Count > 0 ? GameManager.Instance.Players[0].transform : null;
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
-    Target = FindObjectOfType<Player>().transform;
     StartCoroutine(WaitAndCharge());
   }
 
@@ -39,7 +38,7 @@ public class MoveCharge : MonoBehaviour {
 
   const float Threshold = .1f;
   IEnumerator FacePlayer() {
-    while (Waiting || (transform.forward - TargetDelta.normalized).sqrMagnitude > Threshold.Sqr()) {
+    while (Target && (Waiting || (transform.forward - TargetDelta.normalized).sqrMagnitude > Threshold.Sqr())) {
       Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.fixedDeltaTime * WindupTurnSpeed));
       yield return new WaitForFixedUpdate();
     }
@@ -54,7 +53,8 @@ public class MoveCharge : MonoBehaviour {
     for (var t = 0f; t < endTime; t += Time.fixedDeltaTime) {
       var accel = Acceleration * transform.forward;
       Velocity += MaxSpeed * Time.fixedDeltaTime * accel;
-      Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.fixedDeltaTime * ChargeTurnSpeed));
+      if (Target)
+        Controller.Rotation(Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(TargetDelta.normalized), Time.fixedDeltaTime * ChargeTurnSpeed));
       yield return new WaitForFixedUpdate();
     }
     Charging = false;

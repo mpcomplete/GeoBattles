@@ -16,7 +16,7 @@ public abstract class Character : MonoBehaviour {
 
   public int Health;
   public int MaxHealth;
-  public GameObject LastAttacker;
+  public Character LastAttacker;
   public CharacterState State;
   public bool IsAlive => State == CharacterState.Spawning || State == CharacterState.Alive;
 
@@ -25,22 +25,25 @@ public abstract class Character : MonoBehaviour {
   protected UnityAction<Character> GlobalOnAlive;
   protected UnityAction<Character> GlobalOnDying;
   protected UnityAction<Character> GlobalOnDeath;
+  protected UnityAction<Character> GlobalOnDespawn;
 
   // Local channel for use by self or others interested in us
   public UnityAction OnSpawn;
   public UnityAction OnAlive;
   public UnityAction OnDying;
   public UnityAction OnDeath;
+  public UnityAction OnDespawn;
 
   public void Spawn() {
     StopAllCoroutines();
     StartCoroutine(SpawnRoutine());
   }
 
-  public void Damage(int damage) {
+  public void Damage(int damage, Character attacker = null) {
     if (!IsAlive)
       return;
     Health -= damage;
+    LastAttacker = attacker;
     SendMessage("OnHurt", damage, SendMessageOptions.DontRequireReceiver);
     if (Health <= 0) {
       StopAllCoroutines();
@@ -51,6 +54,11 @@ public abstract class Character : MonoBehaviour {
   public void Kill() {
     StopAllCoroutines();
     StartCoroutine(KillRoutine());
+  }
+
+  public void Despawn() {
+    StopAllCoroutines();
+    StartCoroutine(DespawnRoutine());
   }
 
   protected virtual IEnumerator SpawnRoutine() {
@@ -77,6 +85,15 @@ public abstract class Character : MonoBehaviour {
     State = CharacterState.Dead;
     OnDeath?.Invoke();
     GlobalOnDeath?.Invoke(this);
+    Destroy(gameObject);
+  }
+
+  protected virtual IEnumerator DespawnRoutine() {
+    State = CharacterState.Dead;
+    Abilities.ForEach(a => a.enabled = false);
+    OnDespawn?.Invoke();
+    GlobalOnDespawn?.Invoke(this);
+    yield return new WaitForSeconds(DyingDuration.Seconds);
     Destroy(gameObject);
   }
 

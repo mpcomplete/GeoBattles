@@ -11,6 +11,7 @@ public class Mob : Character {
     GlobalOnAlive = GameManager.Instance.MobAlive;
     GlobalOnDying = GameManager.Instance.MobDying;
     GlobalOnDeath = GameManager.Instance.MobDeath;
+    GlobalOnDespawn = GameManager.Instance.MobDespawn;
     Spawn();
   }
 

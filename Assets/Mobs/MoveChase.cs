@@ -8,15 +8,16 @@ public class MoveChase : MonoBehaviour {
   [SerializeField] float MaxSpeed = 2;
 
   public Vector3 Velocity;
-  Transform Target;
+  Transform Target => GameManager.Instance.Players.Count > 0 ? GameManager.Instance.Players[0].transform : null;
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
-    Target = FindObjectOfType<Player>().transform;
     Controller.SetMaxMoveSpeed(MaxSpeed);
   }
 
   void FixedUpdate() {
+    if (!Target)
+      return;
     var accel = Acceleration * TargetDelta.normalized;
     Velocity += MaxSpeed * Time.fixedDeltaTime * accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())

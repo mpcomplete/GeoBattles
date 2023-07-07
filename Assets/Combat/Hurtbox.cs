@@ -19,9 +19,9 @@ public class Hurtbox : MonoBehaviour {
 
   public virtual bool CanBeHurtBy(int attackerTeam) => Team.CanBeHurtBy(attackerTeam);
 
-  public virtual bool TryAttack(int attackerTeam, float damage) {
+  public virtual bool TryAttack(int attackerTeam, float damage, Character attacker) {
     if (enabled && CanBeHurtBy(attackerTeam) && Owner.IsAlive) {
-      Owner.Damage((int)damage);
+      Owner.Damage((int)damage, attacker);
       return true;
     } else {
       return false;

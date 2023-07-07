@@ -12,17 +12,18 @@ public class MoveSnake : MonoBehaviour {
   public Vector3 Velocity;
   public float Angle = 0f;
   public float TurnSpeed = 0;
-  Transform Target;
+  Transform Target => GameManager.Instance.Players.Count > 0 ? GameManager.Instance.Players[0].transform : null;
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
-    Target = FindObjectOfType<Player>().transform;
     Angle = transform.rotation.eulerAngles.y;
     TurnSpeed = 0;
   }
 
   void FixedUpdate() {
+    if (!Target)
+      return;
     if (Tail.TailEaten)
       return;  // Tail is doing suck action.
 
