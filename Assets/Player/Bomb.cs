@@ -12,6 +12,8 @@ public class Bomb : MonoBehaviour {
   }
 
   void TryDetonate() {
-    GameManager.Instance.Mobs.ForEach(m => m.Kill());
+    if (BombManager.Instance.TryDeonateBomb()) {
+      GameManager.Instance.Mobs.ForEach(m => m.Kill());
+    }
   }
 }

@@ -50,12 +50,18 @@ public class ScoreManager : MonoBehaviour {
       Destroy(gameObject);
     } else {
       Instance = this;
+      GameManager.Instance.MobDying += OnMobDying;
+      GameManager.Instance.LevelStart += SetScores;
       DontDestroyOnLoad(gameObject);
     }
   }
 
-  void Start() {
-    GameManager.Instance.MobDying += OnMobDying;
+  void OnDestroy() {
+    GameManager.Instance.MobDying -= OnMobDying;
+    GameManager.Instance.LevelStart -= SetScores;
+  }
+
+  void SetScores() {
     SetScore?.Invoke(Score);
     SetHighScore?.Invoke(HighScore);
   }

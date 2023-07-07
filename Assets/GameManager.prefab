@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1941834694859813896}
   - component: {fileID: 8111577015653127296}
+  - component: {fileID: 4946872320246384681}
+  - component: {fileID: 8609980512771394986}
   - component: {fileID: 7861225774799500460}
   - component: {fileID: 1697645421340700944}
   - component: {fileID: 2648460088039491855}
@@ -64,6 +66,32 @@ MonoBehaviour:
   Mobs: []
   VFX: []
   Projectiles: []
+--- !u!114 &4946872320246384681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4464d18e4594c24a8ba50cee6b46127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BombCount: 3
+--- !u!114 &8609980512771394986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443710145656081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d6ffd182fe6514291028a7abd11772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShipCount: 3
 --- !u!114 &7861225774799500460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fe193b5e489074ba0c0a62cf034047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighScore: 12000
   Score: 0
   Multiplier: 1
   ThresholdBase: 20

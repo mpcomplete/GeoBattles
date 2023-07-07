@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour {
     Projectiles.Remove(p);
   }
 
+  void OnLevelEnd() {
+    Debug.Log("Game over");
+  }
+
   void Awake() {
     if (Instance) {
       Destroy(gameObject);
@@ -78,6 +82,10 @@ public class GameManager : MonoBehaviour {
       ProjectileDeath += OnProjectileDeath;
       DontDestroyOnLoad(gameObject);
     }
+  }
+
+  void Start() {
+    LevelStart?.Invoke();
   }
 
   void FixedUpdate() {

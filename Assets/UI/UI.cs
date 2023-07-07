@@ -6,12 +6,17 @@ public class UI : MonoBehaviour {
   [SerializeField] RectTransform BombContainer;
   [SerializeField] TextMeshProUGUI Score;
   [SerializeField] TextMeshProUGUI HighScore;
+  [SerializeField] RectTransform BombIconPrefab;
+  [SerializeField] RectTransform ShipIconPrefab;
+  [SerializeField] TextMeshProUGUI CountPrefab;
 
   void Awake() {
     ScoreManager.Instance.SetScore += SetScore;
     ScoreManager.Instance.SetHighScore += SetHighScore;
     ScoreManager.Instance.ScoreChange += ScoreChange;
     ScoreManager.Instance.HighScoreChange += HighScoreChange;
+    ShipManager.Instance.ShipCountChange += ShipCountChange;
+    BombManager.Instance.BombCountChange += BombCountChange;
   }
 
   void OnDestroy() {
@@ -19,6 +24,8 @@ public class UI : MonoBehaviour {
     ScoreManager.Instance.SetHighScore -= SetHighScore;
     ScoreManager.Instance.ScoreChange -= ScoreChange;
     ScoreManager.Instance.HighScoreChange -= HighScoreChange;
+    ShipManager.Instance.ShipCountChange -= ShipCountChange;
+    BombManager.Instance.BombCountChange -= BombCountChange;
   }
 
   void SetScore(int score) {
@@ -35,5 +42,35 @@ public class UI : MonoBehaviour {
 
   void HighScoreChange(ScoreEvent scoreEvent) {
     HighScore.text = scoreEvent.ScoreTotal.ToString("N0");
+  }
+
+  void ShipCountChange(int count) {
+    for (var i = 0; i < ShipContainer.childCount; i++) {
+      Destroy(ShipContainer.GetChild(i).gameObject);
+    }
+    if (count <= 3) {
+      for (var i = 0; i < count; i++) {
+        Instantiate(ShipIconPrefab, ShipContainer);
+      }
+    } else {
+      var countText = Instantiate(CountPrefab, ShipContainer);
+      countText.text = count.ToString();
+      Instantiate(ShipIconPrefab, ShipContainer);
+    }
+  }
+
+  void BombCountChange(int count) {
+    for (var i = 0; i < BombContainer.childCount; i++) {
+      Destroy(BombContainer.GetChild(i).gameObject);
+    }
+    if (count <= 3) {
+      for (var i = 0; i < count; i++) {
+        Instantiate(BombIconPrefab, BombContainer);
+      }
+    } else {
+      Instantiate(BombIconPrefab, BombContainer);
+      var countText = Instantiate(CountPrefab, BombContainer);
+      countText.text = count.ToString();
+    }
   }
 }
