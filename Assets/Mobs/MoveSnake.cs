@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveSnake : MonoBehaviour {
@@ -17,16 +15,41 @@ public class MoveSnake : MonoBehaviour {
   public float TurnSpeed = 0;
   Transform Target;
   Vector3 TargetDelta => Target.position - transform.position;
+  Transform TailRoot;
+  int TailEatenIndex = -1;
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
     Target = FindObjectOfType<Player>().transform;
     Angle = transform.rotation.eulerAngles.y;
     TurnSpeed = 0;
-    TailBones[0].parent.SetParent(null);  // Detach the tailbone root so they move separately.
+    TailRoot = TailBones[0].parent;
+    TailRoot.SetParent(null);  // Detach the tailbone root so they move separately.
+    for (var i = 0; i < TailBones.Length; i++) {
+      if (TailBones[i].TryGetComponent(out BlackHoleTargetSnakeTail b)) {
+        b.SnakeHead = this;
+        b.Index = i;
+      }
+    }
+  }
+
+  void OnDestroy() {
+    TailRoot.DetachChildren();
+    Destroy(TailRoot.gameObject);
+    for (var i = 0; i < TailBones.Length; i++) {
+      if (TailBones[i].TryGetComponent(out BlackHoleTargetSnakeTail b)) {
+        b.OnHeadDestroyed();
+      } else { // already got eaten
+        Destroy(TailBones[i].gameObject);
+      }
+    }
   }
 
   void FixedUpdate() {
+    if (TailEatenIndex >= 0) {
+      SuckToTail();
+    }
+
     var targetAngle = Vector3.SignedAngle(Vector3.forward, TargetDelta, Vector3.up);
     var diff = Mathf.DeltaAngle(Angle, targetAngle);
     var turnAccel = TurnAcceleration * Mathf.Sign(diff);
@@ -46,14 +69,29 @@ public class MoveSnake : MonoBehaviour {
   }
 
   void MoveTailBones() {
-    for (int i = TailBones.Length - 1; i >= 0; i--) {
-      var tb = TailBones[i].transform;
-      var tbNext = i > 0 ? TailBones[i-1].transform : transform;
+    for (int i = TailBones.Length - 1; i >= 0; i--)
+      MoveTailBone(TailBones[i].transform, i > 0 ? TailBones[i-1].transform : transform, false);
+  }
 
-      var oldPos = tb.position;
-      tb.position = Vector3.Slerp(tb.position, tbNext.position, Time.fixedDeltaTime / TailBoneSeparationDist);
-      if ((tb.position - oldPos).sqrMagnitude > Mathf.Epsilon)
-        tb.forward = tb.position - oldPos;
+  void SuckToTail() {
+    for (int i = TailBones.Length-1; i > TailEatenIndex; i--)
+      MoveTailBone(TailBones[i].transform, i > 0 ? TailBones[i-1].transform : transform, false);
+    for (int i = TailEatenIndex; i >= 0; i--)
+      MoveTailBone(i > 0 ? TailBones[i-1].transform : transform, TailBones[i].transform, true);
+  }
+
+  void MoveTailBone(Transform tb, Transform tbNext, bool reversed) {
+    var oldPos = tb.position;
+    tb.position = Vector3.Slerp(tb.position, tbNext.position, Time.fixedDeltaTime / TailBoneSeparationDist);
+    var forward = tb.position - oldPos;
+    if (forward.sqrMagnitude > .001f)
+      tb.forward = reversed ? -forward : forward;
+  }
+
+  public void OnTailEaten(int index) {
+    if (TailEatenIndex < 0) TailEatenIndex = index;
+    foreach (var tb in TailBones) {
+      tb.GetComponent<BlackHoleTargetSnakeTail>().enabled = false;
     }
   }
 

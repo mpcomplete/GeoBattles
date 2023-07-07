@@ -1856,6 +1856,10 @@ PrefabInstance:
       propertyPath: Owner
       value: 
       objectReference: {fileID: 6945261370278958281}
+    - target: {fileID: 7712537957615369361, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 6945261370278958281}
     - target: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: m_RootOrder
       value: 0

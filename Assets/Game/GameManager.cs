@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
   public List<Character> Mobs;
   public List<GameObject> VFX;
   public List<Projectile> Projectiles;
+  public List<BlackHoleTarget> BlackHoleTargets;
 
   public UnityAction<Character> PlayerSpawn;
   public UnityAction<Character> PlayerAlive;
