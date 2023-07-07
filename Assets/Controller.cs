@@ -7,7 +7,6 @@ public class Controller : MonoBehaviour {
   Vector3 ScriptMove = Vector3.zero;
 
   [Header("Physics")]
-  public float GravityVulnerability = 1f;
   public float PhysicsVelocityDampening = .9f;
   Vector3 PhysicsAccel;
   public Vector3 PhysicsVelocity;

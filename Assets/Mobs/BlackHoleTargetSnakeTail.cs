@@ -1,25 +1,20 @@
-using System;
-using UnityEngine;
-
 public class BlackHoleTargetSnakeTail : BlackHoleTarget {
-  // Initialized by MoveSnake.
-  public MoveSnake SnakeHead;
-  public int Index;
+  public MoveSnakeTail Tail;
+  public int Index;  // Initialized by MoveSnakeTail.
 
   public override void OnEaten(BlackHole hole) {
-    if (SnakeHead) {
-      SnakeHead.OnTailEaten(Index);
+    if (Tail) {
+      Tail.OnTailEaten(Index);
       gameObject.SetActive(false);
     } else {
       Destroy(gameObject);
     }
   }
 
-  public void OnHeadDestroyed() {
-    SnakeHead = null;
+  public void OnOtherEaten(int index) {
   }
 
-  void Start() => GameManager.Instance.BlackHoleTargets.Add(this);
-  void OnDestroy() => GameManager.Instance.BlackHoleTargets.Remove(this);
-
+  void Awake() {
+    this.InitComponentFromParent(out Tail);
+  }
 }

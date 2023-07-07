@@ -21,8 +21,6 @@ public class ShatterTail : MonoBehaviour {
       TailBones[i].GetComponentsInChildren<Collider>().ForEach(c => c.enabled = false);
     for (int i = 0; i < TailBones.Length; i++) {
       TailBones[i].GetComponentsInChildren<Segment>().ForEach(s => s.Break(ExplosionForce, TailBones[i].transform.position));
-      //foreach (var segment in TailBones[i].GetComponentsInChildren<Segment>())
-      //    segment.Break(ExplosionForce, TailBones[i].transform.position);
       yield return new WaitForSeconds(Delay);
     }
     Destroy(gameObject);

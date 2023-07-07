@@ -86,9 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 8649249277018270790}
   Character: {fileID: 0}
-  GravityVulnerability: 1
-  Model: {fileID: 7245218668767572368}
-  SnakeHead: {fileID: 0}
+  GravityVulnerability: 3
+  Tail: {fileID: 0}
   Index: 0
 --- !u!1 &7245218668767572368
 GameObject:

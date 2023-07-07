@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5254043754031202128}
   - component: {fileID: 6603376393083061086}
+  - component: {fileID: 3673408280950750770}
   m_Layer: 0
   m_Name: Tail
   m_TagString: Untagged
@@ -94,6 +95,44 @@ MonoBehaviour:
   - {fileID: 5194686293261296985}
   Delay: 0.015
   ExplosionForce: 5
+--- !u!114 &3673408280950750770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332753530410075608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7804bc994ea3b4581f6cf5745e7322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SnakeHead: {fileID: 4469853239552575554}
+  TailBones:
+  - {fileID: 2273319609313198538}
+  - {fileID: 1254566628161113696}
+  - {fileID: 5088650290273304413}
+  - {fileID: 7889381191393778943}
+  - {fileID: 7441602871628221326}
+  - {fileID: 2682210179707400952}
+  - {fileID: 316251004241729031}
+  - {fileID: 5420711125181532494}
+  - {fileID: 7331686636906173883}
+  - {fileID: 871967027719281065}
+  - {fileID: 5749225177443855204}
+  - {fileID: 8368311026567365081}
+  - {fileID: 339024869633274215}
+  - {fileID: 4777303125730778637}
+  - {fileID: 8685331571773617139}
+  - {fileID: 7185832609609489688}
+  - {fileID: 2064987204146583490}
+  - {fileID: 5131297106782486901}
+  - {fileID: 3588138679888090555}
+  - {fileID: 1813461128158772277}
+  - {fileID: 3212141139492706425}
+  - {fileID: 3537515489815222859}
+  - {fileID: 5194686293261296985}
+  TailBoneSeparationDist: 0.1
 --- !u!1001 &38356302433922083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,9 +847,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1601167761345441200, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: GravityVulnerability
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -996,35 +1039,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 8253791746242304082}
-  TailBones:
-  - {fileID: 2273319609313198538}
-  - {fileID: 1254566628161113696}
-  - {fileID: 5088650290273304413}
-  - {fileID: 7889381191393778943}
-  - {fileID: 7441602871628221326}
-  - {fileID: 2682210179707400952}
-  - {fileID: 316251004241729031}
-  - {fileID: 5420711125181532494}
-  - {fileID: 7331686636906173883}
-  - {fileID: 871967027719281065}
-  - {fileID: 5749225177443855204}
-  - {fileID: 8368311026567365081}
-  - {fileID: 339024869633274215}
-  - {fileID: 4777303125730778637}
-  - {fileID: 8685331571773617139}
-  - {fileID: 7185832609609489688}
-  - {fileID: 2064987204146583490}
-  - {fileID: 5131297106782486901}
-  - {fileID: 3588138679888090555}
-  - {fileID: 1813461128158772277}
-  - {fileID: 3212141139492706425}
-  - {fileID: 3537515489815222859}
-  - {fileID: 5194686293261296985}
-  TailBoneSeparationDist: 0.1
   TurnAcceleration: 120
   MaxTurnSpeed: 120
   Acceleration: 5
   MaxSpeed: 6
+  Tail: {fileID: 3673408280950750770}
   Speed: 0
   Velocity: {x: 0, y: 0, z: 0}
   Angle: 0

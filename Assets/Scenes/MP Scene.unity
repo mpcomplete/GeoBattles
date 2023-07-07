@@ -1977,7 +1977,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1266874264}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 15
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -10324,7 +10324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677667772216431250, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4697882429590519236, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
       propertyPath: m_Mesh
@@ -15558,6 +15558,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1838227259}
+    - target: {fileID: 1601167761345441200, guid: 79384181b0de71241861eb7f2059215d, type: 3}
+      propertyPath: GravityVulnerability
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 79384181b0de71241861eb7f2059215d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -17498,6 +17502,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+      propertyPath: Abilities.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114936211176147679, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20132,7 +20140,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -26070,11 +26078,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobsSpawnedPerWave
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SpawnPeriod.Millis
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[0]
@@ -26083,27 +26095,31 @@ PrefabInstance:
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: 8ce80dd56b09c974ba73953f36c6407e, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: 8ce80dd56b09c974ba73953f36c6407e, type: 3}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: b6d3ae0c9d223a94ba5d077180a95807, type: 3}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: b6d3ae0c9d223a94ba5d077180a95807, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: decf58604979e624d8d85281660e71d2, type: 3}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: 3304b4fba1f3b304089ae07eb6f6fcb8, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
     - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: MobPrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 102748805799235549, guid: decf58604979e624d8d85281660e71d2, type: 3}
+      objectReference: {fileID: 102748805799235549, guid: 3304b4fba1f3b304089ae07eb6f6fcb8, type: 3}
+    - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: MobPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 102748805799235549, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
