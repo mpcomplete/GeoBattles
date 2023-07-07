@@ -9,6 +9,7 @@ public class MovePinwheel : MonoBehaviour {
   Vector3 Velocity;
 
   void Start() {
+    Controller.SetMaxMoveSpeed(MaxSpeed);
     Accel = Random.onUnitSphere.XZ().normalized * 2f;
   }
 

@@ -41,6 +41,7 @@ public abstract class Character : MonoBehaviour {
     if (!IsAlive)
       return;
     Health -= damage;
+    SendMessage("OnHurt", damage, SendMessageOptions.DontRequireReceiver);
     if (Health <= 0) {
       StopAllCoroutines();
       StartCoroutine(KillRoutine());
@@ -77,5 +78,9 @@ public abstract class Character : MonoBehaviour {
     OnDeath?.Invoke();
     GlobalOnDeath?.Invoke(this);
     Destroy(gameObject);
+  }
+
+  void Awake() {
+    Health = MaxHealth;
   }
 }

@@ -276,10 +276,12 @@ public static class CameraExtensions {
 }
 
 public static class GUIExtensions {
-  public static void DrawLine(Vector3 startWorld, Vector3 endWorld, int width) {
+  public static void DrawLine(Vector3 startWorld, Vector3 endWorld, int width) => DrawLine(startWorld, endWorld, width, Texture2D.whiteTexture);
+  public static void DrawLine(Vector3 startWorld, Vector3 endWorld, int width, Texture texture) {
     var start = Camera.main.WorldToGUIPoint(startWorld);
     var end = Camera.main.WorldToGUIPoint(endWorld);
     Vector2 d = end - start;
+    if (d.sqrMagnitude < Mathf.Epsilon) return;
     float a = Mathf.Rad2Deg * Mathf.Atan(d.y / d.x);
     if (d.x < 0)
       a += 180;
@@ -287,7 +289,7 @@ public static class GUIExtensions {
     int width2 = (int)Mathf.Ceil(width / 2f);
 
     GUIUtility.RotateAroundPivot(a, start);
-    GUI.DrawTexture(new Rect(start.x, start.y - width2, d.magnitude, width), Texture2D.whiteTexture);
+    GUI.DrawTexture(new Rect(start.x, start.y - width2, d.magnitude, width), texture);
     GUIUtility.RotateAroundPivot(-a, start);
   }
   public static void DrawLabel(Vector3 worldPos, string label) => DrawLabel(worldPos, label, Color.white);

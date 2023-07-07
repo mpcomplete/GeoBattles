@@ -20,6 +20,7 @@ public class MoveCharge : MonoBehaviour {
   Vector3 TargetDelta => Target.position - transform.position;
 
   void Start() {
+    Controller.SetMaxMoveSpeed(MaxSpeed);
     Target = FindObjectOfType<Player>().transform;
     StartCoroutine(WaitAndCharge());
   }

@@ -22,6 +22,7 @@ public class MoveSnake : MonoBehaviour {
   int MaxTrailLength => TailBoneSeparationTicks * (TailBones.Length + 1);
 
   void Start() {
+    Controller.SetMaxMoveSpeed(MaxSpeed);
     Target = FindObjectOfType<Player>().transform;
     Angle = transform.rotation.eulerAngles.y;
     TurnSpeed = 0;

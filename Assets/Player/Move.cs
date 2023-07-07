@@ -10,6 +10,7 @@ public class Move : MonoBehaviour {
   Quaternion Rotation;
 
   void Start() {
+    Controller.SetMaxMoveSpeed(Speed);
     InputHandler.OnMove += OnMove;
     Rotation = transform.rotation;
   }

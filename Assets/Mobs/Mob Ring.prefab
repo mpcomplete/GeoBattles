@@ -2946,7 +2946,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 494
+  m_VersionIndex: 497
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3065,7 +3065,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3120,6 +3120,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: SpawnDuration.Millis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
       value: 
       objectReference: {fileID: 2520049110357251027}
@@ -3158,6 +3162,18 @@ PrefabInstance:
     - target: {fileID: 6453744541259110829, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513825953084644731, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: MaxMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513825953084644731, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: MaxScriptMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513825953084644731, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: GravityVulnerability
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_Name
@@ -3203,8 +3219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 8253791746242304082}
-  Acceleration: 2
-  MaxSpeed: 10
+  Acceleration: 3
+  MaxSpeed: 6
   Velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &7303984306276102846 stripped
 GameObject:

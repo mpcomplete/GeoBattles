@@ -49,6 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 0.5
+  MaxScriptMoveSpeed: 0
+  GravityVulnerability: 1
+  PhysicsVelocityDampening: 0.9
+  PhysicsVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &3447700117406664958
 MonoBehaviour:
   m_ObjectHideFlags: 0

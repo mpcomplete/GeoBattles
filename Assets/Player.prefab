@@ -4310,6 +4310,14 @@ PrefabInstance:
       propertyPath: Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2834399971941846106, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: MaxMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834399971941846106, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: GravityVulnerability
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5003793679625755804, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: Character
       value: 
