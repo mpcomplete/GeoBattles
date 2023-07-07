@@ -5217,6 +5217,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8111577015653127296, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: MobsSpawnedPerWave
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
