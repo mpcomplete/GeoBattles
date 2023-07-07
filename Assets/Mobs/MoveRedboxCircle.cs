@@ -9,6 +9,10 @@ public class MoveRedboxCircle : MonoBehaviour {
   Vector3 Accel;
   Vector3 Velocity;
 
+  void Start() {
+    Controller.SetMaxMoveSpeed(CircleMoveSpeed);
+  }
+
   void FixedUpdate() {
     Angle += CircleTurnSpeed * Time.fixedDeltaTime;
     if (Angle > 360f) Angle = 0f;

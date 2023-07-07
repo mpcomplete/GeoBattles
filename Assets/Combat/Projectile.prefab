@@ -411,7 +411,7 @@ Transform:
   - {fileID: 4770074015901165331}
   - {fileID: 5371842649124260138}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4214148855951606702
 BoxCollider:
@@ -473,7 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2eb6a46b3568a4e93f1dfac93c8d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 1
   InitialSpeed: 40
   AttackerTeamId: 0
   ParticleSystemPrefab: {fileID: 2658205673329643211, guid: 314ab7f293c4fcb4f813c8073e75c75b, type: 3}
+  Rigidbody: {fileID: 0}

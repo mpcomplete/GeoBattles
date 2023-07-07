@@ -13,6 +13,7 @@ public class MoveChase : MonoBehaviour {
 
   void Start() {
     Target = FindObjectOfType<Player>().transform;
+    Controller.SetMaxMoveSpeed(MaxSpeed);
   }
 
   void FixedUpdate() {

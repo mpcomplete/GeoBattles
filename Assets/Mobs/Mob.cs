@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Mob : Character {
-  [SerializeField] int BaseScore = 0;
+  public int BaseScore = 0;
 
   // TODO: BlackHoles are special.
   public int Score => BaseScore;
@@ -12,5 +12,9 @@ public class Mob : Character {
     GlobalOnDying = GameManager.Instance.MobDying;
     GlobalOnDeath = GameManager.Instance.MobDeath;
     Spawn();
+  }
+
+  void OnDestroy() {
+    GameManager.Instance.Mobs.Remove(this); // black hole might've eaten us.
   }
 }
