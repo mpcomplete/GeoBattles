@@ -12,4 +12,6 @@ public class ContactHitbox : MonoBehaviour {
         Debug.Log($"{name} contact {other.gameObject.name}");
     }
   }
+
+  void FixedUpdate() { }
 }

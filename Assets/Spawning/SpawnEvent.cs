@@ -50,7 +50,7 @@ public class SpawnEvent : MonoBehaviour {
       Vector3 pos;
       do {
         pos = new Vector3(UnityEngine.Random.Range(b.XMin + Radius, b.XMax - Radius), 0f, UnityEngine.Random.Range(b.ZMin + Radius, b.ZMax - Radius));
-      } while ((pos - player.transform.position).sqrMagnitude < MinPlayerDistance);
+      } while ((pos - player.transform.position).sqrMagnitude < MinPlayerDistance.Sqr());
       return pos;
     }
     for (int i = 0; i < ScaledNumMobs; i++) {
@@ -62,8 +62,8 @@ public class SpawnEvent : MonoBehaviour {
   }
 
   private IEnumerator SpawnSurrounding() {
-    const float MinDistance = 5f;
-    const float MaxDistance = 7f;
+    const float MinDistance = 8f;
+    const float MaxDistance = 10f;
     Vector3 GetPos() {
       var player = GameManager.Instance.Players[0];
       var b = Bounds.Instance;
@@ -96,14 +96,17 @@ public class SpawnEvent : MonoBehaviour {
   }
 
   public IEnumerator WaveDelay() {
-    yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+    if (ScaledDelayBetweenMobs > 0f)
+      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
     // Lame. No way to pause a coroutine so we just have to poll.
-    yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
+    if (!SpawnManager.Instance.PlayerAlive)
+      yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
   }
 
   void SpawnMob(Vector3 randomPos) {
     var mob = ChooseMob();
     Instantiate(mob, randomPos, Quaternion.identity);
+    Debug.Log($"SpawnMob: {Timeval.TickCount}");
   }
 
   void SpawnBlackHole(Vector3 randomPos) {

@@ -451,6 +451,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: SpawnDuration.Millis
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
       value: 
       objectReference: {fileID: 7494801863720348809}
