@@ -695,6 +695,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1997932138140761690, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: NumMobs
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997932138140761690, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: DelayBetweenMobs
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623523545891815135, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: Location
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9156812860480553776, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_Name
       value: SpawnManager
