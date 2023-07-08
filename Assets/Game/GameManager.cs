@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour {
   }
 
   void FixedUpdate() {
+    ++Timeval.TickCount;
     if (--SpawnTicksRemaining <= 0 && IsEncounterActive) {
       for (var i = 0; i < MobsSpawnedPerWave; i++) {
         var prefab = MobPrefabs.Random();

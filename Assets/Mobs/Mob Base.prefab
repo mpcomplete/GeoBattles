@@ -78,7 +78,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5458841429387452083}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e77c2bca9d91844449d62dfa14e299a7, type: 3}
   m_Name: 
@@ -245,12 +245,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c28d8a1676664eb5a22ba3bf4b4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Abilities: []
+  Abilities:
+  - {fileID: 5307978730247184100}
   SpawnDuration:
     Millis: 500
     FramesPerSecond: 60
   DyingDuration:
-    Millis: 500
+    Millis: 0
     FramesPerSecond: 60
   Health: 1
   MaxHealth: 1
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7495383838932506555}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59af13e7d294ee84f8b4f1cbb857d8ae, type: 3}
   m_Name: 

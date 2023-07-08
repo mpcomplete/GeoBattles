@@ -44,29 +44,38 @@ public class SpawnEvent : MonoBehaviour {
   const float Radius = 1f;
   private IEnumerator SpawnRandom() {
     const float MinPlayerDistance = 3f;
-    for (int i = 0; i < ScaledNumMobs; i++) {
+    Vector3 GetPos() {
       var player = GameManager.Instance.Players[0];
       var b = Bounds.Instance;
-      Vector3 randomPos;
+      Vector3 pos;
       do {
-        randomPos = new Vector3(UnityEngine.Random.Range(b.XMin + Radius, b.XMax - Radius), 0f, UnityEngine.Random.Range(b.ZMin + Radius, b.ZMax - Radius));
-      } while ((randomPos - player.transform.position).sqrMagnitude < MinPlayerDistance);
-      SpawnMob(randomPos);
-      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+        pos = new Vector3(UnityEngine.Random.Range(b.XMin + Radius, b.XMax - Radius), 0f, UnityEngine.Random.Range(b.ZMin + Radius, b.ZMax - Radius));
+      } while ((pos - player.transform.position).sqrMagnitude < MinPlayerDistance.Sqr());
+      return pos;
     }
+    for (int i = 0; i < ScaledNumMobs; i++) {
+      SpawnMob(GetPos());
+      yield return WaveDelay();
+    }
+    if (IncludeBlackHole)
+      SpawnBlackHole(GetPos());
   }
 
   private IEnumerator SpawnSurrounding() {
-    const float MinDistance = 5f;
-    const float MaxDistance = 7f;
-    for (int i = 0; i < ScaledNumMobs; i++) {
+    const float MinDistance = 8f;
+    const float MaxDistance = 10f;
+    Vector3 GetPos() {
       var player = GameManager.Instance.Players[0];
       var b = Bounds.Instance;
       var randomPos = player.transform.position + UnityEngine.Random.onUnitSphere.XZ().normalized * UnityEngine.Random.Range(MinDistance, MaxDistance);
-      randomPos = Bounds.Instance.Bound(randomPos, 1f);
-      SpawnMob(randomPos);
-      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+      return Bounds.Instance.Bound(randomPos, 1f);
     }
+    for (int i = 0; i < ScaledNumMobs; i++) {
+      SpawnMob(GetPos());
+      yield return WaveDelay();
+    }
+    if (IncludeBlackHole)
+      SpawnBlackHole(GetPos());
   }
 
   private IEnumerator SpawnCorners() {
@@ -77,18 +86,30 @@ public class SpawnEvent : MonoBehaviour {
       new Vector3(b.XMax - Radius, 0, b.ZMin + Radius),
       new Vector3(b.XMax - Radius, 0, b.ZMax - Radius),
     };
+    Vector3 GetPos(Vector3 corner) => corner + UnityEngine.Random.insideUnitCircle.XZ();
     for (int i = 0; i < ScaledNumMobs; i++) {
-      foreach (var corner in corners) {
-        var pos = corner + UnityEngine.Random.insideUnitCircle.XZ();
-        SpawnMob(pos);
-      }
-      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+      corners.ForEach(c => SpawnMob(GetPos(c)));
+      yield return WaveDelay();
     }
+    if (IncludeBlackHole)
+      corners.ForEach(c => SpawnBlackHole(GetPos(c)));
+  }
+
+  public IEnumerator WaveDelay() {
+    if (ScaledDelayBetweenMobs > 0f)
+      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+    // Lame. No way to pause a coroutine so we just have to poll.
+    if (!SpawnManager.Instance.PlayerAlive)
+      yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
   }
 
   void SpawnMob(Vector3 randomPos) {
     var mob = ChooseMob();
     Instantiate(mob, randomPos, Quaternion.identity);
+  }
+
+  void SpawnBlackHole(Vector3 randomPos) {
+    Instantiate(IncludeBlackHole, randomPos, Quaternion.identity);
   }
 
   GameObject Chosen = null;
