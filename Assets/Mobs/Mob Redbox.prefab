@@ -452,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: SpawnDuration.Millis
-      value: 100000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: Abilities.Array.data[2]
       value: 
       objectReference: {fileID: 7009610265233726413}
+    - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: Abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 7494801863720348809}
     - target: {fileID: 3224294993544863927, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Owner
       value: 

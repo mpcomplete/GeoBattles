@@ -106,7 +106,6 @@ public class SpawnEvent : MonoBehaviour {
   void SpawnMob(Vector3 randomPos) {
     var mob = ChooseMob();
     Instantiate(mob, randomPos, Quaternion.identity);
-    Debug.Log($"SpawnMob: {Timeval.TickCount}");
   }
 
   void SpawnBlackHole(Vector3 randomPos) {
