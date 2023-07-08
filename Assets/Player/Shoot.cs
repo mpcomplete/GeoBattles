@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour {
   int CooldownTicksRemaining = 0;
 
   void Spawn(Variant variant, Vector3 dir) {
-    var p = Instantiate(variant.Projectile, transform.position, Quaternion.LookRotation(dir));
+    var p = Instantiate(variant.Projectile, transform.position + dir, Quaternion.LookRotation(dir));
     p.transform.SetParent(Parent.transform, true);
   }
 

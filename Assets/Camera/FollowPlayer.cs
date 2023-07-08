@@ -6,12 +6,12 @@ public class FollowPlayer : MonoBehaviour {
 
   void Start() {
     GameManager.Instance.PlayerSpawn += Follow;
-    GameManager.Instance.PlayerDeath += UnFollow;
+    GameManager.Instance.PlayerDying += UnFollow;
   }
 
   void OnDestroy() {
     GameManager.Instance.PlayerSpawn -= Follow;
-    GameManager.Instance.PlayerDeath -= UnFollow;
+    GameManager.Instance.PlayerDying -= UnFollow;
   }
 
   void Follow(Character c) {

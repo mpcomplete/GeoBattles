@@ -57,7 +57,9 @@ public class ShipManager : MonoBehaviour {
   }
 
   IEnumerator Respawn(Vector3 position, Quaternion rotation) {
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(1.5f);
+    GameManager.Instance.DespawnMobsSafe(c => true) ;
+    yield return new WaitForFixedUpdate();
     Instantiate(PlayerPrefab, position, rotation);
   }
 }

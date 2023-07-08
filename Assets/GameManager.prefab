@@ -64,6 +64,7 @@ MonoBehaviour:
   - {fileID: 102748805799235549, guid: 3304b4fba1f3b304089ae07eb6f6fcb8, type: 3}
   - {fileID: 102748805799235549, guid: decf58604979e624d8d85281660e71d2, type: 3}
   - {fileID: 102748805799235549, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
+  - {fileID: 102748805799235549, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
   SpawnPeriod:
     Millis: 1000
     FramesPerSecond: 60
@@ -72,6 +73,7 @@ MonoBehaviour:
   Mobs: []
   VFX: []
   Projectiles: []
+  BlackHoleTargets: []
 --- !u!114 &4946872320246384681
 MonoBehaviour:
   m_ObjectHideFlags: 0

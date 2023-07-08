@@ -52,16 +52,10 @@ public class GameManager : MonoBehaviour {
   void OnPlayerSpawn(Character character) {
     SpawnTicksRemaining = SpawnPeriod.Ticks;
     Players.Add(character);
-    DespawnMobsSafe(c => true);
     IsEncounterActive = true;
   }
 
   void OnPlayerDying(Character character) {
-    // Steve: This is pretty hacky way to avoid collision between new ship and last attackers hitbox
-    // This could be a whole "state" of a mob called Suspended.
-    // In GW, these mobs have no motion and they flash for awhile before being removed (not even despawned)
-    if (character.LastAttacker)
-      character.LastAttacker.GetComponentsInChildren<Collider>().ForEach(c => c.enabled = false);
     DespawnMobsSafe(c => c != character.LastAttacker);
     Players.Remove(character);
     IsEncounterActive = false;
