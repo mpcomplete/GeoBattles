@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour {
 
   void Start() {
     this.InitComponent(out Rigidbody);
-    Rigidbody.AddForce(InitialSpeed*transform.forward, ForceMode.Impulse);
+    Rigidbody.AddForce(InitialSpeed*transform.forward, ForceMode.VelocityChange);
     GameManager.Instance.ProjectileSpawn.Invoke(this);
   }
 

@@ -46,4 +46,9 @@ public class ShotManager : MonoBehaviour {
       ActiveShotVariant = ShotVariants.Random();
     }
   }
+
+  [ContextMenu("SetVariant1")]
+  void SetVariant1() => ActiveShotVariant = ShotVariants[0];
+  [ContextMenu("SetVariant2")]
+  void SetVariant2() => ActiveShotVariant = ShotVariants[1];
 }
