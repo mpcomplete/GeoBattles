@@ -30,11 +30,11 @@ public class Bounds : MonoBehaviour {
     Instance = null;
   }
 
-  float Bound(float min, float max, float v) {
+  public float Bound(float min, float max, float v) {
     return Mathf.Min(Mathf.Max(min, v), max);
   }
 
-  Vector3 Bound(Vector3 v, float radius) {
+  public Vector3 Bound(Vector3 v, float radius) {
     return new Vector3(Bound(XMin+radius, XMax-radius, v.x), 0, Bound(ZMin+radius, ZMax-radius, v.z));
   }
 
