@@ -11,14 +11,14 @@ TagManager:
   - 
   - Water
   - UI
-  - Hitbox
-  - Hurtbox
+  - Hitbox Player
+  - Hurtbox Player
   - Character
   - Wall
   - Projectile
   - Shield
-  - 
-  - 
+  - Hitbox Mob
+  - Hurtbox Mob
   - 
   - 
   - 
