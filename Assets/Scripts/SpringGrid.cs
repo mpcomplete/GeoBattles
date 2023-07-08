@@ -1,3 +1,4 @@
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class SpringGrid : MonoBehaviour {
   int VertexIndex(int x, int z) => z*XVertices + x;
   Vector3 GridToWorld(int x, int z) => new(Bounds.Instance.XMin + x*GridSpacing.x, 0f, Bounds.Instance.ZMin + z*GridSpacing.y);
 
+  [BurstCompile]
   struct PForce {
     public Vector3 pos;
     public Vector3 vel;
@@ -29,6 +31,7 @@ public class SpringGrid : MonoBehaviour {
     public float maxDistance;
   }
 
+  [BurstCompile]
   struct SpringSolverJob : IJobParallelFor {
     [ReadOnly] public NativeArray<Vector3> LastVertices;
     [ReadOnly] public NativeArray<Vector3> LastVelocities;
