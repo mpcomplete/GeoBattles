@@ -117,12 +117,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3495465225433851574, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+<<<<<<< HEAD
+      propertyPath: m_IsActive
+      value: 0
+=======
       propertyPath: m_Layer
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3495465225433851574, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+>>>>>>> 9a0ff92cd48fd5493a5003b7c5d3854faa147271
       objectReference: {fileID: 0}
     - target: {fileID: 5003793679625755804, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: Character
