@@ -19,6 +19,13 @@ public class SpawnManager : MonoBehaviour {
     StartCoroutine(RunEventLoop());
   }
 
+  void OnDestroy() {
+    Instance = null;
+    GameManager.Instance.PlayerAlive -= OnPlayerAlive;
+    GameManager.Instance.PlayerDying -= OnPlayerDying;
+    StopAllCoroutines();
+  }
+
   public bool PlayerAlive = false;
   void OnPlayerAlive(Character c) {
     StartCoroutine(WaitThenEnable(1));
