@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4074706457344295761}
-  - component: {fileID: -8220767944981547839}
+  - component: {fileID: 3727836787954697699}
   m_Layer: 10
   m_Name: ProjectileCluster
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8220767944981547839
+--- !u!114 &3727836787954697699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6898308082709039787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87cb98601a975034a9f78ad435015ed1, type: 3}
+  m_Script: {fileID: 11500000, guid: 211fc8e7633a6724781ee4f375f8d55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 3
 --- !u!1001 &3028443546603350050
 PrefabInstance:
   m_ObjectHideFlags: 0
