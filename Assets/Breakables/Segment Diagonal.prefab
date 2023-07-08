@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2350576121917789879, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
       propertyPath: m_Name
-      value: Segment Large
+      value: Segment Diagonal
       objectReference: {fileID: 0}
+    - target: {fileID: 2505580785824049700, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3648523253948331192, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
       propertyPath: m_VersionIndex
       value: 612
@@ -198,7 +202,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8859523921747107544, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859523921747107544, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859523921747107544, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8859523921747107544, guid: 496c9abc699b53947acc8afca7b5717e, type: 3}
       propertyPath: m_LocalPosition.x
