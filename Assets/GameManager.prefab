@@ -69,6 +69,8 @@ MonoBehaviour:
     Millis: 1000
     FramesPerSecond: 60
   MobsSpawnedPerWave: 1
+  SafeSpotSearchAttempts: 100
+  MinimumSafeSpawnDistance: 4
   Players: []
   Mobs: []
   VFX: []

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
   [Header("Testing/Encounter")]
   public Timeval SpawnPeriod = Timeval.FromSeconds(1);
   public int MobsSpawnedPerWave = 1;
+  public int SafeSpotSearchAttempts = 100;
+  public float MinimumSafeSpawnDistance = 2f;
   int SpawnTicksRemaining;
   bool IsEncounterActive = false;
 
@@ -110,11 +112,22 @@ public class GameManager : MonoBehaviour {
     LevelStart?.Invoke();
   }
 
+  Vector3 FindRandomPositionAwayFromPlayer() {
+    var position = Vector3.zero;
+    for (var i = 0; i < 100; i++) {
+      position = 10 * UnityEngine.Random.onUnitSphere.XZ();
+      if (Players.Count <= 0 || Vector3.Distance(Players[0].transform.position, position) > MinimumSafeSpawnDistance) {
+        return position;
+      }
+    }
+    return position;
+  }
+
   void FixedUpdate() {
     if (--SpawnTicksRemaining <= 0 && IsEncounterActive) {
       for (var i = 0; i < MobsSpawnedPerWave; i++) {
         var prefab = MobPrefabs.Random();
-        var position = 10 * UnityEngine.Random.onUnitSphere.XZ();
+        var position = FindRandomPositionAwayFromPlayer();
         Instantiate(prefab, position, Quaternion.identity);
         SpawnTicksRemaining = SpawnPeriod.Ticks;
       }
