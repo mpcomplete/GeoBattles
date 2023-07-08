@@ -4,7 +4,8 @@ using System.Linq;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-  public SpawnManager Instance;
+  public static SpawnManager Instance;
+
   SpawnEvent[] SpawnEvents;
   SpawnEvent CurrentSpawnEvent;
 
