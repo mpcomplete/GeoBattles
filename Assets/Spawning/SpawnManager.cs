@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
   public static SpawnManager Instance;
+
   SpawnEvent[] SpawnEvents;
   SpawnEvent CurrentSpawnEvent;
   public float DebugStartTime = 0f;
@@ -16,6 +17,13 @@ public class SpawnManager : MonoBehaviour {
     GameManager.Instance.PlayerAlive += OnPlayerAlive;
     GameManager.Instance.PlayerDying += OnPlayerDying;
     StartCoroutine(RunEventLoop());
+  }
+
+  void OnDestroy() {
+    Instance = null;
+    GameManager.Instance.PlayerAlive -= OnPlayerAlive;
+    GameManager.Instance.PlayerDying -= OnPlayerDying;
+    StopAllCoroutines();
   }
 
   public bool PlayerAlive = false;

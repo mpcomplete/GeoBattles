@@ -68,9 +68,9 @@ public class UI : MonoBehaviour {
         Instantiate(BombIconPrefab, BombContainer);
       }
     } else {
-      Instantiate(BombIconPrefab, BombContainer);
       var countText = Instantiate(CountPrefab, BombContainer);
       countText.text = count.ToString();
+      Instantiate(BombIconPrefab, BombContainer);
     }
   }
 }
