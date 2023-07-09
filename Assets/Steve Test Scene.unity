@@ -536,6 +536,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6417076812761329414, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: GridSpacing.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417076812761329414, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: GridSpacing.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7413615267701846491, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
