@@ -39,17 +39,19 @@ public class SpringGrid : MonoBehaviour {
     public NativeArray<Vector3> Velocities;
     [ReadOnly] public NativeArray<PForce> Forces;
     public int NumForces;
-    const float SpringK = 20f;
-    const float SpringDamping = 4f;
-    const float Mass = 1f;
+    public float SpringK;
+    public float SpringDamping;
+    public float Mass;
     public float DeltaTime;
 
     public Vector2 GridSpacing;
+    public float XMin;
+    public float ZMin;
     public int XVertices;
     public int ZVertices;
     int VertexIndex(int x, int z) => z*XVertices + x;
     (int, int) GridIndex(int vi) => (vi % XVertices, vi / XVertices);
-    Vector3 GridToWorld(int x, int z) => new(Bounds.Instance.XMin + x*GridSpacing.x, 0f, Bounds.Instance.ZMin + z*GridSpacing.y);
+    Vector3 GridToWorld(int x, int z) => new(XMin + x*GridSpacing.x, 0f, ZMin + z*GridSpacing.y);
 
     public void Execute(int i) {
       (var x, var z) = GridIndex(i);
@@ -104,14 +106,34 @@ public class SpringGrid : MonoBehaviour {
       var rightSide = Vector3.Dot(towardsVert, tangent) > 0f;
       if (!rightSide) tangent = -tangent;
       var baseF = Vector3.Lerp(tangent, vnorm, ProjectileForwardBias).normalized;
-      Velocities[vi] += ProjectileFactor * mass / towardsVert.magnitude * baseF;
+      Vertices[vi] += ProjectileFactor * mass / towardsVert.magnitude * baseF * DeltaTime;
       //SpringKLocal[vi] += mass / towardsVert.magnitude;
     }
   }
 
   SpringSolverJob Job;
   JobHandle JobHandle;
-
+  SpringSolverJob MakeJob(int NumForces) {
+    int readIdx = BufferIdx;
+    int writeIdx = (BufferIdx+1)%2;
+    return new SpringSolverJob() {
+      LastVertices = JobBuffer[readIdx].Vertices,
+      LastVelocities = JobBuffer[readIdx].Velocities,
+      Vertices = JobBuffer[writeIdx].Vertices,
+      Velocities = JobBuffer[writeIdx].Velocities,
+      GridSpacing = GridSpacing,
+      XVertices = XVertices,
+      ZVertices = ZVertices,
+      XMin = Bounds.Instance.XMin,
+      ZMin = Bounds.Instance.ZMin,
+      SpringK = SpringK,
+      SpringDamping = SpringDamping,
+      Mass = Mass,
+      Forces = Forces,
+      NumForces = NumForces,
+      DeltaTime = Time.fixedDeltaTime,
+    };
+  }
   (int, int) GridIndex(int vi) => (vi % XVertices, vi / XVertices);
   void Start() {
     XCells = (int)(Bounds.Instance.XSize / GridSpacing.x);
@@ -170,18 +192,7 @@ public class SpringGrid : MonoBehaviour {
     m.RecalculateNormals();
     Mesh.mesh = m;
 
-    Job = new SpringSolverJob() {
-      LastVertices = JobBuffer[0].Vertices,
-      LastVelocities = JobBuffer[0].Velocities,
-      Vertices = JobBuffer[1].Vertices,
-      Velocities = JobBuffer[1].Velocities,
-      GridSpacing = GridSpacing,
-      XVertices = XVertices,
-      ZVertices = ZVertices,
-      Forces = Forces,
-      NumForces = 0,
-      DeltaTime = Time.fixedDeltaTime,
-    };
+    Job = MakeJob(0);
     BufferIdx++;
     JobHandle = Job.Schedule(nverts, 64);
   }
@@ -191,30 +202,11 @@ public class SpringGrid : MonoBehaviour {
     if (!JobHandle.IsCompleted)
       Debug.Log($"Job: {JobHandle.IsCompleted}");
     Mesh.mesh.vertices = Job.Vertices.ToArray();
-    //var tmp = Job.Velocities.ToArray();
-    //var vi = 0;
-    //foreach (var v in tmp) {
-    //  if (v.sqrMagnitude > 0)
-    //    Debug.Log($"velocity {vi} = {v}");
-    //  vi++;
-    //}
-
     int readIdx = BufferIdx;
     int writeIdx = (BufferIdx+1)%2;
     BufferIdx = writeIdx;
     int numForces = ApplyProjectileForces();
-    Job = new SpringSolverJob() {
-      LastVertices = JobBuffer[readIdx].Vertices,
-      LastVelocities = JobBuffer[readIdx].Velocities,
-      Vertices = JobBuffer[writeIdx].Vertices,
-      Velocities = JobBuffer[writeIdx].Velocities,
-      GridSpacing = GridSpacing,
-      XVertices = XVertices,
-      ZVertices = ZVertices,
-      Forces = Forces,
-      NumForces = numForces,
-      DeltaTime = Time.fixedDeltaTime,
-    };
+    Job = MakeJob(numForces);
     JobHandle = Job.Schedule(JobBuffer[0].Vertices.Length, 64);
   }
 
