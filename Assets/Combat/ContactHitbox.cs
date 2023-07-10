@@ -11,8 +11,7 @@ public class ContactHitbox : MonoBehaviour {
 
   void OnTriggerEnter(Collider other) {
     if (other.gameObject.TryGetComponent(out Hurtbox hb)) {
-      if (hb.TryAttack(Team.ID, Damage, Owner))
-        Debug.Log($"{name} contact {other.gameObject.name}");
+      hb.TryAttack(Team.ID, Damage, Owner);
     }
   }
 

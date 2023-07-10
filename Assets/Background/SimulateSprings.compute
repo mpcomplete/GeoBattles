@@ -1,0 +1,78 @@
+#pragma kernel CSMain
+
+struct Spring
+{
+  float4 restPosition;
+  float4 currentPosition;
+  float4 velocity;
+};
+
+struct Force
+{
+  float4 position;
+  float strength;
+};
+
+RWStructuredBuffer<Spring> springBuffer;
+StructuredBuffer<Force> forceBuffer;
+
+float deltaTime;
+float springConstant = 0.5;
+float dampingFactor = 0.01;
+
+// [numthreads(1024, 1, 1)]
+// void CSMain(uint3 id : SV_DispatchThreadID)
+// {
+//   Spring spring = springBuffer[id.x];
+//   spring.velocity = float4(0,0,0,0); // Steve - trying to reset velocity each frame
+//   float4 sumofforces = float4(0,0,0,0);
+//   for (uint i = 0; i < forceBuffer.Length; i++) {
+//     Force force = forceBuffer[i];
+//     float4 direction = force.position - spring.currentPosition;
+//     float distance = length(direction);
+//     // if we are more than .1 away from the force then let's feel its effect
+//     if (distance > 0.1f) {
+//       direction /= distance;
+//       sumofforces += force.strength / (distance * distance) * direction;
+//     }
+//   }
+//
+//   sumofforces += (spring.restPosition - spring.currentPosition) * springConstant;
+//   spring.velocity += deltaTime * sumofforces;
+//   spring.velocity *= (1.0 - dampingFactor);
+//   spring.currentPosition += deltaTime * spring.velocity;
+//   springBuffer[id.x] = spring;
+// }
+
+/*
+For a given spring that is attracted to a source, we want it to want to move
+towards the source the closer it is to the source.
+When it is within a certain radius of the source it should not want to move at all
+
+strength should be derived from the distance relative to the radius and a max radius
+
+s = 1-lerp(radius, maxradius, distance)
+
+if (distance >= radius) {
+  dp += streng
+}
+*/
+[numthreads(1024, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+  Spring spring = springBuffer[id.x];
+  float4 dp = float4(0,0,0,0);
+  float MIN_RADIUS = 0.1f;
+  float MAX_RADIUS = 10.0f;
+  for (uint i = 0; i < forceBuffer.Length; i++) {
+    Force force = forceBuffer[i];
+    float4 delta = force.position - spring.currentPosition;
+    float distance = length(delta);
+    float strength = 1.0 - lerp(distance, MIN_RADIUS, MAX_RADIUS);
+    dp += strength * delta;
+  }
+
+  dp += (spring.restPosition - spring.currentPosition) * springConstant;
+  spring.currentPosition += dp;
+  springBuffer[id.x] = spring;
+}
