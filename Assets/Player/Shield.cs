@@ -7,6 +7,8 @@ public class Shield : MonoBehaviour {
   [SerializeField] Timeval PulseThreshold = Timeval.FromSeconds(1);
   [SerializeField] Timeval PulseOffDuration = Timeval.FromMillis(30);
   [SerializeField] Timeval PulseOnDuration = Timeval.FromMillis(100);
+  [SerializeField] float ActivateForceRadius = 10;
+  [SerializeField] float ActivateForceScale = -10;
 
   public bool Raised => TicksRemaining > 0;
 
@@ -27,6 +29,7 @@ public class Shield : MonoBehaviour {
   void Raise() {
     TicksRemaining = Duration.Ticks;
     Model.SetActive(true);
+    Bounds.Instance.VectorGrid.AddGridForce(transform.position, ActivateForceScale, ActivateForceRadius, Color.white, false);
   }
 
   void Lower() {

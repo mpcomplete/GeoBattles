@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7936817880362011148}
     m_Modifications:
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Scale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2029417589163891604, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: InitialSpeed
       value: 36
@@ -90,6 +98,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7936817880362011148}
     m_Modifications:
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Scale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -184,6 +200,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3899020926698474516, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
+      propertyPath: Scale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899020926698474516, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4074706457344295761, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -228,6 +252,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6703913095219180662, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
+      propertyPath: Scale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703913095219180662, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6898308082709039787, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
       propertyPath: m_Name
       value: ProjectileCluster Upgrade1
@@ -263,6 +295,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7936817880362011148}
     m_Modifications:
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Scale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025260302331847734, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2029417589163891604, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: InitialSpeed
       value: 36

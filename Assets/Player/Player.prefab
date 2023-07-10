@@ -4940,6 +4940,8 @@ MonoBehaviour:
   PulseOnDuration:
     Millis: 100
     FramesPerSecond: 60
+  ActivateForceRadius: 10
+  ActivateForceScale: -5
 --- !u!1 &8520205596614223008
 GameObject:
   m_ObjectHideFlags: 0
@@ -7208,6 +7210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 6451052018583213590}
+  ForceRadius: 15
+  ForceScale: 5
 --- !u!114 &6945261370278958281
 MonoBehaviour:
   m_ObjectHideFlags: 0

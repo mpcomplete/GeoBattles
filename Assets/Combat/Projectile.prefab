@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 4214148855951606702}
   - component: {fileID: 8827523057620614058}
   - component: {fileID: 2029417589163891604}
+  - component: {fileID: 2025260302331847734}
   m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
@@ -450,3 +451,20 @@ MonoBehaviour:
   AttackerTeamId: 0
   ParticleSystemPrefab: {fileID: 2658205673329643211, guid: 314ab7f293c4fcb4f813c8073e75c75b, type: 3}
   Rigidbody: {fileID: 0}
+--- !u!114 &2025260302331847734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898308082709039787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d46c3c7e6ad884f9a7f506f14cd53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: 0.1
+  Radius: 0.5
+  Direction: 2
+  HasColor: 0
+  Color: {r: 0, g: 0, b: 0, a: 0}

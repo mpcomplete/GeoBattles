@@ -21,6 +21,7 @@ public class Bounds : MonoBehaviour {
   public Transform SouthPlane;
   public Transform WestPlane;
   public Transform EastPlane;
+  public VectorGrid VectorGrid;
 
   void Awake() {
     Instance = this;
