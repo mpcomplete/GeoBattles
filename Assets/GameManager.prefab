@@ -1123,6 +1123,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4160724981492544254, guid: c28b2de21e508a04498b29adf79c8959, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 4237536870596111764}
+    - target: {fileID: 4160724981492544254, guid: c28b2de21e508a04498b29adf79c8959, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160724981492544254, guid: c28b2de21e508a04498b29adf79c8959, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160724981492544254, guid: c28b2de21e508a04498b29adf79c8959, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160724981492544254, guid: c28b2de21e508a04498b29adf79c8959, type: 3}
       propertyPath: m_SortingLayerID
       value: -743591385
       objectReference: {fileID: 0}
