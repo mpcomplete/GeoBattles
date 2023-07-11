@@ -11,6 +11,7 @@ public class MoveRedboxCircle : MonoBehaviour {
 
   void Start() {
     Controller.SetMaxMoveSpeed(CircleMoveSpeed);
+    Angle = Random.Range(0, 360f);
   }
 
   void FixedUpdate() {

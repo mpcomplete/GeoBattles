@@ -544,10 +544,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 8253791746242304082}
-  AvoidDistance: 4
-  AvoidStrength: 10
+  AvoidDistance: 5
+  AvoidStrength: 40
+  TangentBias: 0.3
+  VelocityDampening: 0.85
   MaxSpeed: 15
-  VelocityDampening: 0.9
 --- !u!114 &5483439927510084362 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}

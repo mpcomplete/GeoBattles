@@ -8,6 +8,7 @@ public class InputHandler : MonoBehaviour {
   public UnityAction<Vector3> OnMove;
   public UnityAction<Vector3> OnAim;
   public UnityAction OnBomb;
+  public UnityAction OnDebugShot;
 
   void Awake() {
     Inputs = new();
@@ -25,5 +26,7 @@ public class InputHandler : MonoBehaviour {
     OnAim?.Invoke(new Vector3(aim.x, 0, aim.y));
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
       OnBomb();
+    if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())
+      OnDebugShot?.Invoke();
   }
 }

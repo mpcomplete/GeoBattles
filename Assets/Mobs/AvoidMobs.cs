@@ -6,6 +6,7 @@ public class AvoidMobs : MonoBehaviour {
   //[SerializeField] float MaxSpeed = 2;
   [SerializeField] float SeparationDistance = 2f;
   [SerializeField] float SeparationStrength = 1f;
+  [SerializeField] float SeparationTangentStrength = .2f;
 
   void FixedUpdate() {
     var others = GameManager.Instance.Mobs;
@@ -15,7 +16,8 @@ public class AvoidMobs : MonoBehaviour {
       if (delta.sqrMagnitude < SeparationDistance.Sqr())
         nearAvg += delta;
     }
-    var velocity = SeparationStrength * nearAvg;
+    var tangent = Vector3.Cross(nearAvg.normalized, Vector3.up);
+    var velocity = SeparationStrength*nearAvg.normalized + SeparationTangentStrength*tangent;
     //if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
     //  Velocity = MaxSpeed * Velocity.normalized;
     Controller.Move(Time.fixedDeltaTime * velocity);

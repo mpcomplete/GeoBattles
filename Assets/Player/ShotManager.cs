@@ -10,6 +10,7 @@ public struct Variant {
 public class ShotManager : MonoBehaviour {
   public static ShotManager Instance;
 
+  [SerializeField] InputHandler InputHandler;
   [SerializeField] int ShotChangeScoreInterval = 1000;
   [SerializeField] Variant DefaultShotVariant;
   [SerializeField] Variant[] ShotVariants;
@@ -48,6 +49,10 @@ public class ShotManager : MonoBehaviour {
     if ((previousScore / ShotChangeScoreInterval) < (newScore / ShotChangeScoreInterval)) {
       ActiveShotVariant = ShotVariants.Random();
     }
+  }
+
+  public void SetShotVariant(int idx) {
+    ActiveShotVariant = idx >= ShotVariants.Length ? DefaultShotVariant : ShotVariants[idx];
   }
 
   [ContextMenu("SetVariant1")]
