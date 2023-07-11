@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3900310436331320302}
+  - component: {fileID: 8252750694947925391}
   m_Layer: 0
   m_Name: Segment BlackHole
   m_TagString: Untagged
@@ -32,6 +33,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8252750694947925391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309839408434568196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 0}
+  MeshRenderer: {fileID: 4152823961221909079}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5
+      outSlope: 5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: 2.5
+      outSlope: 0
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.08274232
+    - serializedVersion: 3
+      time: 0.8
+      value: 1
+      inSlope: -0.026638925
+      outSlope: -2.5000002
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.07801423
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -5.0000005
+      outSlope: -5.0000005
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &8686742621640496207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +170,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c39d2bcba3180c4b84ddf17e3ac4a74, type: 3}
+--- !u!23 &4152823961221909079 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4696208775881448984, guid: 2c39d2bcba3180c4b84ddf17e3ac4a74, type: 3}
+  m_PrefabInstance: {fileID: 8686742621640496207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8680082317374058617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 69905313819157558, guid: 2c39d2bcba3180c4b84ddf17e3ac4a74, type: 3}

@@ -60,16 +60,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_9
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8288292881123953811}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &3824508164045911856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 230754798080574686}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6098652104749979866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 230754798080574686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8288292881123953811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098652104749979866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &473941784435133486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,16 +222,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_23
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425305173561447931}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &3509263055361834944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 473941784435133486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5837450204495237162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 473941784435133486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425305173561447931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837450204495237162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &522188016693355948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,16 +384,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_8
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2175408375950924412}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &3539689194001520194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 522188016693355948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5813622372069669288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 522188016693355948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2175408375950924412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813622372069669288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &648544687915729763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,16 +546,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_16
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2195005325388861267}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &4548838313744265357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 648544687915729763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6814256813646536551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 648544687915729763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2195005325388861267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814256813646536551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &744916194735084756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,16 +708,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_21
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3247952745314600493}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &4356906051272451898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 744916194735084756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6757498236000143568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 744916194735084756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3247952745314600493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757498236000143568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &1283786204818548924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,16 +870,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_19
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8390911510388116029}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &2877874298235083602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 1283786204818548924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5062575132682319032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 1283786204818548924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8390911510388116029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062575132682319032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &2133043815861123333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,16 +1032,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_24
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3316231587199171795}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &3151032794670959339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 2133043815861123333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5335381884375278849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 2133043815861123333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3316231587199171795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335381884375278849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &2431358680033359939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,16 +1194,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_12
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 883022313027928936}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &1701591530289335213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 2431358680033359939}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8515434247080879175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 2431358680033359939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &883022313027928936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515434247080879175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &2439626511038860890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -620,16 +1356,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_6
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5112659281197980196}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &1728226461889740212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 2439626511038860890}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8523703172749333086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 2439626511038860890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5112659281197980196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523703172749333086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &2949464051618825513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 1601167761345441200, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: GravityVulnerability
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623682991455892896, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: MaxLengthScale
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
@@ -1247,16 +2079,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_22
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 521267197679464716}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &1881444449088523693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 3187585841871175235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8911948483276792391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 3187585841871175235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &521267197679464716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911948483276792391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &3366714578697964560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1317,16 +2241,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_17
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5755910961602459290}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &1772261831913324542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 3366714578697964560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8730778254277546004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 3366714578697964560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5755910961602459290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730778254277546004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &3721311217608977720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,16 +2403,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_4
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2803637777757122059}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &397565242781245142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 3721311217608977720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7220903341872820540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 3721311217608977720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2803637777757122059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220903341872820540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &3881660034078602524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1457,16 +2565,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_11
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6695640317416067134}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &287881356259821298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 3881660034078602524}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7083987112325097752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 3881660034078602524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6695640317416067134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083987112325097752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &4170379434013609276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1522,6 +2722,66 @@ PrefabInstance:
     - target: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
       propertyPath: m_Name
       value: Segment BlackHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1593,16 +2853,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_7
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4893778290489101768}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &844075141727070528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 4437855926730873518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7640185179807876778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 4437855926730873518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4893778290489101768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640185179807876778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &4596039764998577799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1663,16 +3015,108 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_20
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8860911480234411287}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
 --- !u!4 &714038785021160809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
   m_PrefabInstance: {fileID: 4596039764998577799}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7519151358097719939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 4596039764998577799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8860911480234411287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519151358097719939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!1001 &4670563455938321565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1733,11 +3177,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_25
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6744785431909079832}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &1675375575006380185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 4670563455938321565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6744785431909079832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675375575006380185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &8570775717772078963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -1803,11 +3339,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7651884639510943383}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &1305746045915275016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 5012502667971674892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7651884639510943383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305746045915275016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &8335972917407953122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -1873,11 +3501,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_13
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 83284179874061631}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &428399035719298054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 5936016051114078210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &83284179874061631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428399035719298054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &7223871146610721772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -1943,11 +3663,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_15
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4569292261993817517}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &334326441159058811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 5995075754521442687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4569292261993817517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334326441159058811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &7282995766225291921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2088,11 +3900,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_3
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5072001642422099242}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &1034080356368670896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 6469639771266268340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5072001642422099242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034080356368670896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &8063810261289946970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2158,11 +4062,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_10
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6319567273921190212}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &921070212222603224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 6582364866155647964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6319567273921190212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921070212222603224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &7888598274821513266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2228,11 +4224,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_18
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3351597897316599891}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &4196629636100331174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 7902799101767699106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3351597897316599891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196629636100331174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &6596874349391984972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2298,11 +4386,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4917040532999009241}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &2482421741297586294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 8494449605079927922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4917040532999009241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482421741297586294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &4882736819037929372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2368,11 +4548,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_14
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3533375667802774137}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &2932404639455560620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 9160589894890037160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3533375667802774137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2932404639455560620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &5260305881399225414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
@@ -2438,11 +4710,103 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_5
       objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 102748805799235549}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      propertyPath: BlinkCurve.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 206907129524925580}
   m_SourcePrefab: {fileID: 100100000, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+--- !u!1 &2949664731996875092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6309839408434568196, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
+  m_PrefabInstance: {fileID: 9186883578689697104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &206907129524925580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949664731996875092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268615a4be8ecac47a6fbb369525fa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 102748805799235549}
+  MeshRenderer: {fileID: 0}
+  BlinkCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BlinkDuration:
+    Millis: 1000
+    FramesPerSecond: 60
+  Color: {r: 2.608238, g: 2.608238, b: 2.608238, a: 1}
 --- !u!4 &5286929496441472702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3900310436331320302, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
