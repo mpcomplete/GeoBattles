@@ -72,7 +72,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -154,7 +155,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_19
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -236,7 +238,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -318,7 +321,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_17
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -400,7 +404,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -482,7 +487,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_22
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -564,7 +570,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_23
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -646,7 +653,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -728,7 +736,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -810,7 +819,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -892,7 +902,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -974,7 +985,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_24
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -998,7 +1010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1370,7 +1382,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_14
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1452,7 +1465,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1534,7 +1548,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1616,7 +1631,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1698,7 +1714,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1780,7 +1797,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1862,7 +1880,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1944,7 +1963,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2026,7 +2046,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2108,7 +2129,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2190,7 +2212,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2272,7 +2295,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_18
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2354,7 +2378,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2436,7 +2461,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Segment BlackHole_21
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8252750694947925391, guid: 554b413304b4ca04d969bbbd065ca3b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
