@@ -24,10 +24,9 @@ public class SpawnEvent : MonoBehaviour {
   public float TimeFirstAvailable = 0f;
   public float TimeLastAvailable = Mathf.Infinity;
 
-  // TODO: scaling
-  float ScaledDelayBetweenMobs => DelayBetweenMobs;
-  float ScaledPostDelay => PostDelay;
-  int ScaledNumMobs => NumMobs;
+  float ScaledDelayBetweenMobs => DelayBetweenMobs * SpawnManager.Instance.SpewDelayFactor;
+  float ScaledPostDelay => PostDelay * SpawnManager.Instance.SpawnDelayFactor;
+  int ScaledNumMobs => (int)(NumMobs * SpawnManager.Instance.NumMobsFactor);
 
   public IEnumerator SpawnSequence() {
     Chosen = null;
@@ -38,6 +37,7 @@ public class SpawnEvent : MonoBehaviour {
       _ => null
     };
     yield return sequence;
+    Debug.Log($"Event done, waiting={ScaledPostDelay}");
     yield return new WaitForSeconds(ScaledPostDelay);
   }
 

@@ -5,11 +5,19 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
   public static SpawnManager Instance;
 
+  // Every X seconds, incrase a parameter.
+  public float SpewRateIncreasePeriod = 60f;
+  public float SpawnDelayDecreasePeriod = 60f;
+  public float NumMobsIncreasePeriod = 60f;
+
   SpawnEvent[] SpawnEvents;
   SpawnEvent CurrentSpawnEvent;
   public float DebugStartTime = 0f;
 
   public float CurrentTime => Time.time + DebugStartTime;
+  public float SpewDelayFactor => 1f / (1f + CurrentTime / SpewRateIncreasePeriod);
+  public float SpawnDelayFactor => 1f / (1f + CurrentTime / SpawnDelayDecreasePeriod);
+  public float NumMobsFactor => 1f + CurrentTime / NumMobsIncreasePeriod;
 
   void Awake() {
     Instance = this;
@@ -42,6 +50,7 @@ public class SpawnManager : MonoBehaviour {
   IEnumerator RunEventLoop() {
     yield return new WaitUntil(() => PlayerAlive);
     CurrentSpawnEvent = ChooseEvent();
+    Debug.Log($"Spawn event starting {CurrentTime}: spewrate={SpewDelayFactor}, spawndelay={SpawnDelayFactor}, nummobs={NumMobsFactor}");
     yield return CurrentSpawnEvent.SpawnSequence();
     CurrentSpawnEvent = null;
     StartCoroutine(RunEventLoop());

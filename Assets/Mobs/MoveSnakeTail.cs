@@ -51,7 +51,7 @@ public class MoveSnakeTail : MonoBehaviour {
   void MoveTailBone(Transform tb, Transform tbNext, bool reversed) {
     if (!tb || !tbNext) return; // might have gotten eaten
     var oldPos = tb.position;
-    tb.position = Vector3.Slerp(tb.position, tbNext.position, Time.fixedDeltaTime / TailBoneSeparationDist);
+    tb.position = Vector3.Lerp(tb.position, tbNext.position, Time.fixedDeltaTime / TailBoneSeparationDist);
     var forward = tb.position - oldPos;
     if (forward.sqrMagnitude > .001f)
       tb.forward = reversed ? -forward : forward;

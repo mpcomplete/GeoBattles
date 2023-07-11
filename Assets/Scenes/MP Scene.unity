@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031565809
 Transform:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2835628889099063888, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2936603972614914731, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -538,7 +538,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: DebugStartTime
-      value: 444
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: NumMobsDoublePeriod
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SpewRateDoublePeriod
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: NumMobsIncreasePeriod
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SpawnDelayDoublePeriod
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SpewRateIncreasePeriod
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SpawnDelayDecreasePeriod
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5890530587239223655, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: NumMobs
@@ -568,9 +592,13 @@ PrefabInstance:
       propertyPath: DelayBetweenMobs
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8616554495079720797, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8677185834481921287, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
