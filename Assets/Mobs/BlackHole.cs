@@ -27,6 +27,7 @@ public class BlackHole : MonoBehaviour {
       GridForce.enabled = true;
       BaseForceMagnitude = GridForce.Magnitude;
       OrbitParticles.Play();
+      OrbitParticles.GetComponent<ParticleSystemForceField>().enabled = true;
     }
   }
 
