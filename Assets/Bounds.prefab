@@ -569,10 +569,10 @@ MonoBehaviour:
   m_LooseSpringDamping: 0.002
   m_LooseSpringInterval: 3
   m_RestDistanceScalar: 1
-  m_GridSmoothingFactor: 0
+  m_GridSmoothingFactor: 1
   m_DebugDraw: 0
   m_CalculateNormals: 0
-  m_ColorRevertEnabled: 0
+  m_ColorRevertEnabled: 1
   m_ColorRevertDelay: 10
   m_ColorRevertSpeed: 0.1
   m_TrackedCamera: {fileID: 0}

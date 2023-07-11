@@ -852,6 +852,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1310553305658326201}
+    - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5017846128098520760}
     - targetCorrespondingSourceObject: {fileID: 5598659241668458391, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4438607224866145594}
@@ -980,6 +983,23 @@ MonoBehaviour:
   MaxDistance: 10
   EatDistance: 0.5
   DeathSpawn: {fileID: 8532192614350128779, guid: 13c54f585ccea8a42a6ecd0819638766, type: 3}
+--- !u!114 &5017846128098520760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677667772216431250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d46c3c7e6ad884f9a7f506f14cd53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: -0.25
+  Radius: 10
+  Direction: 4
+  HasColor: 0
+  Color: {r: 0.6037736, g: 0.019935932, b: 0.019935932, a: 1}
 --- !u!114 &7009610265233726413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5307978730247184100, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}

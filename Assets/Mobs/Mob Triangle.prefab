@@ -999,6 +999,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: SeparationDistance
       value: 0.5
       objectReference: {fileID: 0}
