@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6710881262650853181, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 996
+      objectReference: {fileID: 0}
     - target: {fileID: 6898308082709039787, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: m_Name
       value: Projectile_2
@@ -163,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 4074706457344295761, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710881262650853181, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 996
       objectReference: {fileID: 0}
     - target: {fileID: 6898308082709039787, guid: a9d8db1642cde3f4bb24da45e87192b1, type: 3}
       propertyPath: m_Name

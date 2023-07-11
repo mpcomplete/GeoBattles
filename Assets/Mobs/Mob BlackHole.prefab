@@ -852,6 +852,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1310553305658326201}
+    - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2429724840158401734}
     - targetCorrespondingSourceObject: {fileID: 5598659241668458391, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4438607224866145594}
@@ -942,6 +945,40 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  GridPulseRate: 0.25
+  GridPulseSize:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6999984
+      inSlope: 0.7036103
+      outSlope: 0.7036103
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.15683077
+    - serializedVersion: 3
+      time: 0.50361204
+      value: 0.9948164
+      inSlope: -0.0062622833
+      outSlope: -0.0062622833
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13671708
+    - serializedVersion: 3
+      time: 1
+      value: 0.6999852
+      inSlope: -0.38301703
+      outSlope: -0.38301703
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17179132
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   HealthToSize:
     serializedVersion: 2
     m_Curve:
@@ -980,6 +1017,24 @@ MonoBehaviour:
   MaxDistance: 10
   EatDistance: 0.5
   DeathSpawn: {fileID: 8532192614350128779, guid: 13c54f585ccea8a42a6ecd0819638766, type: 3}
+  GridForce: {fileID: 2429724840158401734}
+--- !u!114 &2429724840158401734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677667772216431250}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb43f73b30e5ec4eb81390aa2f54497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Magnitude: -200
+  Radius: 10
+  ForwardBias: 1
+  Radial: 1
+  Rigidbody: {fileID: 0}
 --- !u!114 &7009610265233726413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5307978730247184100, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}

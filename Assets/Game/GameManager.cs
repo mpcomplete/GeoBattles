@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 
   [SerializeField] Character[] MobPrefabs;
 
+  public SpringGrid SpringGrid;
+
   [Header("Testing/Encounter")]
   public Timeval SpawnPeriod = Timeval.FromSeconds(1);
   public int MobsSpawnedPerWave = 1;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour {
   public List<Character> Mobs;
   public List<GameObject> VFX;
   public List<Projectile> Projectiles;
+  public List<GridForce> GridForces;
   public List<BlackHoleTarget> BlackHoleTargets;
 
   public UnityAction<Character> PlayerSpawn;

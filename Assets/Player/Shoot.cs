@@ -6,8 +6,6 @@ public class Shoot : MonoBehaviour {
 
   [SerializeField] InputHandler InputHandler;
 
-  public Variant[] ProjectileVariants;
-  public int CurrentVariant = 0;
   Vector3 Aim;
   int CooldownTicksRemaining = 0;
 
