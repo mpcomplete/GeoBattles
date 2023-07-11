@@ -31,21 +31,17 @@ public class BlackHole : MonoBehaviour {
     }
   }
 
-  float PulseT = 0f;
   float BaseForceMagnitude;
   void Pulse() {
     var healthFactor = 1f + PulseRateHealthFactor*ExplodePct;
-    PulseT += Time.fixedDeltaTime * PulseRate * healthFactor;
-    if (PulseT > 1f) PulseT = 0f;
-    var s = PulseSize.Evaluate(PulseT);
+    var t = (Time.fixedTime * PulseRate * healthFactor) % 1f;
+    var s = PulseSize.Evaluate(t);
     transform.localScale *= s;
   }
 
-  float GridPulseT = 0f;
   void PulseGrid() {
-    GridPulseT += Time.fixedDeltaTime * GridPulseRate;
-    if (GridPulseT > 1f) GridPulseT = 0f;
-    var s = GridPulseSize.Evaluate(GridPulseT);
+    var t = (Time.fixedTime * GridPulseRate) % 1f;
+    var s = GridPulseSize.Evaluate(t);
     GridForce.Magnitude = BaseForceMagnitude * s;
   }
 
