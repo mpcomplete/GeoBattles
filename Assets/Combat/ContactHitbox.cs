@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class ContactHitbox : MonoBehaviour {
   public Character Owner;
   public Team Team;
