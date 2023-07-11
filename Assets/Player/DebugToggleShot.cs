@@ -4,11 +4,11 @@ public class DebugToggleShot : MonoBehaviour {
   [SerializeField] InputHandler InputHandler;
 
   void Start() {
-    InputHandler.OnBomb += NextShot;
+    InputHandler.OnDebugShot += NextShot;
   }
 
   void OnDestroy() {
-    InputHandler.OnBomb -= NextShot;
+    InputHandler.OnDebugShot -= NextShot;
   }
 
   int NextIdx = 0;

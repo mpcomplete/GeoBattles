@@ -27,6 +27,6 @@ public class InputHandler : MonoBehaviour {
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
       OnBomb();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())
-      OnDebugShot();
+      OnDebugShot?.Invoke();
   }
 }
