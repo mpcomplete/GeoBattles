@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 
 public class AnimateSpawn : MonoBehaviour {
-  [SerializeField] Transform AnimationSegmentsRoot;
   [SerializeField] Transform SegmentsRoot;
   [SerializeField] Timeval PulseDuration = Timeval.FromTicks(5);
   [SerializeField] float MinLengthScale = 0.5f;

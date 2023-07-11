@@ -33,6 +33,7 @@ public abstract class Character : MonoBehaviour {
   public UnityAction OnDying;
   public UnityAction OnDeath;
   public UnityAction OnDespawn;
+  public UnityAction OnDamage;
 
   public void Spawn() {
     StopAllCoroutines();
@@ -48,6 +49,8 @@ public abstract class Character : MonoBehaviour {
     if (Health <= 0) {
       StopAllCoroutines();
       StartCoroutine(KillRoutine());
+    } else {
+      OnDamage?.Invoke();
     }
   }
 

@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 // TODO: deform grid
 public class BlackHole : MonoBehaviour {
   [SerializeField] Character Character;
-  [SerializeField] ParticleSystem ActivationParticles;
+  [SerializeField] ParticleSystem OrbitParticles;
   [SerializeField] float PulseRate = 5f;
   [SerializeField] float PulseRateHealthFactor = 1.5f;
   [SerializeField] AnimationCurve PulseSize;
@@ -27,7 +26,7 @@ public class BlackHole : MonoBehaviour {
       Activated = true;
       GridForce.enabled = true;
       BaseForceMagnitude = GridForce.Magnitude;
-      Instantiate(ActivationParticles, transform.position, transform.rotation);
+      OrbitParticles.Play();
     }
   }
 
