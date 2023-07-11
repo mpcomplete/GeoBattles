@@ -4957,7 +4957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3906570864881459824
 Transform:
   m_ObjectHideFlags: 0
@@ -7137,6 +7137,10 @@ PrefabInstance:
       propertyPath: Character
       value: 
       objectReference: {fileID: 6945261370278958281}
+    - target: {fileID: 7712537957615369361, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: GravityVulnerability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7318,6 +7322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 6451052018583213590}
+  ShockwaveEffect: {fileID: 6913376154181664587, guid: 0f9608c1399b2664fbbe007006198756, type: 3}
 --- !u!114 &6945261370278958281
 MonoBehaviour:
   m_ObjectHideFlags: 0
