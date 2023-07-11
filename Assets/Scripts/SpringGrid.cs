@@ -150,6 +150,8 @@ public class SpringGrid : MonoBehaviour {
   }
 
   void FixedUpdate() {
+    if (!JobHandle.IsCompleted)
+      return;
     JobHandle.Complete();
     BufferIdx = (BufferIdx+1)%2;
     UpdateMesh();
