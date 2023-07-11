@@ -100,7 +100,7 @@ MonoBehaviour:
     Millis: 166.66667
     FramesPerSecond: 60
   MinLengthScale: 0.5
-  MaxLengthScale: 1.5
+  MaxLengthScale: 2
   PulseCount: 3
 --- !u!114 &7712537957615369361
 MonoBehaviour:
