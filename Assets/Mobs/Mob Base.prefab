@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2834399971941846106, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: PhysicsVelocityDampening
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 3447700117406664958, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: ID
       value: 1
@@ -110,7 +114,7 @@ PrefabInstance:
       objectReference: {fileID: 2991393538610301684}
     - target: {fileID: 7712537957615369361, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: GravityVulnerability
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7770556312462777418, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: m_RootOrder
@@ -266,3 +270,4 @@ MonoBehaviour:
   Controller: {fileID: 6513825953084644731}
   SeparationDistance: 1
   SeparationStrength: 2
+  SeparationTangentStrength: 0.2

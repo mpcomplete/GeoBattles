@@ -123,6 +123,62 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1031565808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031565809}
+  - component: {fileID: 1031565810}
+  m_Layer: 0
+  m_Name: 4corners triangle_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031565809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031565808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1906164521}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031565810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031565808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb61d87fd235c10469d7240a0130e3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Location: 2
+  Spawn:
+    Possible:
+    - {fileID: 4677667772216431250, guid: 3304b4fba1f3b304089ae07eb6f6fcb8, type: 3}
+  IncludeBlackHole: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+  NumMobs: 80
+  DelayBetweenMobs: 0.2
+  DifferentMob: 0
+  PostDelay: 8
+  ChooseWeight: 5
+  TimeFirstAvailable: 180
+  TimeLastAvailable: Infinity
 --- !u!1 &1508733348
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593519599313790012, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1851952137338399462, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: NumMobs
@@ -434,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4252312728042379260, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: PostDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4399519316942737705, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -470,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4646645151210635919, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: PostDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4833041433133299235, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
@@ -482,7 +538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738173735849739456, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: DebugStartTime
-      value: 111
+      value: 444
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890530587239223655, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: NumMobs
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6126253212857417607, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
@@ -518,5 +578,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6606520717275621485, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1508733349}
+    - targetCorrespondingSourceObject: {fileID: 6606520717275621485, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1031565809}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}

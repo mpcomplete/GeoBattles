@@ -53,12 +53,12 @@ public class SpawnEvent : MonoBehaviour {
       } while ((pos - player.transform.position).sqrMagnitude < MinPlayerDistance.Sqr());
       return pos;
     }
+    if (IncludeBlackHole)
+      SpawnBlackHole(GetPos());
     for (int i = 0; i < ScaledNumMobs; i++) {
       SpawnMob(GetPos());
       yield return WaveDelay();
     }
-    if (IncludeBlackHole)
-      SpawnBlackHole(GetPos());
   }
 
   private IEnumerator SpawnSurrounding() {
@@ -70,12 +70,12 @@ public class SpawnEvent : MonoBehaviour {
       var randomPos = player.transform.position + UnityEngine.Random.onUnitSphere.XZ().normalized * UnityEngine.Random.Range(MinDistance, MaxDistance);
       return Bounds.Instance.Bound(randomPos, 1f);
     }
+    if (IncludeBlackHole)
+      SpawnBlackHole(GetPos());
     for (int i = 0; i < ScaledNumMobs; i++) {
       SpawnMob(GetPos());
       yield return WaveDelay();
     }
-    if (IncludeBlackHole)
-      SpawnBlackHole(GetPos());
   }
 
   private IEnumerator SpawnCorners() {
@@ -87,12 +87,12 @@ public class SpawnEvent : MonoBehaviour {
       new Vector3(b.XMax - Radius, 0, b.ZMax - Radius),
     };
     Vector3 GetPos(Vector3 corner) => corner + UnityEngine.Random.insideUnitCircle.XZ();
+    if (IncludeBlackHole)
+      corners.ForEach(c => SpawnBlackHole(GetPos(c)));
     for (int i = 0; i < ScaledNumMobs; i++) {
       corners.ForEach(c => SpawnMob(GetPos(c)));
       yield return WaveDelay();
     }
-    if (IncludeBlackHole)
-      corners.ForEach(c => SpawnBlackHole(GetPos(c)));
   }
 
   public IEnumerator WaveDelay() {

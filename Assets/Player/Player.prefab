@@ -7187,7 +7187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3495465225433851574, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003793679625755804, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: Character
@@ -7464,4 +7464,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 6451052018583213590}
-  ShockwaveEffect: {fileID: 0}
