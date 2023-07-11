@@ -156,12 +156,19 @@ public class SpringGrid : MonoBehaviour {
   void GatherForces() {
     foreach (var f in GameManager.Instance.GridForces) {
       var dir = f.Rigidbody == null ? f.transform.forward : f.Rigidbody.velocity.normalized;
-      AddForce(f.transform.position, f.Magnitude, dir, f.Radial, f.Radius, f.ForwardBias);
+      Forces[NumForces++] = new PForce { Position = f.transform.position, Magnitude = f.Magnitude, Direction = dir, Radial = f.Radial, Radius = f.Radius, ForwardBias = f.ForwardBias };
     }
+    NextForces.ForEach(f => Forces[NumForces++] = f);
+    NextForces.Clear();
   }
 
-  void AddForce(Vector3 pos, float magnitude, Vector3 dir, bool isRadial, float radius, float forwardBias = 1f) {
-    Forces[NumForces++] = new PForce { Position = pos, Magnitude = magnitude, Direction = dir, Radial = isRadial, Radius = radius, ForwardBias = forwardBias };
+  // Note: `isRadial` means "outwards from `pos`". If it's false, then the force is partially between `dir` and its tangent (based on forwardBias).
+  List<PForce> NextForces = new();
+  public void AddVectorForce(Vector3 pos, float magnitude, float radius, Vector3 dir, float forwardBias) {
+    NextForces.Add(new PForce { Position = pos, Magnitude = magnitude, Direction = dir, Radial = false, Radius = radius, ForwardBias = forwardBias });
+  }
+  public void AddRadialForce(Vector3 pos, float magnitude, float radius) {
+    NextForces.Add(new PForce { Position = pos, Magnitude = magnitude, Direction = Vector3.zero, Radial = true, Radius = radius, ForwardBias = 1f });
   }
 
   // ----
