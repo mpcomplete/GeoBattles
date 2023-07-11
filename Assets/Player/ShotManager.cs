@@ -14,6 +14,7 @@ public class ShotManager : MonoBehaviour {
   [SerializeField] Variant DefaultShotVariant;
   [SerializeField] Variant[] ShotVariants;
 
+  public int DebugStartVariant = -1;
   public Variant ActiveShotVariant { get; private set; }
 
   void Awake() {
@@ -27,6 +28,8 @@ public class ShotManager : MonoBehaviour {
   }
 
   void Start() {
+    if (DebugStartVariant >= 0)
+      ActiveShotVariant = ShotVariants[DebugStartVariant];
     ScoreManager.Instance.ScoreChange += TryToggleActiveShot;
   }
 
@@ -46,4 +49,9 @@ public class ShotManager : MonoBehaviour {
       ActiveShotVariant = ShotVariants.Random();
     }
   }
+
+  [ContextMenu("SetVariant1")]
+  void SetVariant1() => ActiveShotVariant = ShotVariants[0];
+  [ContextMenu("SetVariant2")]
+  void SetVariant2() => ActiveShotVariant = ShotVariants[1];
 }

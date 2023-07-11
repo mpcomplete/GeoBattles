@@ -9,12 +9,15 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] float PulseRate = 5f;
   [SerializeField] float PulseRateHealthFactor = 1.5f;
   [SerializeField] AnimationCurve PulseSize;
+  [SerializeField] float GridPulseRate = .5f;
+  [SerializeField] AnimationCurve GridPulseSize;
   [SerializeField] AnimationCurve HealthToSize;
   [SerializeField] float Gravity = 125f;
   [SerializeField] int ExplodeHealth = 15;
   [SerializeField] float MaxDistance = 5f;
   [SerializeField] float EatDistance = 1f;
   [SerializeField] GameObject DeathSpawn;
+  [SerializeField] GridForce GridForce;
 
   bool Activated = false;
   float ExplodePct => (float)Character.Health / ExplodeHealth;
@@ -22,17 +25,24 @@ public class BlackHole : MonoBehaviour {
   void OnHurt() {
     if (!Activated) {
       Activated = true;
+      GridForce.enabled = true;
+      BaseForceMagnitude = GridForce.Magnitude;
       Instantiate(ActivationParticles, transform.position, transform.rotation);
     }
   }
 
-  float PulseT = 0f;
+  float BaseForceMagnitude;
   void Pulse() {
     var healthFactor = 1f + PulseRateHealthFactor*ExplodePct;
-    PulseT += Time.fixedDeltaTime * PulseRate * healthFactor;
-    if (PulseT > 1f) PulseT = 0f;
-    var s = PulseSize.Evaluate(PulseT);
+    var t = (Time.fixedTime * PulseRate * healthFactor) % 1f;
+    var s = PulseSize.Evaluate(t);
     transform.localScale *= s;
+  }
+
+  void PulseGrid() {
+    var t = (Time.fixedTime * GridPulseRate) % 1f;
+    var s = GridPulseSize.Evaluate(t);
+    GridForce.Magnitude = BaseForceMagnitude * s;
   }
 
   void Suck() {
@@ -77,6 +87,7 @@ public class BlackHole : MonoBehaviour {
       var s = HealthToSize.Evaluate(ExplodePct);
       transform.localScale = new(s, s, s);
       Pulse();
+      PulseGrid();
       Suck();
     }
   }

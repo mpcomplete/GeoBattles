@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 4214148855951606702}
   - component: {fileID: 8827523057620614058}
   - component: {fileID: 2029417589163891604}
+  - component: {fileID: 2901510575813901843}
   m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
@@ -383,7 +384,7 @@ Transform:
   - {fileID: 4770074015901165331}
   - {fileID: 5371842649124260138}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4214148855951606702
 BoxCollider:
@@ -450,3 +451,20 @@ MonoBehaviour:
   AttackerTeamId: 0
   ParticleSystemPrefab: {fileID: 2658205673329643211, guid: 314ab7f293c4fcb4f813c8073e75c75b, type: 3}
   Rigidbody: {fileID: 0}
+--- !u!114 &2901510575813901843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898308082709039787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb43f73b30e5ec4eb81390aa2f54497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Magnitude: 200
+  Radius: 0.5
+  ForwardBias: 0.25
+  Radial: 0
+  Rigidbody: {fileID: 8827523057620614058}
