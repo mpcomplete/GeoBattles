@@ -3656,7 +3656,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mob Redbox Small
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1623682991455892896, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3265846026471704419, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_AddedGameObjects:
