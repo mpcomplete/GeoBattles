@@ -7325,6 +7325,18 @@ PrefabInstance:
       propertyPath: Owner
       value: 
       objectReference: {fileID: 6945261370278958281}
+    - target: {fileID: 6544017372760904294, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544017372760904294, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b780da1a82eb34e0386f4afc024bede0, type: 3}
+    - target: {fileID: 6888538038366168755, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 753da194ddb354563a033dbaabd29a4e, type: 3}
     - target: {fileID: 7712537957615369361, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       propertyPath: Character
       value: 
@@ -7422,6 +7434,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8190706306291907802}
+    - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6451052018583213590}
     - targetCorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
       insertIndex: -1
@@ -7508,6 +7523,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1528125532190443162, guid: 2c5fc829e24ae134586445899948df2d, type: 3}
   m_PrefabInstance: {fileID: 9020725380627829025}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8190706306291907802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495383838932506555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27956c90d497fd4d9e83ed1cf58f9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleSystemPrefabs:
+  - {fileID: 5332476724379010560, guid: 9d1878751a922ca4cb54100a445e0110, type: 3}
 --- !u!114 &6451052018583213590
 MonoBehaviour:
   m_ObjectHideFlags: 0
