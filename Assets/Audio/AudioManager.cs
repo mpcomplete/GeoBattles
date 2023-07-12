@@ -8,21 +8,21 @@ public static class AudioExtensions {
   }
 }
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : SingletonBehavior<AudioManager> {
   [SerializeField] AudioClip MenuMusic;
   [SerializeField] AudioClip InGameMusic;
   [SerializeField] AudioClip GameOverMusic;
   [SerializeField] AudioSource MusicSource;
   [SerializeField] AudioSource PlayerSource;
   [SerializeField] AudioSource MobSource;
+  [SerializeField] AudioSource ProjectileSource;
 
-  void Start() {
+  protected override void AwakeSingleton() {
     GameManager.Instance.LevelStart += LevelStart;
     GameManager.Instance.LevelEnd += LevelEnd;
   }
 
   void OnDestroy() {
-    base.SendMessage("OnDestroy");
     GameManager.Instance.LevelStart -= LevelStart;
     GameManager.Instance.LevelEnd -= LevelEnd;
   }

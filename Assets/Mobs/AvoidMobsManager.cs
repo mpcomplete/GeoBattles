@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class SingletonBehavior : MonoBehaviour {
-  public static SingletonBehavior SingletonInstance;
+public class SingletonBehavior<T> : MonoBehaviour where T : MonoBehaviour {
+  public static T Instance;
 
-  void Awake() {
-    if (SingletonInstance) {
+  protected virtual void Awake() {
+    if (Instance) {
       Destroy(gameObject);
     } else {
-      SingletonInstance = this;
+      Instance = this as T;
       DontDestroyOnLoad(gameObject);
       AwakeSingleton();
     }
@@ -16,8 +16,7 @@ public class SingletonBehavior : MonoBehaviour {
   protected virtual void AwakeSingleton() { }
 }
 
-public class AvoidMobsManager : SingletonBehavior {
-  public static AvoidMobsManager Instance => (AvoidMobsManager)SingletonInstance;
+public class AvoidMobsManager : SingletonBehavior<AvoidMobsManager> {
   public float CellSize = 1f;
   public float SeparationStrength = 1f;
   float HalfCellSize;
