@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpringGrid : MonoBehaviour {
@@ -51,6 +50,13 @@ public class SpringGrid : MonoBehaviour {
     Job = MakeJob();
     BufferIdx++;
     JobHandle = Job.Schedule(numPoints, 64);
+  }
+
+  void OnDestroy() {
+    JobHandle.Complete();
+    JobBuffer[0].Dispose();
+    JobBuffer[1].Dispose();
+    Forces.Dispose();
   }
 
   float GetLineWidth(int idx) => (idx % 4 == 0) ? FatLineHalfWidth : LineHalfWidth;
@@ -144,6 +150,8 @@ public class SpringGrid : MonoBehaviour {
   }
 
   void FixedUpdate() {
+    if (!JobHandle.IsCompleted)
+      return;
     JobHandle.Complete();
     BufferIdx = (BufferIdx+1)%2;
     UpdateMesh();

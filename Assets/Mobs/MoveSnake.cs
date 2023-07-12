@@ -17,7 +17,7 @@ public class MoveSnake : MonoBehaviour {
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
-    Angle = transform.rotation.eulerAngles.y;
+    Angle = transform.rotation.eulerAngles.y + Random.Range(-60f, 60f);
     TurnSpeed = 0;
   }
 
