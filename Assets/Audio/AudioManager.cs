@@ -22,11 +22,6 @@ public class AudioManager : SingletonBehavior<AudioManager> {
     GameManager.Instance.LevelEnd += LevelEnd;
   }
 
-  void OnDestroy() {
-    GameManager.Instance.LevelStart -= LevelStart;
-    GameManager.Instance.LevelEnd -= LevelEnd;
-  }
-
   void LevelStart() => MusicSource.Play(InGameMusic);
 
   void LevelEnd() => MusicSource.Play(GameOverMusic);
