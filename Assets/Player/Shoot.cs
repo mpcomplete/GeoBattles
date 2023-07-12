@@ -5,6 +5,7 @@ public class Shoot : MonoBehaviour {
   static GameObject Parent => _Parent = _Parent ? _Parent : new GameObject("Projectiles");
 
   [SerializeField] InputHandler InputHandler;
+  [SerializeField] AudioSource AudioSource;
 
   Vector3 Aim;
   int CooldownTicksRemaining = 0;
@@ -29,6 +30,7 @@ public class Shoot : MonoBehaviour {
       var variant = ShotManager.Instance.ActiveShotVariant;
       if (Aim.sqrMagnitude > 0) {
         CooldownTicksRemaining = Timeval.FromSeconds(1f / variant.AttacksPerSecond).Ticks;
+        AudioSource.PlayOneShot(variant.AudioSource.clip);
         Spawn(variant, Aim.XZ());
       }
     }
