@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 8253791746242304082}
   Acceleration: 3
-  MaxSpeed: 6
+  MaxSpeed: 12
   Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &7009610265233726413 stripped
 MonoBehaviour:

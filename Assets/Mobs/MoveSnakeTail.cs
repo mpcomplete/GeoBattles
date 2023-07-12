@@ -8,6 +8,7 @@ public class MoveSnakeTail : MonoBehaviour {
 
   public bool TailEaten => TailEatenIndex >= 0;
   int TailEatenIndex = -1;
+  BlackHole EatingHole;
 
   void Start() {
     transform.SetParent(null);  // Detach the tail from the head so it moves separately.
@@ -37,8 +38,12 @@ public class MoveSnakeTail : MonoBehaviour {
   }
 
   void SuckToTail() {
+    if (EatingHole == null) {
+      if (SnakeHead)
+        Destroy(SnakeHead.gameObject);
+      Destroy(gameObject);
+    }
     if (SnakeHead == null && TailBones.All(tb => !tb.gameObject.activeSelf)) {
-      Debug.Log($"errbody eaten");
       Destroy(gameObject);
       return;
     }
@@ -57,10 +62,10 @@ public class MoveSnakeTail : MonoBehaviour {
       tb.forward = reversed ? -forward : forward;
   }
 
-  public void OnTailEaten(int index) {
-    if (TailEatenIndex < 0) TailEatenIndex = index;
-    //foreach (var tb in TailBones) {
-    //  tb.GetComponent<BlackHoleTargetSnakeTail>().enabled = false;
-    //}
+  public void OnTailEaten(BlackHole hole, int index) {
+    if (TailEatenIndex < 0) {
+      EatingHole = hole;
+      TailEatenIndex = index;
+    }
   }
 }

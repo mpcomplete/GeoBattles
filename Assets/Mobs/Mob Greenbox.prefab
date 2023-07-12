@@ -548,7 +548,7 @@ MonoBehaviour:
   AvoidStrength: 40
   TangentBias: 0.3
   VelocityDampening: 0.85
-  MaxSpeed: 15
+  MaxSpeed: 12
 --- !u!114 &7009610265233726413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5307978730247184100, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}

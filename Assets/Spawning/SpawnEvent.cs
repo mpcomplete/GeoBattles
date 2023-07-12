@@ -40,7 +40,7 @@ public class SpawnEvent : MonoBehaviour {
       _ => null
     };
     StartCoroutine(sequence);
-    Debug.Log($"Event running, waiting={ScaledPostDelay}");
+    Debug.Log($"At t={SpawnManager.Instance.CurrentTime}, event {name} running (mobs={NumMobs}, between={DelayBetweenMobs}). Waiting={ScaledPostDelay}");
     yield return new WaitForSeconds(ScaledPostDelay);
   }
 

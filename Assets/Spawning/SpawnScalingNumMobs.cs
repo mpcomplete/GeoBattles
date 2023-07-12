@@ -26,6 +26,6 @@ public class SpawnScalingNumMobs : SpawnIncreaseParam {
 
   protected override void SetParam() {
     SpawnEvent.NumMobs += AddMobs;
-    Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
+    //Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
   }
 }
