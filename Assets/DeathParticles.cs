@@ -1,10 +1,12 @@
 using UnityEngine;
 
 public class DeathParticles : MonoBehaviour {
-  [SerializeField] Character Character;
   [SerializeField] ParticleSystem[] ParticleSystemPrefabs;
 
+  Character Character;
+
   void Start() {
+    Character = GetComponent<Character>();
     Character.OnDying += SpawnParticles;
     Character.OnDespawn += SpawnParticles;
   }
