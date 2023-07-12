@@ -227,14 +227,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 679418553411705838, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
-      propertyPath: CellSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 679418553411705838, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
-      propertyPath: SeparationStrength
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1051754628054872225, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -425,11 +417,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7143335400384472510, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022356678500623341, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324846287502656365, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: m_Volume
+      value: 0.231
       objectReference: {fileID: 0}
     - target: {fileID: 8677185834481921287, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
