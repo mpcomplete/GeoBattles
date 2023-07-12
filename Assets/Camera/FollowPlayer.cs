@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour {
   }
 
   void Follow(Character c) {
-    VirtualCamera.Follow = c.transform;
+    VirtualCamera.Follow = c.GetComponent<SoftFollowCameraTarget>().Target;
   }
 
   void UnFollow(Character c) {
