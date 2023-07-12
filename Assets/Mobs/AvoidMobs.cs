@@ -35,5 +35,12 @@ public class AvoidMobs : MonoBehaviour {
     //  Velocity = MaxSpeed * Velocity.normalized;
     //Controller.Move(Time.fixedDeltaTime * velocity);
     Controller.AddPhysicsVelocity(velocity);
+
+    DebugAvgForce = nearAvg;
   }
+
+  Vector3 DebugAvgForce;
+  //void OnGUI() {
+  //  GUIExtensions.DrawLine(transform.position, transform.position + DebugAvgForce, 1);
+  //}
 }
