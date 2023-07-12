@@ -5,6 +5,7 @@ using UnityEngine;
 public struct Variant {
   public GameObject Projectile;
   public float AttacksPerSecond;
+  public AudioSource AudioSource;
 }
 
 public class ShotManager : MonoBehaviour {
