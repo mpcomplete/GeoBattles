@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5233041426745821562}
   - component: {fileID: 3534083757948669287}
-  - component: {fileID: 8649249277018270790}
   - component: {fileID: 8585419695380380979}
   m_Layer: 9
   m_Name: Mob Snake TailBone
@@ -56,21 +55,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 1, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8649249277018270790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093569797998458442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65244dc7c09d4c847911762ca56a1012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 0.5
-  PhysicsVelocityDampening: 0.9
-  PhysicsVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8585419695380380979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df50ceadb311d4042a48c09532c63b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 8649249277018270790}
+  Controller: {fileID: 0}
   Character: {fileID: 0}
   GravityVulnerability: 3
   Tail: {fileID: 0}
