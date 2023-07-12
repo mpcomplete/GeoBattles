@@ -276,5 +276,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 6513825953084644731}
   SeparationDistance: 1
-  SeparationStrength: 5
+  SeparationStrength: 1
   SeparationTangentStrength: 0.2

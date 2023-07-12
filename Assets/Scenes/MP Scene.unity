@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 679418553411705838, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: CellSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 679418553411705838, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
+      propertyPath: SeparationStrength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1051754628054872225, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
       propertyPath: m_IsActive
       value: 0

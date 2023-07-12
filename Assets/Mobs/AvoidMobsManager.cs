@@ -32,7 +32,8 @@ public class AvoidMobsManager : SingletonBehavior {
     var away = -CellAverageOffset[x, z];
     if (away.sqrMagnitude < .01f.Sqr() || CellMobCount[x, z] < 2)
       return Vector3.zero;
-    return SeparationStrength*away;
+    return away.normalized;
+    //return Mathf.Sqrt(CellMobCount[x,z] - 2) * away.normalized;
   }
 
   void Start() {
