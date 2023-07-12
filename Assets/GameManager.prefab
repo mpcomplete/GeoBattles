@@ -576,7 +576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3702787330865307300
 Transform:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
     - {fileID: 4677667772216431250, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
   IncludeBlackHole: {fileID: 0}
   NumMobs: 6
-  DelayBetweenMobs: 0.1
+  DelayBetweenMobs: 0.3
   DifferentMob: 0
   PostDelay: 9
   ChooseWeight: 5
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
-  DecreaseBy: 0.05
+  DecreaseBy: 0.03
 --- !u!114 &1164450151027183747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8821312503414352697
 Transform:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
     - {fileID: 4677667772216431250, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
     - {fileID: 4677667772216431250, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
   IncludeBlackHole: {fileID: 0}
-  NumMobs: 1
+  NumMobs: 6
   DelayBetweenMobs: 0.5
   DifferentMob: 1
   PostDelay: 2
@@ -1040,7 +1040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5646632863734886764
 Transform:
   m_ObjectHideFlags: 0
@@ -1132,7 +1132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 407395935812594685, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DebugStartTime
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407395935812594685, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: NumMobsIncreasePeriod
@@ -1148,7 +1148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 655031295069870366, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 754768315799530930, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DelayBetweenMobs
@@ -1156,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 881461436564592033, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1044736581017254917, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: NumMobs
@@ -1168,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1197781463993282882, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272928230838896464, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_RootOrder
@@ -1236,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2234234269754380474, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688763364167109840, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
@@ -1248,7 +1248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634057897464840762, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229928298750529241, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: NumMobs
@@ -1260,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4229928298750529241, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DelayBetweenMobs
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4229928298750529241, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: Spawn.Possible.Array.size
@@ -1272,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944353907055107996, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4971036727239717103, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
@@ -1284,11 +1284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4976444239767677979, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6178886638971596204, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6330295975089256170, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: PostDelay
@@ -1300,27 +1300,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7125105945325671933, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7225350633809133308, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7549924492677900181, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7881131804652289389, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8235987789496017766, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8236511464266891737, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8950998582578936308, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DelayBetweenMobs
@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
-  DecreaseBy: 0.05
+  DecreaseBy: 0.03
 --- !u!114 &2300846263948878865
 MonoBehaviour:
   m_ObjectHideFlags: 0
