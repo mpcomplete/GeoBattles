@@ -4,7 +4,7 @@ public class SoftFollowCameraTarget : MonoBehaviour {
   public Vector3 FollowFactor = new(.6f, 0f, .8f);
   public Transform Target { get; private set; }
 
-  void Start() {
+  void Awake() {
     Target = new GameObject().transform;
     Target.position = Vector3.Scale(transform.position, FollowFactor);
   }

@@ -123,77 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &58884033
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_Name
-      value: Mob BlackHole
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
 --- !u!20 &180536905 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4237536870596111764, guid: 94ebf7ab6a6a29f4cae1ad75872233a2, type: 3}
   m_PrefabInstance: {fileID: 7140907741609234503}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1637866154
+--- !u!1001 &635003089
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -203,11 +138,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.85
+      value: -9.825
       objectReference: {fileID: 0}
     - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -247,18 +182,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
       propertyPath: m_Name
-      value: Mob BlackHole_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Mob BlackHole_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
---- !u!1001 &1948062472
+--- !u!1001 &829724614
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -266,63 +197,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.875
+      value: -11
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.675
+      value: 5.175
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469853239552575554, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4469853239552575554, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+    - target: {fileID: 4677667772216431250, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
       propertyPath: m_Name
-      value: Mob BlackHole_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Mob Pinwheel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0151c43ef2bcffc4f87f96cef5c11e92, type: 3}
 --- !u!850595691 &2007699313
 LightingSettings:
   m_ObjectHideFlags: 0

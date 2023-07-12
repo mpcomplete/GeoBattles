@@ -17,7 +17,6 @@ public class DeathSound : MonoBehaviour {
   }
 
   void PlaySound() {
-    Debug.Log("tried to play death sound");
     AudioSource.PlayClipAtPoint(Source.clip, transform.position);
   }
 }

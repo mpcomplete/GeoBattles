@@ -7,7 +7,7 @@ public class BlackHoleTarget : MonoBehaviour {
 
   public virtual void OnEaten(BlackHole hole) {
     if (Character is Mob m)
-      Destroy(m.gameObject);
+      m.Despawn();
   }
 
   public virtual void Suck(Vector3 accel) => Controller.AddPhysicsAccel(GravityVulnerability * accel);
