@@ -35,8 +35,8 @@ public class AvoidProjectiles : MonoBehaviour {
   }
 
   Vector3 DebugAvgForce;
-  void OnGUI() {
-    if (DebugAvgForce.sqrMagnitude > 0f)
-      GUIExtensions.DrawLine(transform.position, transform.position + DebugAvgForce, 1);
-  }
+  //void OnGUI() {
+  //  if (DebugAvgForce.sqrMagnitude > 0f)
+  //    GUIExtensions.DrawLine(transform.position, transform.position + DebugAvgForce, 1);
+  //}
 }

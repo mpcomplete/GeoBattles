@@ -1188,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1337,6 +1337,10 @@ PrefabInstance:
     - target: {fileID: 6513825953084644731, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: MaxMoveSpeed
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7275440275955707427, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: SeparationDistance
