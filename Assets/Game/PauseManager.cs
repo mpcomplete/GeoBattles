@@ -10,7 +10,6 @@ public class PauseManager : SingletonBehavior<PauseManager> {
   public bool Paused;
 
   protected override void AwakeSingleton() {
-    Debug.LogWarning("Pause from game over seems to actually open the main menu?");
     Inputs = new();
     Inputs.Enable();
     Inputs.GamePlay.Pause.performed += TogglePause;
@@ -21,20 +20,28 @@ public class PauseManager : SingletonBehavior<PauseManager> {
   }
 
   void TogglePause(InputAction.CallbackContext ctx) {
-    if (!GameManager.Instance.IsGameActive)
-      return;
+    switch (GameManager.Instance.GameState) {
+      case GameState.PreGame:
+        GameManager.Instance.StartGame.Invoke();
+      break;
 
-    Debug.Log("Pause occured");
-    if (Paused) {
-      Paused = false;
-      Time.timeScale = 1;
-      InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
-      OnUnpause?.Invoke();
-    } else {
-      Paused = true;
-      Time.timeScale = 0;
-      InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
-      OnPause?.Invoke();
+      case GameState.PostGame:
+        GameManager.Instance.PreGame.Invoke();
+      break;
+
+      case GameState.InGame:
+        if (Paused) {
+          Paused = false;
+          Time.timeScale = 1;
+          InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInFixedUpdate;
+          OnUnpause?.Invoke();
+        } else {
+          Paused = true;
+          Time.timeScale = 0;
+          InputSystem.settings.updateMode = InputSettings.UpdateMode.ProcessEventsInDynamicUpdate;
+          OnPause?.Invoke();
+        }
+      break;
     }
   }
 }

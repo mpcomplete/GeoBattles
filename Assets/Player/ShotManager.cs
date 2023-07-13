@@ -23,7 +23,7 @@ public class ShotManager : MonoBehaviour {
       Destroy(gameObject);
     } else {
       Instance = this;
-      GameManager.Instance.LevelStart += SetDefaultShot;
+      GameManager.Instance.StartGame += SetDefaultShot;
       DontDestroyOnLoad(gameObject);
     }
   }
@@ -35,7 +35,7 @@ public class ShotManager : MonoBehaviour {
   }
 
   void OnDestroy() {
-    GameManager.Instance.LevelStart -= SetDefaultShot;
+    GameManager.Instance.StartGame -= SetDefaultShot;
     ScoreManager.Instance.ScoreChange -= TryToggleActiveShot;
   }
 

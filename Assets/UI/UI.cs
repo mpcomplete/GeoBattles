@@ -19,9 +19,13 @@ public class UI : MonoBehaviour {
   [Header("Pause")]
   [SerializeField] RectTransform PauseMenu;
 
+  [Header("Main Menu")]
+  [SerializeField] RectTransform MainMenu;
+
   void Awake() {
-    GameManager.Instance.LevelStart += LevelStart;
-    GameManager.Instance.LevelEnd += LevelEnd;
+    GameManager.Instance.PreGame += PreGame;
+    GameManager.Instance.StartGame += StartGame;
+    GameManager.Instance.PostGame += PostGame;
     PauseManager.Instance.OnPause += Pause;
     PauseManager.Instance.OnUnpause += UnPause;
     ScoreManager.Instance.SetScore += SetScore;
@@ -33,8 +37,8 @@ public class UI : MonoBehaviour {
   }
 
   void OnDestroy() {
-    GameManager.Instance.LevelStart += LevelStart;
-    GameManager.Instance.LevelEnd -= LevelEnd;
+    GameManager.Instance.StartGame += StartGame;
+    GameManager.Instance.PostGame -= PostGame;
     PauseManager.Instance.OnPause -= Pause;
     PauseManager.Instance.OnUnpause -= UnPause;
     ScoreManager.Instance.SetScore -= SetScore;
@@ -45,14 +49,26 @@ public class UI : MonoBehaviour {
     BombManager.Instance.BombCountChange -= BombCountChange;
   }
 
-  void LevelEnd() {
+  void PreGame() {
+    HUD.gameObject.SetActive(false);
+    MainMenu.gameObject.SetActive(true);
+    GameOverMenu.gameObject.SetActive(false);
+    PauseMenu.gameObject.SetActive(false);
+  }
+
+  void PostGame() {
+    HUD.gameObject.SetActive(true);
+    MainMenu.gameObject.SetActive(false);
     GameOverMenu.gameObject.SetActive(true);
+    PauseMenu.gameObject.SetActive(false);
     FinalScore.text = $"Final Score: {ScoreManager.Instance.Score}";
   }
 
-  void LevelStart() {
+  void StartGame() {
     HUD.gameObject.SetActive(true);
+    MainMenu.gameObject.SetActive(false);
     GameOverMenu.gameObject.SetActive(false);
+    PauseMenu.gameObject.SetActive(false);
   }
 
   void Pause() {

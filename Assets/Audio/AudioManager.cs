@@ -19,11 +19,12 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   public AudioSource ProjectileSource;
 
   protected override void AwakeSingleton() {
-    GameManager.Instance.LevelStart += LevelStart;
-    GameManager.Instance.LevelEnd += LevelEnd;
+    GameManager.Instance.PreGame += PreGame;
+    GameManager.Instance.StartGame += StartGame;
+    GameManager.Instance.PostGame += PostGame;
   }
 
-  void LevelStart() => MusicSource.Play(InGameMusic);
-
-  void LevelEnd() => MusicSource.Play(GameOverMusic);
+  void PreGame() => MusicSource.Play(MenuMusic);
+  void StartGame() => MusicSource.Play(InGameMusic);
+  void PostGame() => MusicSource.Play(GameOverMusic);
 }
