@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellSize: 1
-  SeparationStrength: 0.2
+  SeparationStrength: 25
 --- !u!1 &1592099848168807479
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,7 +58,8 @@ MonoBehaviour:
   NumMobs: 6
   DelayBetweenMobs: 0.5
   DifferentMob: 1
-  PostDelay: 2
+  GlobalCooldown: 2
+  SelfCooldown: 0
   ChooseWeight: 20
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -158,7 +159,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.05
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -309,7 +311,8 @@ MonoBehaviour:
   NumMobs: 2
   DelayBetweenMobs: 0.05
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 30
   TimeLastAvailable: 120
@@ -396,7 +399,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.5
   DifferentMob: 0
-  PostDelay: 2
+  GlobalCooldown: 2
+  SelfCooldown: 0
   ChooseWeight: 3
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
@@ -495,7 +499,8 @@ MonoBehaviour:
   NumMobs: 100
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 0
   ChooseWeight: 3
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
@@ -569,7 +574,8 @@ MonoBehaviour:
   NumMobs: 9
   DelayBetweenMobs: 1
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -667,7 +673,8 @@ MonoBehaviour:
   NumMobs: 3
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 0
   TimeLastAvailable: Infinity
@@ -724,7 +731,8 @@ MonoBehaviour:
   NumMobs: 10
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -794,7 +802,8 @@ MonoBehaviour:
   NumMobs: 80
   DelayBetweenMobs: 0.05
   DifferentMob: 0
-  PostDelay: 8
+  GlobalCooldown: 8
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
@@ -915,7 +924,8 @@ MonoBehaviour:
   NumMobs: 12
   DelayBetweenMobs: 0.3
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -1017,7 +1027,8 @@ MonoBehaviour:
   NumMobs: 20
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -1135,7 +1146,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -1206,7 +1218,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 0
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 0
   TimeLastAvailable: 60
@@ -1263,7 +1276,8 @@ MonoBehaviour:
   NumMobs: 4
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -1334,7 +1348,8 @@ MonoBehaviour:
   NumMobs: 3
   DelayBetweenMobs: 0
   DifferentMob: 1
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 0
   TimeLastAvailable: 60
@@ -1391,7 +1406,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 3
   TimeFirstAvailable: 30
   TimeLastAvailable: Infinity
@@ -1529,7 +1545,8 @@ MonoBehaviour:
   NumMobs: 12
   DelayBetweenMobs: 0.2
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
