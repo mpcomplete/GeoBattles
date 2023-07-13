@@ -12,7 +12,7 @@ public class AvoidProjectiles : MonoBehaviour {
     var avgForce = Vector3.zero;
     foreach (var p in GameManager.Instance.Projectiles) {
       var toMe = transform.position - p.transform.position;
-      var pv = p.GetComponent<Rigidbody>().velocity.normalized;
+      var pv = p.Rigidbody.velocity.normalized;
       var headingTowards = Vector3.Dot(toMe, pv) > 0;
       if (headingTowards && toMe.sqrMagnitude < AvoidDistance.Sqr()) {
         var perpendicular = toMe.normalized - pv;  // the further perpendicular to projectile's trajectory
