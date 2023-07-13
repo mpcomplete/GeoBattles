@@ -12,10 +12,11 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   [SerializeField] AudioClip MenuMusic;
   [SerializeField] AudioClip InGameMusic;
   [SerializeField] AudioClip GameOverMusic;
-  [SerializeField] AudioSource MusicSource;
-  [SerializeField] AudioSource PlayerSource;
-  [SerializeField] AudioSource MobSource;
-  [SerializeField] AudioSource ProjectileSource;
+
+  public AudioSource MusicSource;
+  public AudioSource PlayerSource;
+  public AudioSource MobSource;
+  public AudioSource ProjectileSource;
 
   protected override void AwakeSingleton() {
     GameManager.Instance.LevelStart += LevelStart;

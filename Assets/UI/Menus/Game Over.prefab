@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4441374773286567697}
   m_Layer: 5
-  m_Name: Game Over Overlay
+  m_Name: Game Over
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
