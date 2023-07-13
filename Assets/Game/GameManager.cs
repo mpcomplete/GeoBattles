@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum GameState {
+  PreGame,
+  InGame,
+  PostGame,
+}
+
 public class GameManager : MonoBehaviour {
   public static GameManager Instance;
 
@@ -11,19 +17,8 @@ public class GameManager : MonoBehaviour {
     Time.fixedDeltaTime = 1f/60f;
   }
 
-  [SerializeField] Character[] MobPrefabs;
-
-  public SpringGrid SpringGrid;
-
-  [Header("Testing/Encounter")]
-  public Timeval SpawnPeriod = Timeval.FromSeconds(1);
-  public int MobsSpawnedPerWave = 1;
-  public int SafeSpotSearchAttempts = 100;
-  public float MinimumSafeSpawnDistance = 2f;
-  int SpawnTicksRemaining;
-  bool IsEncounterActive = false;
-
-  public bool IsGameActive { get; private set; } = false;
+  public GameState GameState;
+  public bool IsGameActive => GameState == GameState.InGame;
   public List<Character> Players;
   public List<Character> Mobs;
   public List<GameObject> VFX;
@@ -43,8 +38,36 @@ public class GameManager : MonoBehaviour {
   public UnityAction<Character> MobDespawn;
   public UnityAction<Projectile> ProjectileSpawn;
   public UnityAction<Projectile> ProjectileDeath;
-  public UnityAction LevelStart;
-  public UnityAction LevelEnd;
+  public UnityAction PreGame;
+  public UnityAction StartGame;
+  public UnityAction PostGame;
+
+  void Awake() {
+    if (Instance) {
+      Destroy(gameObject);
+    } else {
+      Instance = this;
+      Players = new();
+      Mobs = new();
+      VFX = new();
+      Projectiles = new();
+      PlayerSpawn += OnPlayerSpawn;
+      PlayerDying += OnPlayerDying;
+      MobSpawn += OnMobSpawn;
+      MobDespawn += OnMobDespawn;
+      MobDeath += OnMobDeath;
+      ProjectileSpawn += OnProjectileSpawn;
+      ProjectileDeath += OnProjectileDeath;
+      PreGame += OnPreGame;
+      StartGame += OnLevelStart;
+      PostGame += OnLevelEnd;
+      DontDestroyOnLoad(gameObject);
+    }
+  }
+
+  void Start() {
+    PreGame?.Invoke();
+  }
 
   // Despawning mobs removes them from the list
   public void DespawnMobsSafe(Predicate<Character> predicate) {
@@ -56,15 +79,13 @@ public class GameManager : MonoBehaviour {
   }
 
   void OnPlayerSpawn(Character character) {
-    SpawnTicksRemaining = SpawnPeriod.Ticks;
+    DespawnMobsSafe(c => true);
     Players.Add(character);
-    IsEncounterActive = true;
   }
 
   void OnPlayerDying(Character character) {
     DespawnMobsSafe(c => c != character.LastAttacker);
     Players.Remove(character);
-    IsEncounterActive = false;
   }
 
   void OnMobSpawn(Character character) {
@@ -87,62 +108,18 @@ public class GameManager : MonoBehaviour {
     Projectiles.Remove(p);
   }
 
+  void OnPreGame() {
+    Debug.Log("Pre game");
+    GameState = GameState.PreGame;
+  }
+
   void OnLevelStart() {
     Debug.Log("Game Start");
-    IsGameActive = true;
+    GameState = GameState.InGame;
   }
 
   void OnLevelEnd() {
     Debug.Log("Game over");
-    IsGameActive = false;
-  }
-
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      Players = new();
-      Mobs = new();
-      VFX = new();
-      Projectiles = new();
-      PlayerSpawn += OnPlayerSpawn;
-      PlayerDying += OnPlayerDying;
-      MobSpawn += OnMobSpawn;
-      MobDespawn += OnMobDespawn;
-      MobDeath += OnMobDeath;
-      ProjectileSpawn += OnProjectileSpawn;
-      ProjectileDeath += OnProjectileDeath;
-      LevelStart += OnLevelStart;
-      LevelEnd += OnLevelEnd;
-      DontDestroyOnLoad(gameObject);
-    }
-  }
-
-  void Start() {
-    LevelStart?.Invoke();
-  }
-
-  Vector3 FindRandomPositionAwayFromPlayer() {
-    var position = Vector3.zero;
-    for (var i = 0; i < 100; i++) {
-      position = 10 * UnityEngine.Random.onUnitSphere.XZ();
-      if (Players.Count <= 0 || Vector3.Distance(Players[0].transform.position, position) > MinimumSafeSpawnDistance) {
-        return position;
-      }
-    }
-    return position;
-  }
-
-  void FixedUpdate() {
-    ++Timeval.TickCount;
-    if (--SpawnTicksRemaining <= 0 && IsEncounterActive) {
-      for (var i = 0; i < MobsSpawnedPerWave; i++) {
-        var prefab = MobPrefabs.Random();
-        var position = FindRandomPositionAwayFromPlayer();
-        Instantiate(prefab, position, Quaternion.identity);
-        SpawnTicksRemaining = SpawnPeriod.Ticks;
-      }
-    }
+    GameState = GameState.PostGame;
   }
 }

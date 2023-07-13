@@ -24,7 +24,7 @@ public class BombManager : MonoBehaviour {
       Destroy(gameObject);
     } else {
       Instance = this;
-      GameManager.Instance.LevelStart += SetBombCount;
+      GameManager.Instance.StartGame += SetBombCount;
       DontDestroyOnLoad(gameObject);
     }
   }
@@ -34,7 +34,7 @@ public class BombManager : MonoBehaviour {
   }
 
   void OnDestroy() {
-    GameManager.Instance.LevelStart -= SetBombCount;
+    GameManager.Instance.StartGame -= SetBombCount;
     ScoreManager.Instance.ScoreChange -= TryAwardExtraBomb;
   }
 

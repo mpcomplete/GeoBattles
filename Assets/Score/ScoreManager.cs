@@ -51,14 +51,14 @@ public class ScoreManager : MonoBehaviour {
     } else {
       Instance = this;
       GameManager.Instance.MobDying += OnMobDying;
-      GameManager.Instance.LevelStart += SetScores;
+      GameManager.Instance.StartGame += SetScores;
       DontDestroyOnLoad(gameObject);
     }
   }
 
   void OnDestroy() {
     GameManager.Instance.MobDying -= OnMobDying;
-    GameManager.Instance.LevelStart -= SetScores;
+    GameManager.Instance.StartGame -= SetScores;
   }
 
   void SetScores() {

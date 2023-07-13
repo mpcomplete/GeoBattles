@@ -17,29 +17,29 @@ public class ShipManager : MonoBehaviour {
     } else {
       Instance = this;
       GameManager.Instance.PlayerDying += ShipDeath;
-      GameManager.Instance.LevelStart += SetShipCount;
+      GameManager.Instance.StartGame += StartGame;
       DontDestroyOnLoad(gameObject);
     }
   }
 
   void Start() {
-    Instantiate(PlayerPrefab, Vector3.zero, Quaternion.identity);
     ScoreManager.Instance.ScoreChange += TryAwardExtraShip;
   }
 
   void OnDestroy() {
     GameManager.Instance.PlayerDying -= ShipDeath;
-    GameManager.Instance.LevelStart -= SetShipCount;
+    GameManager.Instance.StartGame -= StartGame;
     ScoreManager.Instance.ScoreChange -= TryAwardExtraShip;
   }
 
-  void SetShipCount() {
+  void StartGame() {
+    Instantiate(PlayerPrefab, Vector3.zero, Quaternion.identity);
     ShipCountChange?.Invoke(ShipCount);
   }
 
   void ShipDeath(Character c) {
     if (ShipCount <= 0) {
-      GameManager.Instance.LevelEnd?.Invoke();
+      GameManager.Instance.PostGame?.Invoke();
     } else {
       ShipCount -= 1;
       ShipCountChange?.Invoke(ShipCount);
