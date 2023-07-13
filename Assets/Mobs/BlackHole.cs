@@ -4,6 +4,7 @@ using UnityEngine;
 // TODO: deform grid
 public class BlackHole : MonoBehaviour {
   [SerializeField] Character Character;
+  [SerializeField] MonoBehaviour[] ActivationAbilities;
   [SerializeField] ParticleSystem OrbitParticles;
   [SerializeField] float PulseRate = 5f;
   [SerializeField] float PulseRateHealthFactor = 1.5f;
@@ -24,10 +25,10 @@ public class BlackHole : MonoBehaviour {
   void OnHurt() {
     if (!Activated) {
       Activated = true;
-      GridForce.enabled = true;
+      ActivationAbilities.ForEach(a => { a.gameObject.SetActive(true); a.enabled = true; });
       BaseForceMagnitude = GridForce.Magnitude;
-      OrbitParticles.Play();
-      OrbitParticles.GetComponent<ParticleSystemForceField>().enabled = true;
+      //OrbitParticles.Play();
+      //OrbitParticles.GetComponent<ParticleSystemForceField>().enabled = true;
     }
   }
 
