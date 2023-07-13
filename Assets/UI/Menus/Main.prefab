@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: retro Evolved
+  m_text: by matt perry and steve kane
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99089c30dfdd6548b5175e6fb5819b9, type: 2}
   m_sharedMaterial: {fileID: 7010812819432830200, guid: e99089c30dfdd6548b5175e6fb5819b9, type: 2}
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Geometry Wars
+  m_text: Geo Battles
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99089c30dfdd6548b5175e6fb5819b9, type: 2}
   m_sharedMaterial: {fileID: 7010812819432830200, guid: e99089c30dfdd6548b5175e6fb5819b9, type: 2}
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 99.5
+  m_fontSize: 125.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
