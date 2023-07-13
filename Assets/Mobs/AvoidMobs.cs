@@ -28,15 +28,15 @@ public class AvoidMobs : MonoBehaviour {
     //    nearAvg += delta;
     //}
     //nearAvg = nearAvg.normalized;
-    var nearAvg = AvoidMobsManager.Instance.GetAvoidForce(transform.position);
-    var tangent = Vector3.Cross(nearAvg, Vector3.up);
-    var velocity = SeparationStrength*nearAvg + SeparationTangentStrength*tangent;
+    //var nearAvg = AvoidMobsManager.Instance.GetAvoidForce(transform.position);
+    //var tangent = Vector3.Cross(nearAvg, Vector3.up);
+    //var velocity = SeparationStrength*nearAvg + SeparationTangentStrength*tangent;
     //if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
     //  Velocity = MaxSpeed * Velocity.normalized;
     //Controller.Move(Time.fixedDeltaTime * velocity);
-    Controller.AddPhysicsVelocity(velocity);
+    //Controller.AddPhysicsVelocity(velocity);
 
-    DebugAvgForce = nearAvg;
+    //DebugAvgForce = nearAvg;
   }
 
   Vector3 DebugAvgForce;
