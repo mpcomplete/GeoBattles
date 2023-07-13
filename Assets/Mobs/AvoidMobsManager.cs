@@ -1,21 +1,5 @@
 using UnityEngine;
 
-public class SingletonBehavior<T> : MonoBehaviour where T : MonoBehaviour {
-  public static T Instance;
-
-  protected virtual void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this as T;
-      DontDestroyOnLoad(gameObject);
-      AwakeSingleton();
-    }
-  }
-
-  protected virtual void AwakeSingleton() { }
-}
-
 public class AvoidMobsManager : SingletonBehavior<AvoidMobsManager> {
   public float CellSize = 1f;
   public float SeparationStrength = 1f;

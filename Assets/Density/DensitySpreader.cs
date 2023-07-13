@@ -1,83 +1,169 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DirectionStrategy {
+  Alignment,
+  Histogram
+}
+
+public enum DensityScalingStrategy {
+  None,
+  Multiply,
+  Log
+}
+
 public class DensitySpreader : MonoBehaviour {
-    public List<Transform> objects;
-    public float InitialSpreadMax = 1;
-    public float someFactor = 1.0f; // Adjust this as needed
-    public float speed = 1.0f; // Movement speed of objects
-    public float dampening = 1.0f;
+  public Timeval SpawnInterval = Timeval.FromMillis(100);
+  public Transform[] Prefabs;
+  [Range(0,2048)]
+  public int NumberOfSpawns = 256;
+  [Range(0,1)]
+  public float strength = 1.0f;
+  [Range(0,1)]
+  public float dampening = 0.95f;
+  [Range(0,10)]
+  public float maxSpeed = 5f;
+  public DirectionStrategy DirectionStrategy;
+  public DensityScalingStrategy DensityScalingStrategy;
 
-    // Keep track of velocities
-    private Dictionary<Transform, Vector3> velocities = new Dictionary<Transform, Vector3>();
+  Vector2[] directions = {
+    new Vector2(-1, 0),
+    new Vector2(1, 0),
+    new Vector2(0, -1),
+    new Vector2(0, 1),
+    new Vector2(-1, -1),
+    new Vector2(-1, 1),
+    new Vector2(1, -1),
+    new Vector2(1, 1)
+  };
 
-    void Start() {
-      for (var i = 0; i < transform.childCount; i++) {
-        var child = transform.GetChild(i);
-        child.transform.position = InitialSpreadMax * Random.onUnitSphere.XZ();
-        objects.Add(child);
+  List<Transform> objects = new();
+  Dictionary<Transform, Vector3> velocities = new Dictionary<Transform, Vector3>();
+  int[,] densityGrid = new int[32, 24];
+  Vector3 targetPoint;
+  float targetPointSpeed = 1.0f;
 
-        // Initialize velocity
-        velocities[child] = Vector3.zero;
+  void Start() {
+    StartCoroutine(StaggerSpawns());
+  }
+
+  IEnumerator StaggerSpawns() {
+    var index = 0;
+    for (var i = 0; i < NumberOfSpawns; i++) {
+      var prefab = Prefabs[index];
+      var instance = Instantiate(prefab, transform);
+      objects.Add(instance);
+      velocities.Add(instance, Vector3.zero);
+      index++;
+      index = index < Prefabs.Length ? index : 0;
+      yield return new WaitForSeconds(SpawnInterval.Seconds);
+    }
+  }
+
+  void MoveTargetPoint() {
+    targetPoint.x = 16 * Mathf.Sin(Time.time * targetPointSpeed);
+    targetPoint.z = 12 * Mathf.Cos(Time.time * targetPointSpeed);
+  }
+
+  void PopulateDensities() {
+    for (int i = 0; i < 32; i++) {
+      for (int j = 0; j < 24; j++) {
+        densityGrid[i,j] = 0;
       }
     }
-
-    void FixedUpdate()
-    {
-        int[,] densityGrid = new int[32, 24];
-
-        // Clear the density grid
-        for (int i = 0; i < 32; i++)
-            for (int j = 0; j < 24; j++)
-                densityGrid[i, j] = 0;
-
-        // Populate the density grid
-        foreach (Transform obj in objects)
-        {
-            int x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x), 0, 31);
-            int z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z), 0, 23);
-            densityGrid[x, z]++;
-        }
-
-        // Apply density forces
-        foreach (Transform obj in objects)
-        {
-            int x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x), 0, 31);
-            int z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z), 0, 23);
-
-            // Calculate the average density of the cell and its surrounding cells
-            int totalDensity = 0;
-            int numCells = 0;
-            for (int dx = -1; dx <= 1; dx++)
-            {
-                for (int dz = -1; dz <= 1; dz++)
-                {
-                    int nx = Mathf.Clamp(x + dx, 0, 31);
-                    int nz = Mathf.Clamp(z + dz, 0, 23);
-                    totalDensity += densityGrid[nx, nz];
-                    numCells++;
-                }
-            }
-            float averageDensity = (float)totalDensity / numCells;
-
-            // Apply a force proportional to the difference between the cell's density and the average density
-            // Only apply if more than one entity is in the cell
-            if (densityGrid[x, z] > 1) {
-                float forceMagnitude = (Mathf.Log(densityGrid[x, z]) - averageDensity) * someFactor;
-
-                // In this case, the force is applied in a random direction within the XZ plane
-                Vector3 forceDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
-                Vector3 force = forceDirection * forceMagnitude;
-
-                // dampen the velocity
-                velocities[obj] *= dampening;
-
-                // Apply the force to the velocity
-                velocities[obj] += force;
-            }
-
-            // Update the position based on the velocity
-            obj.position += velocities[obj] * Time.deltaTime;
-        }
+    foreach (Transform obj in objects) {
+      int x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x + 16), 0, 31);
+      int z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z + 12), 0, 23);
+      densityGrid[x, z]++;
     }
+  }
+
+  // possibly dubious. seems to degenerate and sort of hug the walls
+  Vector3? BestDirectionByAlignment(Transform obj) {
+    var x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x + 16), 0, 31);
+    var z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z + 12), 0, 23);
+    var v = velocities[obj];
+    var left = new Vector3(-v.z, 0, v.x).normalized;
+    var right = -left;
+    var currentDensity = densityGrid[x, z];
+    Vector3? bestDirection = null;
+    var bestAlignment = -Mathf.Infinity;
+    for (int i = 0; i < directions.Length; i++) {
+      var nx = x + (int)directions[i].x;
+      var nz = z + (int)directions[i].y;
+      if (nx >= 0 && nx < 32 && nz >= 0 && nz < 24) {
+        var neighborDensity = densityGrid[nx, nz];
+        if (neighborDensity < currentDensity) {
+          var direction = new Vector3(directions[i].x, 0, directions[i].y);
+          var alignment1 = Vector3.Dot(left, direction);
+          var alignment2 = Vector3.Dot(right, direction);
+          var alignment = Mathf.Max(alignment1, alignment2);
+          if (alignment > bestAlignment) {
+            bestAlignment = alignment;
+            bestDirection = direction;
+          }
+        }
+      }
+    }
+    return bestDirection;
+  }
+
+  List<Vector3> weightedDirections = new(256);
+  Vector3? BestDirectionByHistogram(Transform obj) {
+    var x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x + 16), 0, 31);
+    var z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z + 12), 0, 23);
+    var currentDensity = densityGrid[x, z];
+    var right = new Vector3(-velocities[obj].z, velocities[obj].y, velocities[obj].x);
+    var left = right;
+    weightedDirections.Clear();
+    for (int i = 0; i < directions.Length; i++) {
+      var nx = x + (int)directions[i].x;
+      var nz = z + (int)directions[i].y;
+      if (nx >= 0 && nx < 32 && nz >= 0 && nz < 24) {
+        var neighborDensity = densityGrid[nx, nz];
+        if (neighborDensity < currentDensity) {
+          var direction = new Vector3(directions[i].x, 0, directions[i].y).normalized;
+          var alongRight = Vector3.Dot(right, direction);
+          var alongLeft = Vector3.Dot(left, direction);
+          var weight = (int)((currentDensity - neighborDensity) * Mathf.Max(alongRight, alongLeft));
+          for (int j = 0; j < weight; j++)
+            weightedDirections.Add(direction);
+        }
+      }
+    }
+    if (weightedDirections.Count > 0)
+      return weightedDirections[Random.Range(0, weightedDirections.Count)];
+    else
+      return null;
+  }
+
+  void FixedUpdate() {
+    MoveTargetPoint();
+    PopulateDensities();
+    foreach (Transform obj in objects) {
+      var x = Mathf.Clamp(Mathf.FloorToInt(obj.position.x + 16), 0, 31);
+      var z = Mathf.Clamp(Mathf.FloorToInt(obj.position.z + 12), 0, 23);
+      var currentDensity = densityGrid[x, z];
+      var bestDirection = DirectionStrategy switch {
+        DirectionStrategy.Alignment => BestDirectionByAlignment(obj),
+        DirectionStrategy.Histogram => BestDirectionByHistogram(obj)
+      };
+      velocities[obj] *= dampening;
+      if (bestDirection.HasValue) {
+        var densityScale = DensityScalingStrategy switch {
+          DensityScalingStrategy.None => 1,
+          DensityScalingStrategy.Multiply => currentDensity,
+          DensityScalingStrategy.Log => Mathf.Log(currentDensity),
+        };
+        var orthogonalForce = bestDirection.Value - Vector3.Project(bestDirection.Value, velocities[obj]);
+        var force = orthogonalForce * strength * densityScale;
+        velocities[obj] += force;
+      }
+      velocities[obj] += (targetPoint - obj.position).normalized;
+      velocities[obj] += .1f * Random.insideUnitSphere.XZ();
+      velocities[obj] = Mathf.Min(velocities[obj].magnitude, maxSpeed) * velocities[obj].normalized;
+      obj.position += velocities[obj] * Time.deltaTime;
+    }
+  }
 }

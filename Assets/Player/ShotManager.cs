@@ -11,7 +11,6 @@ public struct Variant {
 public class ShotManager : MonoBehaviour {
   public static ShotManager Instance;
 
-  [SerializeField] InputHandler InputHandler;
   [SerializeField] int ShotChangeScoreInterval = 1000;
   [SerializeField] Variant DefaultShotVariant;
   [SerializeField] Variant[] ShotVariants;

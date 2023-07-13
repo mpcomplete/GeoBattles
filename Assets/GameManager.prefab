@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481364b583153b74685ae84517012123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputHandler: {fileID: 0}
   ShotChangeScoreInterval: 10000
   DefaultShotVariant:
     Projectile: {fileID: 6898308082709039787, guid: 524b4ea505eea38499fe4082bdf292f0, type: 3}
@@ -291,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3028812462724254712}
   - component: {fileID: 5212332320832666320}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Post-Processing Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: e53b72df5f0a0414ba1ce2d3d0c59670, type: 2}
@@ -507,7 +506,7 @@ GameObject:
   - component: {fileID: 4770533916525736429}
   - component: {fileID: 9099750472616492556}
   - component: {fileID: 7130357406776662045}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -600,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
