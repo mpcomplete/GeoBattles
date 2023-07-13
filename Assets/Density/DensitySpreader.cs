@@ -19,23 +19,25 @@ public class DensitySpreader : MonoBehaviour {
   [Range(0,2048)]
   public int NumberOfSpawns = 256;
   [Range(0,1)]
-  public float strength = 1.0f;
+  public float Strength = 1.0f;
   [Range(0,1)]
-  public float dampening = 0.95f;
+  public float Dampening = 0.95f;
   [Range(0,10)]
-  public float maxSpeed = 5f;
+  public float MaxSpeed = 5f;
+  [Range(0,1)]
+  public float RandomJitterScale = .1f;
   public DirectionStrategy DirectionStrategy;
   public DensityScalingStrategy DensityScalingStrategy;
 
   Vector2[] directions = {
-    new Vector2(-1, 0),
-    new Vector2(1, 0),
-    new Vector2(0, -1),
-    new Vector2(0, 1),
-    new Vector2(-1, -1),
-    new Vector2(-1, 1),
-    new Vector2(1, -1),
-    new Vector2(1, 1)
+    new Vector3(-1, 0, 0),
+    new Vector3(1, 0, 0),
+    new Vector3(0, 0, -1),
+    new Vector3(0, 0, 1),
+    new Vector3(-1, 0, -1),
+    new Vector3(-1, 0, 1),
+    new Vector3(1, 0, -1),
+    new Vector3(1, 0, 1)
   };
 
   List<Transform> objects = new();
@@ -95,7 +97,7 @@ public class DensitySpreader : MonoBehaviour {
       if (nx >= 0 && nx < 32 && nz >= 0 && nz < 24) {
         var neighborDensity = densityGrid[nx, nz];
         if (neighborDensity < currentDensity) {
-          var direction = new Vector3(directions[i].x, 0, directions[i].y);
+          var direction = directions[i];
           var alignment1 = Vector3.Dot(left, direction);
           var alignment2 = Vector3.Dot(right, direction);
           var alignment = Mathf.Max(alignment1, alignment2);
@@ -123,19 +125,20 @@ public class DensitySpreader : MonoBehaviour {
       if (nx >= 0 && nx < 32 && nz >= 0 && nz < 24) {
         var neighborDensity = densityGrid[nx, nz];
         if (neighborDensity < currentDensity) {
-          var direction = new Vector3(directions[i].x, 0, directions[i].y).normalized;
+          var direction = directions[i];
           var alongRight = Vector3.Dot(right, direction);
           var alongLeft = Vector3.Dot(left, direction);
+          // score our preference for choosing this option be weighing it by a multiplication
+          // of the difference in density between the neighbor and ourselves
+          // and the strength of alignment with either the left or right vector of our current velocity
           var weight = (int)((currentDensity - neighborDensity) * Mathf.Max(alongRight, alongLeft));
+          // add "weight" copies of the vector to our "histogram" to affect the probabilty of sampling them
           for (int j = 0; j < weight; j++)
             weightedDirections.Add(direction);
         }
       }
     }
-    if (weightedDirections.Count > 0)
-      return weightedDirections[Random.Range(0, weightedDirections.Count)];
-    else
-      return null;
+    return weightedDirections.Count > 0 ? weightedDirections.Random() : null;
   }
 
   void FixedUpdate() {
@@ -149,7 +152,7 @@ public class DensitySpreader : MonoBehaviour {
         DirectionStrategy.Alignment => BestDirectionByAlignment(obj),
         DirectionStrategy.Histogram => BestDirectionByHistogram(obj)
       };
-      velocities[obj] *= dampening;
+      velocities[obj] *= Dampening;
       if (bestDirection.HasValue) {
         var densityScale = DensityScalingStrategy switch {
           DensityScalingStrategy.None => 1,
@@ -157,12 +160,12 @@ public class DensitySpreader : MonoBehaviour {
           DensityScalingStrategy.Log => Mathf.Log(currentDensity),
         };
         var orthogonalForce = bestDirection.Value - Vector3.Project(bestDirection.Value, velocities[obj]);
-        var force = orthogonalForce * strength * densityScale;
+        var force = orthogonalForce * Strength * densityScale;
         velocities[obj] += force;
       }
       velocities[obj] += (targetPoint - obj.position).normalized;
-      velocities[obj] += .1f * Random.insideUnitSphere.XZ();
-      velocities[obj] = Mathf.Min(velocities[obj].magnitude, maxSpeed) * velocities[obj].normalized;
+      velocities[obj] += RandomJitterScale * Random.insideUnitSphere.XZ();
+      velocities[obj] = Mathf.Min(velocities[obj].magnitude, MaxSpeed) * velocities[obj].normalized;
       obj.position += velocities[obj] * Time.deltaTime;
     }
   }

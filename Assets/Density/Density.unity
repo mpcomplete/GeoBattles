@@ -159,10 +159,11 @@ MonoBehaviour:
   - {fileID: 6978994544058153649, guid: ea238983e443d5a47a0f64c6145fa860, type: 3}
   - {fileID: 8883981514072707258, guid: 0dfda002a0c8045499faa3cfc358b0c9, type: 3}
   - {fileID: 6202881551799669306, guid: b8b2fee5a17fdd844b3a93ec7e23a27e, type: 3}
-  NumberOfSpawns: 256
-  strength: 0.6
-  dampening: 0.95
-  maxSpeed: 6
+  NumberOfSpawns: 2048
+  Strength: 0.6
+  Dampening: 0.95
+  MaxSpeed: 7
+  RandomJitterScale: 0
   DirectionStrategy: 1
   DensityScalingStrategy: 2
 --- !u!4 &537615676
