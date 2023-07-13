@@ -62,6 +62,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7144e97-1c8a-4952-800c-5eb0f7d3b4d4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -119,6 +128,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""NextShot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47ea0b1a-dfd8-4b48-8b5e-dc5bbb5894b5"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_GamePlay_Aim = m_GamePlay.FindAction("Aim", throwIfNotFound: true);
         m_GamePlay_Bomb = m_GamePlay.FindAction("Bomb", throwIfNotFound: true);
         m_GamePlay_NextShot = m_GamePlay.FindAction("NextShot", throwIfNotFound: true);
+        m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -208,6 +229,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Aim;
     private readonly InputAction m_GamePlay_Bomb;
     private readonly InputAction m_GamePlay_NextShot;
+    private readonly InputAction m_GamePlay_Pause;
     public struct GamePlayActions
     {
         private @Inputs m_Wrapper;
@@ -216,6 +238,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_GamePlay_Aim;
         public InputAction @Bomb => m_Wrapper.m_GamePlay_Bomb;
         public InputAction @NextShot => m_Wrapper.m_GamePlay_NextShot;
+        public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -237,6 +260,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @NextShot.started += instance.OnNextShot;
             @NextShot.performed += instance.OnNextShot;
             @NextShot.canceled += instance.OnNextShot;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -253,6 +279,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @NextShot.started -= instance.OnNextShot;
             @NextShot.performed -= instance.OnNextShot;
             @NextShot.canceled -= instance.OnNextShot;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -285,5 +314,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnBomb(InputAction.CallbackContext context);
         void OnNextShot(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
   int SpawnTicksRemaining;
   bool IsEncounterActive = false;
 
+  public bool IsGameActive { get; private set; } = false;
   public List<Character> Players;
   public List<Character> Mobs;
   public List<GameObject> VFX;
@@ -86,8 +87,14 @@ public class GameManager : MonoBehaviour {
     Projectiles.Remove(p);
   }
 
+  void OnLevelStart() {
+    Debug.Log("Game Start");
+    IsGameActive = true;
+  }
+
   void OnLevelEnd() {
     Debug.Log("Game over");
+    IsGameActive = false;
   }
 
   void Awake() {
@@ -106,6 +113,7 @@ public class GameManager : MonoBehaviour {
       MobDeath += OnMobDeath;
       ProjectileSpawn += OnProjectileSpawn;
       ProjectileDeath += OnProjectileDeath;
+      LevelStart += OnLevelStart;
       LevelEnd += OnLevelEnd;
       DontDestroyOnLoad(gameObject);
     }

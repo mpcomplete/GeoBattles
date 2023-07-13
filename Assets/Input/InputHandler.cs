@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour {
   }
 
   void OnDestroy() {
-    Inputs.Disable();
+    Inputs.Dispose();
   }
 
   void FixedUpdate() {

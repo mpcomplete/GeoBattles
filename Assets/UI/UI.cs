@@ -2,10 +2,6 @@ using UnityEngine;
 using TMPro;
 
 public class UI : MonoBehaviour {
-  [Header("GameOver")]
-  [SerializeField] RectTransform GameOver;
-  [SerializeField] TextMeshProUGUI FinalScore;
-
   [Header("HUD")]
   [SerializeField] RectTransform HUD;
   [SerializeField] RectTransform ShipContainer;
@@ -16,9 +12,18 @@ public class UI : MonoBehaviour {
   [SerializeField] RectTransform ShipIconPrefab;
   [SerializeField] TextMeshProUGUI CountPrefab;
 
+  [Header("GameOver")]
+  [SerializeField] RectTransform GameOverMenu;
+  [SerializeField] TextMeshProUGUI FinalScore;
+
+  [Header("Pause")]
+  [SerializeField] RectTransform PauseMenu;
+
   void Awake() {
     GameManager.Instance.LevelStart += LevelStart;
     GameManager.Instance.LevelEnd += LevelEnd;
+    PauseManager.Instance.OnPause += Pause;
+    PauseManager.Instance.OnUnpause += UnPause;
     ScoreManager.Instance.SetScore += SetScore;
     ScoreManager.Instance.SetHighScore += SetHighScore;
     ScoreManager.Instance.ScoreChange += ScoreChange;
@@ -30,6 +35,8 @@ public class UI : MonoBehaviour {
   void OnDestroy() {
     GameManager.Instance.LevelStart += LevelStart;
     GameManager.Instance.LevelEnd -= LevelEnd;
+    PauseManager.Instance.OnPause -= Pause;
+    PauseManager.Instance.OnUnpause -= UnPause;
     ScoreManager.Instance.SetScore -= SetScore;
     ScoreManager.Instance.SetHighScore -= SetHighScore;
     ScoreManager.Instance.ScoreChange -= ScoreChange;
@@ -39,13 +46,21 @@ public class UI : MonoBehaviour {
   }
 
   void LevelEnd() {
-    GameOver.gameObject.SetActive(true);
+    GameOverMenu.gameObject.SetActive(true);
     FinalScore.text = $"Final Score: {ScoreManager.Instance.Score}";
   }
 
   void LevelStart() {
     HUD.gameObject.SetActive(true);
-    GameOver.gameObject.SetActive(false);
+    GameOverMenu.gameObject.SetActive(false);
+  }
+
+  void Pause() {
+    PauseMenu.gameObject.SetActive(true);
+  }
+
+  void UnPause() {
+    PauseMenu.gameObject.SetActive(false);
   }
 
   void SetScore(int score) {
