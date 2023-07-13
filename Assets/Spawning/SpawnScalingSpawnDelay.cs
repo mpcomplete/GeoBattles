@@ -5,6 +5,7 @@ public class SpawnScalingSpawnDelay : SpawnIncreaseParam {
 
   protected override void SetParam() {
     SpawnEvent.DelayBetweenMobs -= DecreaseBy;
+    SpawnEvent.DelayBetweenMobs = Mathf.Max(SpawnEvent.DelayBetweenMobs, MinValue);
     //Debug.Log($"Decreasing {SpawnEvent.name} DelayBetweenMobs to {SpawnEvent.DelayBetweenMobs}");
   }
 }

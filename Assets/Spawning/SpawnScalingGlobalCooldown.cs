@@ -5,6 +5,7 @@ public class SpawnScalingGlobalCooldown : SpawnIncreaseParam {
 
   protected override void SetParam() {
     SpawnEvent.GlobalCooldown -= DecreaseBy;
+    SpawnEvent.GlobalCooldown = Mathf.Max(SpawnEvent.GlobalCooldown, MinValue);
     //Debug.Log($"Decreasing {SpawnEvent.name} GlobalCooldown to {SpawnEvent.GlobalCooldown}");
   }
 }
