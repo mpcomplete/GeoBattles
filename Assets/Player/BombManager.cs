@@ -5,7 +5,9 @@ public class BombManager : MonoBehaviour {
   public static BombManager Instance;
 
   [SerializeField] int BonusBombScoreInterval = 100000;
-  [SerializeField] int BombCount = 3;
+  [SerializeField] int InitialBombCount = 3;
+
+  int BombCount = 3;
 
   public UnityAction<int> BombCountChange;
 
@@ -39,6 +41,7 @@ public class BombManager : MonoBehaviour {
   }
 
   void SetBombCount() {
+    BombCount = InitialBombCount;
     BombCountChange?.Invoke(BombCount);
   }
 

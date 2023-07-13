@@ -7,7 +7,9 @@ public class ShipManager : MonoBehaviour {
 
   [SerializeField] Player PlayerPrefab;
   [SerializeField] int BonusShipScoreInterval = 75000;
-  [SerializeField] int ShipCount = 3;
+  [SerializeField] int InitialShipCount = 3;
+
+  int ShipCount;
 
   public UnityAction<int> ShipCountChange;
 
@@ -16,7 +18,7 @@ public class ShipManager : MonoBehaviour {
       Destroy(gameObject);
     } else {
       Instance = this;
-      GameManager.Instance.PlayerDying += ShipDeath;
+      GameManager.Instance.PlayerDeath += ShipDeath;
       GameManager.Instance.StartGame += StartGame;
       DontDestroyOnLoad(gameObject);
     }
@@ -27,13 +29,14 @@ public class ShipManager : MonoBehaviour {
   }
 
   void OnDestroy() {
-    GameManager.Instance.PlayerDying -= ShipDeath;
+    GameManager.Instance.PlayerDeath -= ShipDeath;
     GameManager.Instance.StartGame -= StartGame;
     ScoreManager.Instance.ScoreChange -= TryAwardExtraShip;
   }
 
   void StartGame() {
     Instantiate(PlayerPrefab, Vector3.zero, Quaternion.identity);
+    ShipCount = InitialShipCount;
     ShipCountChange?.Invoke(ShipCount);
   }
 

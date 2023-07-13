@@ -110,16 +110,19 @@ public class GameManager : MonoBehaviour {
 
   void OnPreGame() {
     Debug.Log("Pre game");
+    DespawnMobsSafe(c => true);
     GameState = GameState.PreGame;
   }
 
   void OnLevelStart() {
     Debug.Log("Game Start");
+    DespawnMobsSafe(c => true);
     GameState = GameState.InGame;
   }
 
   void OnLevelEnd() {
     Debug.Log("Game over");
+    DespawnMobsSafe(c => true);
     GameState = GameState.PostGame;
   }
 }
