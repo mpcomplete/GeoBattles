@@ -2,6 +2,12 @@ using UnityEngine;
 using TMPro;
 
 public class UI : MonoBehaviour {
+  [Header("GameOver")]
+  [SerializeField] RectTransform GameOver;
+  [SerializeField] TextMeshProUGUI FinalScore;
+
+  [Header("HUD")]
+  [SerializeField] RectTransform HUD;
   [SerializeField] RectTransform ShipContainer;
   [SerializeField] RectTransform BombContainer;
   [SerializeField] TextMeshProUGUI Score;
@@ -11,6 +17,8 @@ public class UI : MonoBehaviour {
   [SerializeField] TextMeshProUGUI CountPrefab;
 
   void Awake() {
+    GameManager.Instance.LevelStart += LevelStart;
+    GameManager.Instance.LevelEnd += LevelEnd;
     ScoreManager.Instance.SetScore += SetScore;
     ScoreManager.Instance.SetHighScore += SetHighScore;
     ScoreManager.Instance.ScoreChange += ScoreChange;
@@ -20,12 +28,24 @@ public class UI : MonoBehaviour {
   }
 
   void OnDestroy() {
+    GameManager.Instance.LevelStart += LevelStart;
+    GameManager.Instance.LevelEnd -= LevelEnd;
     ScoreManager.Instance.SetScore -= SetScore;
     ScoreManager.Instance.SetHighScore -= SetHighScore;
     ScoreManager.Instance.ScoreChange -= ScoreChange;
     ScoreManager.Instance.HighScoreChange -= HighScoreChange;
     ShipManager.Instance.ShipCountChange -= ShipCountChange;
     BombManager.Instance.BombCountChange -= BombCountChange;
+  }
+
+  void LevelEnd() {
+    GameOver.gameObject.SetActive(true);
+    FinalScore.text = $"Final Score: {ScoreManager.Instance.Score}";
+  }
+
+  void LevelStart() {
+    HUD.gameObject.SetActive(true);
+    GameOver.gameObject.SetActive(false);
   }
 
   void SetScore(int score) {
