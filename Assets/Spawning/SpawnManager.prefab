@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7654337808482013317}
   - component: {fileID: 2943412805876770170}
   - component: {fileID: 494655150096190426}
-  - component: {fileID: 1956485506602980888}
   - component: {fileID: 2415579984967340291}
+  - component: {fileID: 1718675438230700820}
+  - component: {fileID: 1956485506602980888}
   m_Layer: 0
   m_Name: N random
   m_TagString: Untagged
@@ -58,7 +59,8 @@ MonoBehaviour:
   NumMobs: 6
   DelayBetweenMobs: 0.5
   DifferentMob: 1
-  PostDelay: 2
+  GlobalCooldown: 2
+  SelfCooldown: 3
   ChooseWeight: 20
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -75,21 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 10
+  MinValue: 0
+  MaxValue: 50
   AddMobs: 1
---- !u!114 &1956485506602980888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379302131308088463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38990f0b891da634ebdd6069e80d1a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Period: 30
-  DecreaseBy: 0.5
 --- !u!114 &2415579984967340291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +93,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0.01
+  MaxValue: Infinity
   DecreaseBy: 0.02
+--- !u!114 &1718675438230700820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379302131308088463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
+--- !u!114 &1956485506602980888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379302131308088463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38990f0b891da634ebdd6069e80d1a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0
+  MaxValue: Infinity
+  DecreaseBy: 0.5
 --- !u!1 &655031295069870366
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +140,7 @@ GameObject:
   - component: {fileID: 6330295975089256170}
   - component: {fileID: 102573811481212897}
   - component: {fileID: 8120729862313034459}
+  - component: {fileID: 1948119559932427295}
   m_Layer: 0
   m_Name: 4corners rainbow
   m_TagString: Untagged
@@ -158,7 +183,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.05
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
@@ -175,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 120
+  MinValue: 0
+  MaxValue: 4
   AddMobs: 1
 --- !u!114 &8120729862313034459
 MonoBehaviour:
@@ -189,7 +217,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
+--- !u!114 &1948119559932427295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655031295069870366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!1 &881461436564592033
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +354,9 @@ MonoBehaviour:
   IncludeBlackHole: {fileID: 0}
   NumMobs: 2
   DelayBetweenMobs: 0.05
-  DifferentMob: 0
-  PostDelay: 3
+  DifferentMob: 1
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 30
   TimeLastAvailable: 120
@@ -326,6 +373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
+  MinValue: 0
+  MaxValue: Infinity
   AddMobs: 1
 --- !u!114 &2016982007727370827
 MonoBehaviour:
@@ -340,6 +389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.002
 --- !u!1 &2244839000860079431
 GameObject:
@@ -352,8 +403,9 @@ GameObject:
   - component: {fileID: 8599090495534502238}
   - component: {fileID: 5507532249578353825}
   - component: {fileID: 6514531424306095778}
-  - component: {fileID: 2796453512355468003}
   - component: {fileID: 2502278091664147753}
+  - component: {fileID: 3184893799961791840}
+  - component: {fileID: 2796453512355468003}
   m_Layer: 0
   m_Name: N nemesis
   m_TagString: Untagged
@@ -396,7 +448,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.5
   DifferentMob: 0
-  PostDelay: 2
+  GlobalCooldown: 2
+  SelfCooldown: 6
   ChooseWeight: 3
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
@@ -413,21 +466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 120
+  MinValue: 0
+  MaxValue: 5
   AddMobs: 1
---- !u!114 &2796453512355468003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2244839000860079431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38990f0b891da634ebdd6069e80d1a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Period: 30
-  DecreaseBy: 0.5
 --- !u!114 &2502278091664147753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +482,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0.01
+  MaxValue: Infinity
   DecreaseBy: 0.02
+--- !u!114 &3184893799961791840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244839000860079431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
+--- !u!114 &2796453512355468003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244839000860079431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38990f0b891da634ebdd6069e80d1a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0
+  MaxValue: Infinity
+  DecreaseBy: 0.5
 --- !u!1 &2688763364167109840
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +527,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7355710753376840480}
   - component: {fileID: 1997932138140761690}
+  - component: {fileID: 2460803310792649114}
+  - component: {fileID: 4947965334957654434}
+  - component: {fileID: 3239122301389112650}
   - component: {fileID: 6104711814888349191}
   m_Layer: 0
   m_Name: 4corners triangle
@@ -495,10 +573,59 @@ MonoBehaviour:
   NumMobs: 100
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 20
   ChooseWeight: 3
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
+--- !u!114 &2460803310792649114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688763364167109840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f8d50f1e92bd4c92b1c336a101cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0
+  MaxValue: 160
+  AddMobs: 4
+--- !u!114 &4947965334957654434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688763364167109840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db4bb58e83addf4ba455a6b761affff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 60
+  MinValue: 0.01
+  MaxValue: Infinity
+  DecreaseBy: 0.02
+--- !u!114 &3239122301389112650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688763364167109840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!114 &6104711814888349191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 1
 --- !u!1 &2965465730409253507
 GameObject:
@@ -526,6 +655,7 @@ GameObject:
   - component: {fileID: 6980572439894145457}
   - component: {fileID: 801709034286519550}
   - component: {fileID: 7409336911039722992}
+  - component: {fileID: 6963129603192541680}
   m_Layer: 0
   m_Name: 4corners spew box
   m_TagString: Untagged
@@ -569,7 +699,8 @@ MonoBehaviour:
   NumMobs: 9
   DelayBetweenMobs: 1
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -586,6 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   AddMobs: 1
 --- !u!114 &801709034286519550
 MonoBehaviour:
@@ -600,6 +733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
+  MinValue: 0.01
+  MaxValue: Infinity
   DecreaseBy: 0.1
 --- !u!114 &7409336911039722992
 MonoBehaviour:
@@ -614,7 +749,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
+--- !u!114 &6963129603192541680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2965465730409253507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!1 &3536339088592006646
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +820,8 @@ MonoBehaviour:
   NumMobs: 3
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 0
   TimeLastAvailable: Infinity
@@ -681,6 +835,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7979771909039853223}
   - component: {fileID: 1044736581017254917}
+  - component: {fileID: 797478051424772926}
+  - component: {fileID: 8467658808353313551}
   - component: {fileID: 1338046546597803592}
   m_Layer: 0
   m_Name: surround snake
@@ -721,13 +877,46 @@ MonoBehaviour:
     Possible:
     - {fileID: 4677667772216431250, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
   IncludeBlackHole: {fileID: 0}
-  NumMobs: 10
+  NumMobs: 8
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
+--- !u!114 &797478051424772926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3634057897464840762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f8d50f1e92bd4c92b1c336a101cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 60
+  MinValue: 0
+  MaxValue: 16
+  AddMobs: 1
+--- !u!114 &8467658808353313551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3634057897464840762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!114 &1338046546597803592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,6 +930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 1
 --- !u!1 &4747679673596224752
 GameObject:
@@ -794,7 +985,8 @@ MonoBehaviour:
   NumMobs: 80
   DelayBetweenMobs: 0.05
   DifferentMob: 0
-  PostDelay: 8
+  GlobalCooldown: 8
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 180
   TimeLastAvailable: Infinity
@@ -844,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7617576131521992787
 Transform:
   m_ObjectHideFlags: 0
@@ -873,6 +1065,7 @@ GameObject:
   - component: {fileID: 3828775025007786642}
   - component: {fileID: 2112035463382011718}
   - component: {fileID: 8808672398630348895}
+  - component: {fileID: 2511965368871272314}
   m_Layer: 0
   m_Name: 4corners spew diamond
   m_TagString: Untagged
@@ -915,7 +1108,8 @@ MonoBehaviour:
   NumMobs: 12
   DelayBetweenMobs: 0.3
   DifferentMob: 0
-  PostDelay: 9
+  GlobalCooldown: 9
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -932,6 +1126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   AddMobs: 2
 --- !u!114 &2112035463382011718
 MonoBehaviour:
@@ -946,6 +1142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 60
+  MinValue: 0.01
+  MaxValue: Infinity
   DecreaseBy: 0.03
 --- !u!114 &8808672398630348895
 MonoBehaviour:
@@ -960,7 +1158,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
+--- !u!114 &2511965368871272314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976444239767677979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!1 &6178886638971596204
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1189,7 @@ GameObject:
   - component: {fileID: 3623523545891815135}
   - component: {fileID: 3048865848390840962}
   - component: {fileID: 33418617922069825}
+  - component: {fileID: 9014602289161195655}
   m_Layer: 0
   m_Name: surround mid
   m_TagString: Untagged
@@ -1017,7 +1234,8 @@ MonoBehaviour:
   NumMobs: 20
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -1034,6 +1252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: 40
   AddMobs: 4
 --- !u!114 &33418617922069825
 MonoBehaviour:
@@ -1048,7 +1268,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
+--- !u!114 &9014602289161195655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178886638971596204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!1 &7125105945325671933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,6 +1329,8 @@ GameObject:
   - component: {fileID: 7459601842272345852}
   - component: {fileID: 2171838138148849569}
   - component: {fileID: 746948399465183606}
+  - component: {fileID: 353632392122662510}
+  - component: {fileID: 9000132765753882902}
   m_Layer: 0
   m_Name: 4corners mid
   m_TagString: Untagged
@@ -1133,9 +1373,10 @@ MonoBehaviour:
     - {fileID: 4677667772216431250, guid: b89fd9ce348bca3478d096cca2ba2f66, type: 3}
   IncludeBlackHole: {fileID: 0}
   NumMobs: 1
-  DelayBetweenMobs: 0.1
+  DelayBetweenMobs: 0.01
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity
@@ -1152,7 +1393,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
+--- !u!114 &353632392122662510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225350633809133308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f8d50f1e92bd4c92b1c336a101cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 60
+  MinValue: 0
+  MaxValue: 4
+  AddMobs: 1
+--- !u!114 &9000132765753882902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225350633809133308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!1 &7549924492677900181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,10 +1481,11 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
-  ChooseWeight: 10
+  GlobalCooldown: 3
+  SelfCooldown: 3
+  ChooseWeight: 5
   TimeFirstAvailable: 0
-  TimeLastAvailable: 60
+  TimeLastAvailable: 30
 --- !u!1 &7881131804652289389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1496,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8377950032267214508}
   - component: {fileID: 1564889602679665475}
+  - component: {fileID: 4942016006988907086}
+  - component: {fileID: 3612236823967067571}
   - component: {fileID: 9151495406964744668}
   m_Layer: 0
   m_Name: 4corners snake
@@ -1263,10 +1541,43 @@ MonoBehaviour:
   NumMobs: 4
   DelayBetweenMobs: 0
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 6
   ChooseWeight: 5
   TimeFirstAvailable: 120
   TimeLastAvailable: Infinity
+--- !u!114 &4942016006988907086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881131804652289389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f8d50f1e92bd4c92b1c336a101cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 60
+  MinValue: 0
+  MaxValue: 8
+  AddMobs: 1
+--- !u!114 &3612236823967067571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881131804652289389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ba40c708dd904db3f2de3ed515d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Period: 30
+  MinValue: 0.5
+  MaxValue: Infinity
+  DecreaseBy: 1
 --- !u!114 &9151495406964744668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 1
 --- !u!1 &8235987789496017766
 GameObject:
@@ -1334,10 +1647,11 @@ MonoBehaviour:
   NumMobs: 3
   DelayBetweenMobs: 0
   DifferentMob: 1
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 10
-  TimeFirstAvailable: 0
-  TimeLastAvailable: 60
+  TimeFirstAvailable: 5
+  TimeLastAvailable: 30
 --- !u!1 &8236511464266891737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1705,8 @@ MonoBehaviour:
   NumMobs: 1
   DelayBetweenMobs: 0.1
   DifferentMob: 0
-  PostDelay: 3
+  GlobalCooldown: 3
+  SelfCooldown: 0
   ChooseWeight: 3
   TimeFirstAvailable: 30
   TimeLastAvailable: Infinity
@@ -1408,6 +1723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Period: 30
+  MinValue: 0
+  MaxValue: Infinity
   DecreaseBy: 0.5
 --- !u!1 &9156812860480553776
 GameObject:
@@ -1529,7 +1846,8 @@ MonoBehaviour:
   NumMobs: 12
   DelayBetweenMobs: 0.2
   DifferentMob: 0
-  PostDelay: 6
+  GlobalCooldown: 6
+  SelfCooldown: 0
   ChooseWeight: 5
   TimeFirstAvailable: 60
   TimeLastAvailable: Infinity

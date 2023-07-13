@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SpawnIncreaseParam : MonoBehaviour {
   public float Period = 60f;
+  public float MinValue = 0f;
+  public float MaxValue = Mathf.Infinity;
   public SpawnEvent SpawnEvent => GetComponent<SpawnEvent>();
 
   private void Start() {
@@ -10,7 +12,7 @@ public class SpawnIncreaseParam : MonoBehaviour {
     for (t = SpawnManager.Instance.CurrentTime - SpawnEvent.TimeFirstAvailable; t > Period; t -= Period) {
       SetParam();
     }
-    Invoke("SetParamRepeat", Mathf.Max(0f, t));
+    Invoke("SetParamRepeat", Mathf.Max(0f, Period - t));
   }
 
   void SetParamRepeat() {
@@ -23,9 +25,11 @@ public class SpawnIncreaseParam : MonoBehaviour {
 
 public class SpawnScalingNumMobs : SpawnIncreaseParam {
   public int AddMobs;
+  int IntMaxValue => (int)MaxValue < 0 ? int.MaxValue : (int)MaxValue;  // (int)Infinity == -2billion??
 
   protected override void SetParam() {
     SpawnEvent.NumMobs += AddMobs;
-    //Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
+    SpawnEvent.NumMobs = Mathf.Min(SpawnEvent.NumMobs, IntMaxValue);
+    Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
   }
 }

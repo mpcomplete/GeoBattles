@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class SpawnList {
@@ -19,17 +20,11 @@ public class SpawnEvent : MonoBehaviour {
   public int NumMobs = 1;
   public float DelayBetweenMobs = .1f;
   public bool DifferentMob = false;
-  public float PostDelay = 1f;
+  [Tooltip("Time before any event can run after this, starting from event start")] public float GlobalCooldown = 1f;
+  [Tooltip("Time before this event can be chosen again, starting from event start")] public float SelfCooldown = 0f;
   public int ChooseWeight = 10;
   public float TimeFirstAvailable = 0f;
   public float TimeLastAvailable = Mathf.Infinity;
-
-  float ScaledDelayBetweenMobs => DelayBetweenMobs;
-  float ScaledPostDelay => PostDelay;
-  int ScaledNumMobs => NumMobs;
-  //float ScaledDelayBetweenMobs => DelayBetweenMobs * SpawnManager.Instance.SpewDelayFactor;
-  //float ScaledPostDelay => PostDelay * SpawnManager.Instance.SpawnDelayFactor;
-  //int ScaledNumMobs => (int)(NumMobs * SpawnManager.Instance.NumMobsFactor);
 
   public IEnumerator SpawnSequence() {
     Chosen = null;
@@ -40,8 +35,17 @@ public class SpawnEvent : MonoBehaviour {
       _ => null
     };
     StartCoroutine(sequence);
-    Debug.Log($"At t={SpawnManager.Instance.CurrentTime}, event {name} running (mobs={NumMobs}, between={DelayBetweenMobs}). Waiting={ScaledPostDelay}");
-    yield return new WaitForSeconds(ScaledPostDelay);
+    Debug.Log($"At t={SpawnManager.Instance.CurrentTime}, event {name} running (mobs={NumMobs}, between={DelayBetweenMobs}). Waiting={GlobalCooldown}");
+    if (SelfCooldown > 0)
+      StartCoroutine(DoEventCooldown());
+    yield return new WaitForSeconds(GlobalCooldown);
+  }
+
+  // Note: This works because disabling a MonoBehaviour does not stop coroutines. Disabling the gameObject does, though.
+  IEnumerator DoEventCooldown() {
+    enabled = false;
+    yield return new WaitForSeconds(SelfCooldown);
+    enabled = true;
   }
 
   const float Radius = 1f;
@@ -58,7 +62,7 @@ public class SpawnEvent : MonoBehaviour {
     }
     if (IncludeBlackHole)
       SpawnBlackHole(GetPos());
-    for (int i = 0; i < ScaledNumMobs; i++) {
+    for (int i = 0; i < NumMobs; i++) {
       SpawnMob(GetPos());
       yield return WaveDelay();
     }
@@ -75,7 +79,7 @@ public class SpawnEvent : MonoBehaviour {
     }
     if (IncludeBlackHole)
       SpawnBlackHole(GetPos());
-    for (int i = 0; i < ScaledNumMobs; i++) {
+    for (int i = 0; i < NumMobs; i++) {
       SpawnMob(GetPos());
       yield return WaveDelay();
     }
@@ -92,15 +96,15 @@ public class SpawnEvent : MonoBehaviour {
     Vector3 GetPos(Vector3 corner) => corner + UnityEngine.Random.insideUnitCircle.XZ();
     if (IncludeBlackHole)
       corners.ForEach(c => SpawnBlackHole(GetPos(c)));
-    for (int i = 0; i < ScaledNumMobs; i++) {
+    for (int i = 0; i < NumMobs; i++) {
       corners.ForEach(c => SpawnMob(GetPos(c)));
       yield return WaveDelay();
     }
   }
 
   public IEnumerator WaveDelay() {
-    if (ScaledDelayBetweenMobs > 0f)
-      yield return new WaitForSeconds(ScaledDelayBetweenMobs);
+    if (DelayBetweenMobs > 0f)
+      yield return new WaitForSeconds(DelayBetweenMobs);
     // Lame. No way to pause a coroutine so we just have to poll.
     if (!SpawnManager.Instance.PlayerAlive)
       yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
