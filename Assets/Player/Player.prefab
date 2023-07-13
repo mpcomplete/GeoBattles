@@ -7593,7 +7593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputHandler: {fileID: 6451052018583213590}
-  ShockwaveEffect: {fileID: 6913376154181664587, guid: 0f9608c1399b2664fbbe007006198756, type: 3}
+  Shockwave: {fileID: 3288058773764401576, guid: 0f9608c1399b2664fbbe007006198756, type: 3}
 --- !u!114 &6945261370278958281
 MonoBehaviour:
   m_ObjectHideFlags: 0

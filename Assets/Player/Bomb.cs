@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour {
   [SerializeField] InputHandler InputHandler;
-  [SerializeField] GameObject ShockwaveEffect;
+  [SerializeField] BombShockwave Shockwave;
 
   void Start() {
     InputHandler.OnBomb += TryDetonate;
@@ -14,8 +14,7 @@ public class Bomb : MonoBehaviour {
 
   void TryDetonate() {
     if (BombManager.Instance.TryDeonateBomb()) {
-      GameManager.Instance.DespawnMobsSafe(c => true);
-      Instantiate(ShockwaveEffect, transform);
+      Instantiate(Shockwave, transform.position, Quaternion.identity);
     }
   }
 }
