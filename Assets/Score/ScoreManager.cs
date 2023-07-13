@@ -36,9 +36,10 @@ public class ScoreManager : MonoBehaviour {
 
   public UnityAction<int> SetScore;
   public UnityAction<int> SetHighScore;
-  public UnityAction<MultiplierEvent> MultiplierChange;
   public UnityAction<ScoreEvent> ScoreChange;
   public UnityAction<ScoreEvent> HighScoreChange;
+  public UnityAction<int> SetMultiplier;
+  public UnityAction<MultiplierEvent> MultiplierChange;
 
   [ContextMenu("Reset High Score")]
   void ResetHighScore() {
@@ -51,19 +52,27 @@ public class ScoreManager : MonoBehaviour {
     } else {
       Instance = this;
       GameManager.Instance.MobDying += OnMobDying;
-      GameManager.Instance.StartGame += SetScores;
+      GameManager.Instance.StartGame += StartGame;
+      GameManager.Instance.PlayerSpawn += ResetMultiplier;
       DontDestroyOnLoad(gameObject);
     }
   }
 
   void OnDestroy() {
     GameManager.Instance.MobDying -= OnMobDying;
-    GameManager.Instance.StartGame -= SetScores;
+    GameManager.Instance.StartGame -= StartGame;
   }
 
-  void SetScores() {
+  void StartGame() {
+    Score = 0;
+    Multiplier = 1;
     SetScore?.Invoke(Score);
     SetHighScore?.Invoke(HighScore);
+  }
+
+  void ResetMultiplier(Character c) {
+    Multiplier = 1;
+    SetMultiplier?.Invoke(Multiplier);
   }
 
   void OnMobDying(Character character) {

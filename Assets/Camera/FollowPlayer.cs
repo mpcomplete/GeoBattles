@@ -7,11 +7,13 @@ public class FollowPlayer : MonoBehaviour {
   void Start() {
     GameManager.Instance.PlayerSpawn += Follow;
     GameManager.Instance.PlayerDying += UnFollow;
+    GameManager.Instance.PostGame += ReturnToCenter;
   }
 
   void OnDestroy() {
     GameManager.Instance.PlayerSpawn -= Follow;
     GameManager.Instance.PlayerDying -= UnFollow;
+    GameManager.Instance.PostGame -= ReturnToCenter;
   }
 
   void Follow(Character c) {
@@ -20,5 +22,9 @@ public class FollowPlayer : MonoBehaviour {
 
   void UnFollow(Character c) {
     VirtualCamera.Follow = null;
+  }
+
+  void ReturnToCenter() {
+    VirtualCamera.Follow = Bounds.Instance.transform;
   }
 }
