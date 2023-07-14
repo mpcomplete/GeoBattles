@@ -30,6 +30,6 @@ public class SpawnScalingNumMobs : SpawnIncreaseParam {
   protected override void SetParam() {
     SpawnEvent.NumMobs += AddMobs;
     SpawnEvent.NumMobs = Mathf.Min(SpawnEvent.NumMobs, IntMaxValue);
-    Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
+    //Debug.Log($"Increasing {SpawnEvent.name} numMobs to {SpawnEvent.NumMobs}");
   }
 }

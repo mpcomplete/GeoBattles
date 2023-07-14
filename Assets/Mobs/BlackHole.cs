@@ -44,7 +44,6 @@ public class BlackHole : MonoBehaviour {
         avgPos /= numHoles;
         foreach (var hole in activatedHoles) {
           var away = (hole.transform.position - avgPos).normalized;
-          Debug.Log($"Bursting {hole.gameObject.name} {ProjectileBurstForce} {away}");
           hole.GetComponent<Controller>().AddPhysicsVelocity(ProjectileBurstForce * away);
         }
       }

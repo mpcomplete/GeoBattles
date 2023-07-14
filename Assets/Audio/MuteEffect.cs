@@ -19,13 +19,11 @@ public class MuteEffect : MonoBehaviour {
     transform.SetParent(null);
     AudioMixer.GetFloat("MusicVolume", out var oldMusic);
     AudioMixer.GetFloat("SoundVolume", out var oldSound);
-    Debug.Log($"Old v = {oldMusic}");
     while (T < endTime) {
-      var factor = (VolumeCurve.Evaluate(T)-1)*80f;
+      var factor = (VolumeCurve.Evaluate(T)-1)*80f;  // map [0,1] to [-80db, 0db]
       AudioMixer.SetFloat("MusicVolume", oldMusic + factor);
       AudioMixer.SetFloat("SoundVolume", oldSound + factor);
       AudioMixer.GetFloat("MusicVolume", out var tmp);
-      Debug.Log($"Now v = {tmp}");
       T += Time.fixedDeltaTime;
       yield return new WaitForFixedUpdate();
     }
