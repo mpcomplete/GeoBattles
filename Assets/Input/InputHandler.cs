@@ -21,6 +21,7 @@ public class InputHandler : MonoBehaviour {
 
   Vector2 LastAim;
   Vector2 LastMousePos;
+  bool MouseFiring = false;
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
     OnMove?.Invoke(move.XZ());
@@ -28,16 +29,21 @@ public class InputHandler : MonoBehaviour {
     if (aim != LastAim) {
       LastAim = aim;
       OnAim?.Invoke(aim.XZ());
-    } else {
+    } else if (MouseFiring) {
       var mousePos = Inputs.GamePlay.MouseAim.ReadValue<Vector2>();
       if (LastMousePos != mousePos && GameManager.Instance.Players.Count > 0) {
         LastMousePos = mousePos;
-        var worldPos = Camera.main.ScreenToWorldPoint(mousePos).XZ();
+        var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y)).XZ();
         var playerPos = GameManager.Instance.Players[0].transform.position;
         var mouseAim = (worldPos - playerPos).XZ().normalized;
+        Debug.Log($"Mouse {mousePos} => {worldPos} gives {mouseAim}");
         OnAim?.Invoke(mouseAim.XZ());
       }
+    } else {
+      OnAim?.Invoke(Vector3.zero);
     }
+    if (Inputs.GamePlay.MouseFireToggle.WasPerformedThisFrame())
+      MouseFiring = !MouseFiring;
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
       OnBomb();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())

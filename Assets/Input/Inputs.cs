@@ -80,6 +80,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouseFireToggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3d5b63a-df97-49ae-984e-717afbde660f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""MouseAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""546d479c-360f-4854-9490-02e0c7d9922b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MouseKeyboard"",
+                    ""action"": ""MouseFireToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -326,6 +346,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_GamePlay_NextShot = m_GamePlay.FindAction("NextShot", throwIfNotFound: true);
         m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
         m_GamePlay_MouseAim = m_GamePlay.FindAction("MouseAim", throwIfNotFound: true);
+        m_GamePlay_MouseFireToggle = m_GamePlay.FindAction("MouseFireToggle", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -397,6 +418,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_NextShot;
     private readonly InputAction m_GamePlay_Pause;
     private readonly InputAction m_GamePlay_MouseAim;
+    private readonly InputAction m_GamePlay_MouseFireToggle;
     public struct GamePlayActions
     {
         private @Inputs m_Wrapper;
@@ -407,6 +429,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @NextShot => m_Wrapper.m_GamePlay_NextShot;
         public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
         public InputAction @MouseAim => m_Wrapper.m_GamePlay_MouseAim;
+        public InputAction @MouseFireToggle => m_Wrapper.m_GamePlay_MouseFireToggle;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -434,6 +457,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @MouseAim.started += instance.OnMouseAim;
             @MouseAim.performed += instance.OnMouseAim;
             @MouseAim.canceled += instance.OnMouseAim;
+            @MouseFireToggle.started += instance.OnMouseFireToggle;
+            @MouseFireToggle.performed += instance.OnMouseFireToggle;
+            @MouseFireToggle.canceled += instance.OnMouseFireToggle;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -456,6 +482,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @MouseAim.started -= instance.OnMouseAim;
             @MouseAim.performed -= instance.OnMouseAim;
             @MouseAim.canceled -= instance.OnMouseAim;
+            @MouseFireToggle.started -= instance.OnMouseFireToggle;
+            @MouseFireToggle.performed -= instance.OnMouseFireToggle;
+            @MouseFireToggle.canceled -= instance.OnMouseFireToggle;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -553,6 +582,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnNextShot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnMouseAim(InputAction.CallbackContext context);
+        void OnMouseFireToggle(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
