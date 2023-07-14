@@ -66,8 +66,7 @@ public class MoveCharge : MonoBehaviour {
         Velocity = MaxSpeed * Velocity.normalized;
       if (!Charging)
         Velocity *= VelocityDampening;
-      var dx = Time.fixedDeltaTime * Velocity;
-      Controller.Move(dx);
+      Controller.MoveV(Velocity);
     }
   }
 }

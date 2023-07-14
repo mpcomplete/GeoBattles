@@ -19,11 +19,25 @@ public class InputHandler : MonoBehaviour {
     Inputs.Dispose();
   }
 
+  Vector2 LastAim;
+  Vector2 LastMousePos;
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
-    OnMove?.Invoke(new Vector3(move.x, 0, move.y));
+    OnMove?.Invoke(move.XZ());
     var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
-    OnAim?.Invoke(new Vector3(aim.x, 0, aim.y));
+    if (aim != LastAim) {
+      LastAim = aim;
+      OnAim?.Invoke(aim.XZ());
+    } else {
+      var mousePos = Inputs.GamePlay.MouseAim.ReadValue<Vector2>();
+      if (LastMousePos != mousePos && GameManager.Instance.Players.Count > 0) {
+        LastMousePos = mousePos;
+        var worldPos = Camera.main.ScreenToWorldPoint(mousePos).XZ();
+        var playerPos = GameManager.Instance.Players[0].transform.position;
+        var mouseAim = (worldPos - playerPos).XZ().normalized;
+        OnAim?.Invoke(mouseAim.XZ());
+      }
+    }
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
       OnBomb();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())

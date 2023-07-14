@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System;
+using UnityEngine.EventSystems;
 
 public class UI : SingletonBehavior<UI> {
   [Header("HUD")]
@@ -21,6 +24,7 @@ public class UI : SingletonBehavior<UI> {
 
   [Header("Main Menu")]
   [SerializeField] RectTransform MainMenu;
+  [SerializeField] Button PlayButton;
 
   protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += PreGame;
@@ -45,6 +49,12 @@ public class UI : SingletonBehavior<UI> {
     MainMenu.gameObject.SetActive(true);
     GameOverMenu.gameObject.SetActive(false);
     PauseMenu.gameObject.SetActive(false);
+    PlayButton.onClick.AddListener(OnPlay);
+    EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
+  }
+
+  void OnPlay() {
+    GameManager.Instance.LoadLevel();
   }
 
   void PostGame() {

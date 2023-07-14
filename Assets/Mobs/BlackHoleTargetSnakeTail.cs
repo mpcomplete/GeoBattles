@@ -14,17 +14,6 @@ public class BlackHoleTargetSnakeTail : BlackHoleTarget {
     }
   }
 
-  Vector3 Velocity;
-  public override void Suck(Vector3 accel) {
-    var a = GravityVulnerability * accel;
-    Velocity += Time.fixedDeltaTime * a;
-  }
-
-  private void FixedUpdate() {
-    transform.position += Time.fixedDeltaTime * Velocity;
-    Velocity *= VelocityDamping;
-  }
-
   void Awake() {
     this.InitComponentFromParent(out Tail);
   }

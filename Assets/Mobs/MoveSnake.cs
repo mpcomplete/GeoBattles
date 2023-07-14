@@ -17,6 +17,7 @@ public class MoveSnake : MonoBehaviour {
 
   void Start() {
     Controller.SetMaxMoveSpeed(MaxSpeed);
+    Tail.SetMoveSpeed(MaxSpeed);
     Angle = transform.rotation.eulerAngles.y + Random.Range(-60f, 60f);
     TurnSpeed = 0;
   }
@@ -38,7 +39,7 @@ public class MoveSnake : MonoBehaviour {
     Speed = Mathf.Min(Speed, MaxSpeed);
     Velocity = Speed * transform.forward;
 
-    Controller.Move(Time.fixedDeltaTime * Velocity);
+    Controller.MoveV(Velocity);
     var desired = Quaternion.Euler(0, Angle, 0) * Vector3.forward;
     Controller.Rotation(Quaternion.LookRotation(desired));
   }
