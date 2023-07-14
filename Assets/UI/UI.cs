@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class UI : MonoBehaviour {
+public class UI : SingletonBehavior<UI> {
   [Header("HUD")]
   [SerializeField] RectTransform HUD;
   [SerializeField] RectTransform ShipContainer;
@@ -22,31 +22,22 @@ public class UI : MonoBehaviour {
   [Header("Main Menu")]
   [SerializeField] RectTransform MainMenu;
 
-  void Awake() {
+  protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += PreGame;
     GameManager.Instance.StartGame += StartGame;
     GameManager.Instance.PostGame += PostGame;
+    GameManager.Instance.LevelChange += LevelChange;
     PauseManager.Instance.OnPause += Pause;
     PauseManager.Instance.OnUnpause += UnPause;
+  }
+
+  void LevelChange() {
     ScoreManager.Instance.SetScore += SetScore;
     ScoreManager.Instance.SetHighScore += SetHighScore;
     ScoreManager.Instance.ScoreChange += ScoreChange;
     ScoreManager.Instance.HighScoreChange += HighScoreChange;
     ShipManager.Instance.ShipCountChange += ShipCountChange;
     BombManager.Instance.BombCountChange += BombCountChange;
-  }
-
-  void OnDestroy() {
-    GameManager.Instance.StartGame += StartGame;
-    GameManager.Instance.PostGame -= PostGame;
-    PauseManager.Instance.OnPause -= Pause;
-    PauseManager.Instance.OnUnpause -= UnPause;
-    ScoreManager.Instance.SetScore -= SetScore;
-    ScoreManager.Instance.SetHighScore -= SetHighScore;
-    ScoreManager.Instance.ScoreChange -= ScoreChange;
-    ScoreManager.Instance.HighScoreChange -= HighScoreChange;
-    ShipManager.Instance.ShipCountChange -= ShipCountChange;
-    BombManager.Instance.BombCountChange -= BombCountChange;
   }
 
   void PreGame() {
@@ -61,7 +52,7 @@ public class UI : MonoBehaviour {
     MainMenu.gameObject.SetActive(false);
     GameOverMenu.gameObject.SetActive(true);
     PauseMenu.gameObject.SetActive(false);
-    FinalScore.text = $"Final Score: {ScoreManager.Instance.Score}";
+    FinalScore.text = $"Final Score: {ScoreManager.Instance.Score.ToString("N0")}";
   }
 
   void StartGame() {

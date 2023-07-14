@@ -1,17 +1,18 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public enum GameState {
   PreGame,
+  Loading,
   InGame,
   PostGame,
 }
 
-public class GameManager : MonoBehaviour {
-  public static GameManager Instance;
-
+public class GameManager : SingletonBehavior<GameManager> {
   [RuntimeInitializeOnLoadMethod]
   public static void Boot() {
     Time.fixedDeltaTime = 1f/60f;
@@ -41,32 +42,45 @@ public class GameManager : MonoBehaviour {
   public UnityAction PreGame;
   public UnityAction StartGame;
   public UnityAction PostGame;
+  public UnityAction LevelChange;
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      Players = new();
-      Mobs = new();
-      VFX = new();
-      Projectiles = new();
-      PlayerSpawn += OnPlayerSpawn;
-      PlayerDying += OnPlayerDying;
-      MobSpawn += OnMobSpawn;
-      MobDespawn += OnMobDespawn;
-      MobDeath += OnMobDeath;
-      ProjectileSpawn += OnProjectileSpawn;
-      ProjectileDeath += OnProjectileDeath;
-      PreGame += OnPreGame;
-      StartGame += OnLevelStart;
-      PostGame += OnLevelEnd;
-      DontDestroyOnLoad(gameObject);
-    }
+  protected override void AwakeSingleton() {
+    Players = new();
+    Mobs = new();
+    VFX = new();
+    Projectiles = new();
+    PlayerSpawn += OnPlayerSpawn;
+    PlayerDying += OnPlayerDying;
+    MobSpawn += OnMobSpawn;
+    MobDespawn += OnMobDespawn;
+    MobDeath += OnMobDeath;
+    ProjectileSpawn += OnProjectileSpawn;
+    ProjectileDeath += OnProjectileDeath;
+    PreGame += OnPreGame;
+    StartGame += OnLevelStart;
+    PostGame += OnLevelEnd;
   }
 
   void Start() {
-    PreGame?.Invoke();
+    LoadMainMenu();
+  }
+
+  public void LoadMainMenu() {
+    PreGame.Invoke();
+  }
+
+  public void LoadLevel() {
+    StartCoroutine(LoadNextLevel());
+  }
+
+  IEnumerator LoadNextLevel() {
+    var load = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    GameState = GameState.Loading;
+    while (!load.isDone) {
+      yield return null;
+    }
+    LevelChange?.Invoke();
+    StartGame?.Invoke();
   }
 
   // Despawning mobs removes them from the list
@@ -109,19 +123,16 @@ public class GameManager : MonoBehaviour {
   }
 
   void OnPreGame() {
-    Debug.Log("Pre game");
     DespawnMobsSafe(c => true);
     GameState = GameState.PreGame;
   }
 
   void OnLevelStart() {
-    Debug.Log("Game Start");
     DespawnMobsSafe(c => true);
     GameState = GameState.InGame;
   }
 
   void OnLevelEnd() {
-    Debug.Log("Game over");
     DespawnMobsSafe(c => true);
     GameState = GameState.PostGame;
   }

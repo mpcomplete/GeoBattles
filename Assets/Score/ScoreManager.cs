@@ -21,9 +21,7 @@ public struct MultiplierEvent {
   }
 }
 
-public class ScoreManager : MonoBehaviour {
-  public static ScoreManager Instance;
-
+public class ScoreManager : LevelManager<ScoreManager> {
   public int HighScore {
     get => PlayerPrefs.GetInt("HighScore", 0);
     set => PlayerPrefs.SetInt("HighScore", value);
@@ -36,34 +34,42 @@ public class ScoreManager : MonoBehaviour {
 
   public UnityAction<int> SetScore;
   public UnityAction<int> SetHighScore;
-  public UnityAction<MultiplierEvent> MultiplierChange;
   public UnityAction<ScoreEvent> ScoreChange;
   public UnityAction<ScoreEvent> HighScoreChange;
+  public UnityAction<int> SetMultiplier;
+  public UnityAction<MultiplierEvent> MultiplierChange;
 
   [ContextMenu("Reset High Score")]
   void ResetHighScore() {
     HighScore = 0;
   }
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      GameManager.Instance.MobDying += OnMobDying;
-      GameManager.Instance.StartGame += SetScores;
-      DontDestroyOnLoad(gameObject);
-    }
+  protected override void Awake() {
+    base.Awake();
+    GameManager.Instance.MobDying += OnMobDying;
+    GameManager.Instance.StartGame += StartGame;
+    GameManager.Instance.PlayerSpawn += ResetMultiplier;
   }
 
   void OnDestroy() {
     GameManager.Instance.MobDying -= OnMobDying;
-    GameManager.Instance.StartGame -= SetScores;
+    GameManager.Instance.StartGame -= StartGame;
+    GameManager.Instance.PlayerSpawn -= ResetMultiplier;
   }
 
-  void SetScores() {
+  void StartGame() {
+    Kills = 0;
+    Score = 0;
+    Multiplier = 1;
     SetScore?.Invoke(Score);
     SetHighScore?.Invoke(HighScore);
+    SetMultiplier?.Invoke(Multiplier);
+  }
+
+  void ResetMultiplier(Character c) {
+    Kills = 0;
+    Multiplier = 1;
+    SetMultiplier?.Invoke(Multiplier);
   }
 
   void OnMobDying(Character character) {
@@ -78,8 +84,8 @@ public class ScoreManager : MonoBehaviour {
       HighScoreChange?.Invoke(new(position, scoreChange, Score));
     }
     if (Kills >= Threshold) {
-      Multiplier += 1;
       Kills = 0;
+      Multiplier += 1;
       MultiplierChange?.Invoke(new(position, Multiplier));
     }
   }

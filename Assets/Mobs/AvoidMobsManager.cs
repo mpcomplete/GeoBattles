@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AvoidMobsManager : SingletonBehavior<AvoidMobsManager> {
+public class AvoidMobsManager : LevelManager<AvoidMobsManager> {
   public float CellSize = 1f;
   public float SeparationStrength = 1f;
   float HalfCellSize;

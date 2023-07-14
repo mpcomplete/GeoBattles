@@ -1,19 +1,18 @@
-using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour {
-  public static SpawnManager Instance;
-
+public class SpawnManager : LevelManager<SpawnManager> {
   public float DebugStartTime = 0f;
-  public float CurrentTime => Time.time + DebugStartTime;
+  public float CurrentTime => Time.time - AwakeTime + DebugStartTime;
+  public float AwakeTime;
 
   SpawnEvent[] SpawnEvents;
   SpawnEvent CurrentSpawnEvent;
 
-  void Awake() {
-    Instance = this;
+  protected override void Awake() {
+    base.Awake();
+    AwakeTime = Time.time;
     SpawnEvents = GetComponentsInChildren<SpawnEvent>();
     GameManager.Instance.PlayerAlive += OnPlayerAlive;
     GameManager.Instance.PlayerDying += OnPlayerDying;
@@ -21,7 +20,6 @@ public class SpawnManager : MonoBehaviour {
   }
 
   void OnDestroy() {
-    Instance = null;
     GameManager.Instance.PlayerAlive -= OnPlayerAlive;
     GameManager.Instance.PlayerDying -= OnPlayerDying;
     StopAllCoroutines();
@@ -31,6 +29,7 @@ public class SpawnManager : MonoBehaviour {
   void OnPlayerAlive(Character c) {
     StartCoroutine(WaitThenEnable(1));
   }
+
   void OnPlayerDying(Character c) {
     PlayerAlive = false;
   }

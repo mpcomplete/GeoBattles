@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BombManager : MonoBehaviour {
-  public static BombManager Instance;
-
+public class BombManager : LevelManager<BombManager> {
   [SerializeField] int BonusBombScoreInterval = 100000;
   [SerializeField] int InitialBombCount = 3;
 
@@ -11,7 +9,7 @@ public class BombManager : MonoBehaviour {
 
   public UnityAction<int> BombCountChange;
 
-  public bool TryDeonateBomb() {
+  public bool TryDetonateBomb() {
     if (BombCount > 0) {
       BombCount -= 1;
       BombCountChange?.Invoke(BombCount);
@@ -21,17 +19,8 @@ public class BombManager : MonoBehaviour {
     }
   }
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      GameManager.Instance.StartGame += SetBombCount;
-      DontDestroyOnLoad(gameObject);
-    }
-  }
-
   void Start() {
+    GameManager.Instance.StartGame += SetBombCount;
     ScoreManager.Instance.ScoreChange += TryAwardExtraBomb;
   }
 

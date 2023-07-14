@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class PregameFireworks : MonoBehaviour {
+public class PregameFireworks : SingletonBehavior<PregameFireworks> {
   [SerializeField] Timeval SpawnInterval = Timeval.FromMillis(100);
   [SerializeField] ParticleSystem[] ParticleSystems;
 
-  void Awake() {
+  protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += StartFireworks;
     GameManager.Instance.StartGame += CleanupFireworks;
   }

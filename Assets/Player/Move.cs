@@ -11,9 +11,19 @@ public class Move : MonoBehaviour {
   Quaternion Rotation;
 
   void Start() {
+    GetComponent<Player>().OnDying += KillParticles;
     Controller.SetMaxMoveSpeed(Speed);
     InputHandler.OnMove += OnMove;
     Rotation = transform.rotation;
+  }
+
+  void OnDestroy() {
+    GetComponent<Player>().OnDying -= KillParticles;
+  }
+
+  void KillParticles() {
+    ThrusterParticles.Clear();
+    ThrusterParticles.Stop();
   }
 
   void FixedUpdate() {

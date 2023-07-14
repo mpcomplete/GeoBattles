@@ -8,9 +8,7 @@ public struct Variant {
   public AudioSource AudioSource;
 }
 
-public class ShotManager : MonoBehaviour {
-  public static ShotManager Instance;
-
+public class ShotManager : LevelManager<ShotManager> {
   [SerializeField] int ShotChangeScoreInterval = 1000;
   [SerializeField] Variant DefaultShotVariant;
   [SerializeField] Variant[] ShotVariants;
@@ -18,14 +16,9 @@ public class ShotManager : MonoBehaviour {
   public int DebugStartVariant = -1;
   public Variant ActiveShotVariant { get; private set; }
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      GameManager.Instance.StartGame += SetDefaultShot;
-      DontDestroyOnLoad(gameObject);
-    }
+  protected override void Awake() {
+    base.Awake();
+    GameManager.Instance.StartGame += SetDefaultShot;
   }
 
   void Start() {
