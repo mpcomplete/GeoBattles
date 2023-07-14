@@ -150,14 +150,15 @@ public class DensitySpreader : MonoBehaviour {
       var currentDensity = densityGrid[x, z];
       var bestDirection = DirectionStrategy switch {
         DirectionStrategy.Alignment => BestDirectionByAlignment(obj),
-        DirectionStrategy.Histogram => BestDirectionByHistogram(obj)
+        DirectionStrategy.Histogram => BestDirectionByHistogram(obj),
+        _ => BestDirectionByHistogram(obj)
       };
       velocities[obj] *= Dampening;
       if (bestDirection.HasValue) {
         var densityScale = DensityScalingStrategy switch {
-          DensityScalingStrategy.None => 1,
           DensityScalingStrategy.Multiply => currentDensity,
           DensityScalingStrategy.Log => Mathf.Log(currentDensity),
+          _ => 1,
         };
         var orthogonalForce = bestDirection.Value - Vector3.Project(bestDirection.Value, velocities[obj]);
         var force = orthogonalForce * Strength * densityScale;

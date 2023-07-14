@@ -2,9 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShipManager : MonoBehaviour {
-  public static ShipManager Instance;
-
+public class ShipManager : LevelManager<ShipManager> {
   [SerializeField] Player PlayerPrefab;
   [SerializeField] int BonusShipScoreInterval = 75000;
   [SerializeField] int InitialShipCount = 3;
@@ -13,15 +11,10 @@ public class ShipManager : MonoBehaviour {
 
   public UnityAction<int> ShipCountChange;
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      GameManager.Instance.PlayerDeath += ShipDeath;
-      GameManager.Instance.StartGame += StartGame;
-      DontDestroyOnLoad(gameObject);
-    }
+  protected override void Awake() {
+    base.Awake();
+    GameManager.Instance.PlayerDeath += ShipDeath;
+    GameManager.Instance.StartGame += StartGame;
   }
 
   void Start() {
@@ -35,7 +28,8 @@ public class ShipManager : MonoBehaviour {
   }
 
   void StartGame() {
-    Instantiate(PlayerPrefab, Vector3.zero, Quaternion.identity);
+    var player = Instantiate(PlayerPrefab, transform);
+    player.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
     ShipCount = InitialShipCount;
     ShipCountChange?.Invoke(ShipCount);
   }
@@ -60,10 +54,12 @@ public class ShipManager : MonoBehaviour {
   }
 
   IEnumerator Respawn(Vector3 position, Quaternion rotation) {
+    Debug.Log("Respawn");
     yield return new WaitForSeconds(1f);
     GameManager.Instance.DespawnMobsSafe(c => true) ;
-    // yield return new WaitForFixedUpdate();
     yield return new WaitForSeconds(1f);
-    Instantiate(PlayerPrefab, position, rotation);
+    var player = Instantiate(PlayerPrefab, transform);
+    player.transform.SetPositionAndRotation(position, rotation);
+    Debug.Log("Player respawned", player);
   }
 }

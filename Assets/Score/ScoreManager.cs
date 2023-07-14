@@ -21,9 +21,7 @@ public struct MultiplierEvent {
   }
 }
 
-public class ScoreManager : MonoBehaviour {
-  public static ScoreManager Instance;
-
+public class ScoreManager : LevelManager<ScoreManager> {
   public int HighScore {
     get => PlayerPrefs.GetInt("HighScore", 0);
     set => PlayerPrefs.SetInt("HighScore", value);
@@ -46,31 +44,30 @@ public class ScoreManager : MonoBehaviour {
     HighScore = 0;
   }
 
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      GameManager.Instance.MobDying += OnMobDying;
-      GameManager.Instance.StartGame += StartGame;
-      GameManager.Instance.PlayerSpawn += ResetMultiplier;
-      DontDestroyOnLoad(gameObject);
-    }
+  protected override void Awake() {
+    base.Awake();
+    GameManager.Instance.MobDying += OnMobDying;
+    GameManager.Instance.StartGame += StartGame;
+    GameManager.Instance.PlayerSpawn += ResetMultiplier;
   }
 
   void OnDestroy() {
     GameManager.Instance.MobDying -= OnMobDying;
     GameManager.Instance.StartGame -= StartGame;
+    GameManager.Instance.PlayerSpawn -= ResetMultiplier;
   }
 
   void StartGame() {
+    Kills = 0;
     Score = 0;
     Multiplier = 1;
     SetScore?.Invoke(Score);
     SetHighScore?.Invoke(HighScore);
+    SetMultiplier?.Invoke(Multiplier);
   }
 
   void ResetMultiplier(Character c) {
+    Kills = 0;
     Multiplier = 1;
     SetMultiplier?.Invoke(Multiplier);
   }
@@ -87,8 +84,8 @@ public class ScoreManager : MonoBehaviour {
       HighScoreChange?.Invoke(new(position, scoreChange, Score));
     }
     if (Kills >= Threshold) {
-      Multiplier += 1;
       Kills = 0;
+      Multiplier += 1;
       MultiplierChange?.Invoke(new(position, Multiplier));
     }
   }

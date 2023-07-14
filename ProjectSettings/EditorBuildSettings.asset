@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Steve Test Scene.unity
+    path: Assets/Scenes/Steve Test Scene.unity
     guid: 3328f1a5565d594409fe4b30c23b59b2
   - enabled: 1
-    path: Assets/Background/Vector Grids Gameplay Scene.unity
+    path: Assets/Scenes/Main Game.unity
     guid: 39d335e60c385fa4cbbcef8c94481e86
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9f6bfb3028a76634299aecb4ac6d177f, type: 2}

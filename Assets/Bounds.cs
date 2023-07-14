@@ -7,9 +7,7 @@ public struct BoundHit {
   public Vector3 Normal;
 }
 
-public class Bounds : MonoBehaviour {
-  public static Bounds Instance;
-
+public class Bounds : LevelManager<Bounds> {
   public float XMin;
   public float XMax;
   public float ZMin;
@@ -21,14 +19,6 @@ public class Bounds : MonoBehaviour {
   public Transform SouthPlane;
   public Transform WestPlane;
   public Transform EastPlane;
-
-  void Awake() {
-    Instance = this;
-  }
-
-  void OnDestroy() {
-    Instance = null;
-  }
 
   public float Bound(float min, float max, float v) {
     return Mathf.Min(Mathf.Max(min, v), max);

@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour {
   }
 
   void TryDetonate() {
-    if (BombManager.Instance.TryDeonateBomb()) {
+    if (BombManager.Instance.TryDetonateBomb()) {
       Instantiate(Shockwave, transform.position, Quaternion.identity);
     }
   }

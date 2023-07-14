@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ScoreMessageManager : MonoBehaviour {
+public class ScoreMessageManager : LevelManager<ScoreMessageManager> {
   [SerializeField] WorldSpaceMessage ScoreMessagePrefab;
   [SerializeField] WorldSpaceMessage MultiplierMessagePrefab;
 
-  void Awake() {
+  void Start() {
     ScoreManager.Instance.ScoreChange += ScoreChange;
     ScoreManager.Instance.MultiplierChange += MultiplierChange;
   }

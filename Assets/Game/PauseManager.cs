@@ -15,18 +15,14 @@ public class PauseManager : SingletonBehavior<PauseManager> {
     Inputs.GamePlay.Pause.performed += TogglePause;
   }
 
-  void OnDestroy() {
-    Inputs.Dispose();
-  }
-
   void TogglePause(InputAction.CallbackContext ctx) {
     switch (GameManager.Instance.GameState) {
       case GameState.PreGame:
-        GameManager.Instance.StartGame.Invoke();
+        GameManager.Instance.LoadLevel();
       break;
 
       case GameState.PostGame:
-        GameManager.Instance.PreGame.Invoke();
+        GameManager.Instance.LoadMainMenu();
       break;
 
       case GameState.InGame:

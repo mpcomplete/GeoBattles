@@ -1,22 +1,7 @@
 using UnityEngine;
 
-public class WorldSpaceMessageManager : MonoBehaviour {
-  public static WorldSpaceMessageManager Instance;
-
+public class WorldSpaceMessageManager : SingletonBehavior<WorldSpaceMessageManager> {
   [SerializeField] WorldSpaceMessage Prefab;
-
-  void Awake() {
-    if (Instance) {
-      Destroy(gameObject);
-    } else {
-      Instance = this;
-      DontDestroyOnLoad(gameObject);
-    }
-  }
-
-  void OnDestroy() {
-    Instance = null;
-  }
 
   public WorldSpaceMessage SpawnMessage(string message, Vector3 position, float lifetime = -1f) {
     var worldSpaceMessage = Instantiate(Prefab, position, Quaternion.identity, transform);
