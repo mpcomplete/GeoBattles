@@ -18,7 +18,7 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] GameObject DeathSpawn;
   [SerializeField] GridForce GridForce;
 
-  bool Activated = false;
+  public bool Activated = false;
   float ExplodePct => (float)Character.Health / ExplodeHealth;
 
   void OnHurt() {

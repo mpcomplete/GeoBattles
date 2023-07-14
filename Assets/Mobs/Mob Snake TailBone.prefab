@@ -71,6 +71,7 @@ MonoBehaviour:
   Controller: {fileID: 2538652627697071808}
   Character: {fileID: 0}
   GravityVulnerability: 1
+  MaxAccel: 1000
   Tail: {fileID: 0}
   Index: 0
   VelocityDamping: 0.9

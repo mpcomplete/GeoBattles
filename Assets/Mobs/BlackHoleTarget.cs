@@ -4,8 +4,11 @@ public class BlackHoleTarget : MonoBehaviour {
   public Controller Controller;
   public Character Character;
   public float GravityVulnerability = 1f;
+  public float MaxAccel = 100f;
 
   public virtual void OnEaten(BlackHole hole) {
+    if (Character.TryGetComponent(out BlackHole eatenHole))
+      eatenHole.enabled = false; // Hack to prevent blackholes from eating each other.
     if (Character is Mob m)
       m.Despawn();
     enabled = false;
@@ -22,6 +25,8 @@ public class BlackHoleTarget : MonoBehaviour {
       return;
     }
     Controller.AddPhysicsAccel(accel);
+    if (Controller.PhysicsAccel.sqrMagnitude > MaxAccel.Sqr())
+      Controller.PhysicsAccel = MaxAccel * Controller.PhysicsAccel.normalized;
   }
 
   void OnEnable() => GameManager.Instance.BlackHoleTargets.Add(this);

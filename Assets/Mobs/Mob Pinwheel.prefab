@@ -774,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
@@ -788,6 +788,10 @@ PrefabInstance:
       propertyPath: Abilities.Array.data[2]
       value: 
       objectReference: {fileID: 7009610265233726413}
+    - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: Abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 4528057670460713113}
     - target: {fileID: 3224294993544863927, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Owner
       value: 
@@ -886,6 +890,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 904c28d8a1676664eb5a22ba3bf4b4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4528057670460713113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1601167761345441200, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+  m_PrefabInstance: {fileID: 2949464051618825513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677667772216431250}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559ec0d12187a0442bf16eeaef22af08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4677667772216431250 stripped

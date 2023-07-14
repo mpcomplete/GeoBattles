@@ -421,15 +421,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: NumMobs
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DifferentMob
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
-      propertyPath: GlobalCooldown
+      propertyPath: SelfCooldown
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: GlobalCooldown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2234234269754380474, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
@@ -511,6 +515,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8905000695616381223, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: SelfCooldown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905000695616381223, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: GlobalCooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905000695616381223, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: TimeFirstAvailable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9156812860480553776, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_Name
       value: Spawn Manager
@@ -518,6 +534,10 @@ PrefabInstance:
     - target: {fileID: 9156812860480553776, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189627429215282157, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -657,7 +677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1434695462
 Transform:
   m_ObjectHideFlags: 0
@@ -737,12 +757,12 @@ MonoBehaviour:
   Spawn:
     Possible:
     - {fileID: 4677667772216431250, guid: 5f40cef938a6b6848b7fa43e81fbdc13, type: 3}
-  IncludeBlackHole: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+  IncludeBlackHole: {fileID: 0}
   NumMobs: 4
   DelayBetweenMobs: 0
   DifferentMob: 0
-  GlobalCooldown: 6
-  SelfCooldown: 6
+  GlobalCooldown: 0
+  SelfCooldown: 10
   ChooseWeight: 5
   TimeFirstAvailable: 0
   TimeLastAvailable: Infinity

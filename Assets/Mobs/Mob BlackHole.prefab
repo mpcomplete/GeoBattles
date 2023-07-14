@@ -1268,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Health
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: BaseScore
@@ -1276,7 +1276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: MaxHealth
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: ExplosionForce
@@ -1284,7 +1284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
@@ -1294,6 +1294,10 @@ PrefabInstance:
       propertyPath: Abilities.Array.data[1]
       value: 
       objectReference: {fileID: 4372}
+    - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: Abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 4279336786515622932}
     - target: {fileID: 3265846026471704419, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1361,6 +1365,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6453744541259110829, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     - {fileID: 3983715197200740422, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+    - {fileID: 1601167761345441200, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3265846026471704419, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
     m_AddedGameObjects:
@@ -1447,7 +1452,7 @@ PrefabInstance:
       addedObject: {fileID: 8570775717772078963}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
-      insertIndex: 7
+      insertIndex: 6
       addedObject: {fileID: 4745}
     - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
@@ -1461,6 +1466,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 201481490217948779}
+    - targetCorrespondingSourceObject: {fileID: 7495383838932506555, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4279336786515622932}
     - targetCorrespondingSourceObject: {fileID: 5598659241668458391, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3888}
@@ -1646,11 +1654,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Gravity: 2000
-  ExplodeHealth: 555
+  ExplodeHealth: 16
   MaxDistance: 10
   EatDistance: 0.5
   DeathSpawn: {fileID: 8532192614350128779, guid: 13c54f585ccea8a42a6ecd0819638766, type: 3}
   GridForce: {fileID: 4353}
+  Activated: 0
 --- !u!114 &4353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1682,6 +1691,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 5
   Strength: 5
+--- !u!114 &4279336786515622932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677667772216431250}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9a0b7e5e0f9d644a9a5751e2e86617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 8253791746242304082}
+  Character: {fileID: 102748805799235549}
+  GravityVulnerability: 1
+  MaxAccel: 125
+  BlackHole: {fileID: 4192}
+  SeparationDistance: 2.2
+  TangentStrength: 90
 --- !u!114 &7009610265233726413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5307978730247184100, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
