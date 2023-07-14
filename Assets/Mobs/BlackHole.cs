@@ -52,8 +52,7 @@ public class BlackHole : MonoBehaviour {
 
       var toHole = transform.position - b.transform.position;
       if (toHole.sqrMagnitude < MaxDistance.Sqr()) {
-        var r = toHole.magnitude;
-        b.Suck(Gravity  / (r*r) * toHole.normalized);  // g/r^2
+        b.Suck(this, Gravity, toHole);
       }
       if (toHole.sqrMagnitude < EatDistance.Sqr()) {
         eaten.Add(b);
