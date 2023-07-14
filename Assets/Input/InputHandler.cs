@@ -36,7 +36,6 @@ public class InputHandler : MonoBehaviour {
         var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y)).XZ();
         var playerPos = GameManager.Instance.Players[0].transform.position;
         var mouseAim = (worldPos - playerPos).XZ().normalized;
-        Debug.Log($"Mouse {mousePos} => {worldPos} gives {mouseAim}");
         OnAim?.Invoke(mouseAim.XZ());
       }
     } else {
