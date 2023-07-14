@@ -125,7 +125,7 @@ public class SpawnEvent : MonoBehaviour {
 
   void SpawnMob(Vector3 randomPos) {
     var mob = ChooseMob();
-    Instantiate(mob, randomPos, Quaternion.identity);
+    Instantiate(mob, randomPos, Quaternion.LookRotation(GetPlayerPosSafe() - randomPos));
   }
 
   void SpawnBlackHole(Vector3 randomPos) {

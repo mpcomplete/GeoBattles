@@ -13,9 +13,15 @@ public class MoveSnakeTail : MonoBehaviour {
 
   void Start() {
     transform.SetParent(null);  // Detach the tail from the head so it moves separately.
+    var snakeChar = SnakeHead.GetComponent<Character>();
+    var snakeTeam = SnakeHead.GetComponent<Team>();
     for (var i = 0; i < TailBones.Length; i++) {
-      if (TailBones[i].TryGetComponent(out BlackHoleTargetSnakeTail b))
+      if (TailBones[i].TryGetComponent(out BlackHoleTargetSnakeTail b)) {
         b.Index = i;
+        var hb = b.GetComponentInChildren<ContactHitbox>();
+        hb.Owner = snakeChar;
+        hb.Team = snakeTeam;
+      }
     }
   }
 
