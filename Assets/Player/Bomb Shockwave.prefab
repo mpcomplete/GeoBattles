@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756971cd2ab74cd4aba30d26bcc3367c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioMixer: {fileID: 24100000, guid: da95145cc0e9a4e41a4ef7c4bf0e8ecc, type: 2}
   VolumeCurve:
     serializedVersion: 2
     m_Curve:
@@ -251,17 +252,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5223243
-      value: 0.47702637
-      inSlope: -2.1028214
-      outSlope: -2.1028214
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.71
-      value: 0.0023584906
+      time: 0.39999998
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -269,8 +261,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.4602816
-      value: 0.25896955
+      time: 0.9621204
+      value: 0.45237267
       inSlope: 1.3477432
       outSlope: 1.3477432
       tangentMode: 0

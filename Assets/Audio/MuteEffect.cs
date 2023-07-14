@@ -1,7 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MuteEffect : MonoBehaviour {
+  [SerializeField] AudioMixer AudioMixer;
   [SerializeField] AnimationCurve VolumeCurve;
   static MuteEffect RunningInstance;
 
@@ -15,13 +17,20 @@ public class MuteEffect : MonoBehaviour {
     }
     RunningInstance = this;
     transform.SetParent(null);
-    var oldVolume = AudioListener.volume;
+    AudioMixer.GetFloat("MusicVolume", out var oldMusic);
+    AudioMixer.GetFloat("SoundVolume", out var oldSound);
+    Debug.Log($"Old v = {oldMusic}");
     while (T < endTime) {
-      AudioListener.volume = oldVolume * VolumeCurve.Evaluate(T);
+      var factor = (VolumeCurve.Evaluate(T)-1)*80f;
+      AudioMixer.SetFloat("MusicVolume", oldMusic + factor);
+      AudioMixer.SetFloat("SoundVolume", oldSound + factor);
+      AudioMixer.GetFloat("MusicVolume", out var tmp);
+      Debug.Log($"Now v = {tmp}");
       T += Time.fixedDeltaTime;
       yield return new WaitForFixedUpdate();
     }
-    AudioListener.volume = oldVolume;
+    AudioMixer.SetFloat("MusicVolume", oldMusic);
+    AudioMixer.SetFloat("SoundVolume", oldSound);
     RunningInstance = null;
     Destroy(gameObject);
   }
