@@ -54,12 +54,10 @@ public class ShipManager : LevelManager<ShipManager> {
   }
 
   IEnumerator Respawn(Vector3 position, Quaternion rotation) {
-    Debug.Log("Respawn");
     yield return new WaitForSeconds(1f);
     GameManager.Instance.DespawnMobsSafe(c => true) ;
     yield return new WaitForSeconds(1f);
     var player = Instantiate(PlayerPrefab, transform);
     player.transform.SetPositionAndRotation(position, rotation);
-    Debug.Log("Player respawned", player);
   }
 }

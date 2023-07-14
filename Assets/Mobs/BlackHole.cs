@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO: deform grid
 public class BlackHole : MonoBehaviour {
   [SerializeField] Character Character;
   [SerializeField] MonoBehaviour[] ActivationAbilities;
