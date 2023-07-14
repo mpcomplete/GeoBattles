@@ -17,6 +17,6 @@ public class DeathSound : MonoBehaviour {
   }
 
   void PlaySound() {
-    AudioSource.PlayClipAtPoint(Source.clip, transform.position);
+    Source.PlayOneShot(Source.clip);
   }
 }
