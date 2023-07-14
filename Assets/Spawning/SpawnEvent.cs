@@ -47,18 +47,28 @@ public class SpawnEvent : MonoBehaviour {
     enabled = true;
   }
 
+  // Dumb hack in case the player dies during a spawn event.
+  Vector3 GetPlayerPosSafe() {
+    if (GameManager.Instance.Players.Count == 0)
+      return Vector3.zero;
+    return GameManager.Instance.Players[0].transform.position;
+  }
+
   const float Radius = 1f;
   private IEnumerator SpawnRandom() {
-    const float MinPlayerDistance = 3f;
+    const float MinPlayerDistance = 4f;
     Vector3 GetPos() {
-      var player = GameManager.Instance.Players[0];
+      var playerPos = GetPlayerPosSafe();
       var b = Bounds.Instance;
       Vector3 pos;
       do {
         pos = new Vector3(UnityEngine.Random.Range(b.XMin + Radius, b.XMax - Radius), 0f, UnityEngine.Random.Range(b.ZMin + Radius, b.ZMax - Radius));
-      } while ((pos - player.transform.position).sqrMagnitude < MinPlayerDistance.Sqr());
+        pos = Bounds.Instance.Bound(pos, 1f);
+      } while ((pos - playerPos).sqrMagnitude < MinPlayerDistance.Sqr());
       return pos;
     }
+    if (!SpawnManager.Instance.PlayerAlive)
+      yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
     if (IncludeBlackHole)
       SpawnBlackHole(GetPos());
     for (int i = 0; i < NumMobs; i++) {
@@ -68,14 +78,16 @@ public class SpawnEvent : MonoBehaviour {
   }
 
   private IEnumerator SpawnSurrounding() {
-    const float MinDistance = 8f;
-    const float MaxDistance = 10f;
+    const float MinDistance = 10f;
+    const float MaxDistance = 12f;
     Vector3 GetPos() {
-      var player = GameManager.Instance.Players[0];
+      var playerPos = GetPlayerPosSafe();
       var b = Bounds.Instance;
-      var randomPos = player.transform.position + UnityEngine.Random.onUnitSphere.XZ().normalized * UnityEngine.Random.Range(MinDistance, MaxDistance);
+      var randomPos = playerPos + UnityEngine.Random.onUnitSphere.XZ().normalized * UnityEngine.Random.Range(MinDistance, MaxDistance);
       return Bounds.Instance.Bound(randomPos, 1f);
     }
+    if (!SpawnManager.Instance.PlayerAlive)
+      yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
     if (IncludeBlackHole)
       SpawnBlackHole(GetPos());
     for (int i = 0; i < NumMobs; i++) {
@@ -92,7 +104,9 @@ public class SpawnEvent : MonoBehaviour {
       new Vector3(b.XMax - Radius, 0, b.ZMin + Radius),
       new Vector3(b.XMax - Radius, 0, b.ZMax - Radius),
     };
-    Vector3 GetPos(Vector3 corner) => corner + UnityEngine.Random.insideUnitCircle.XZ();
+    Vector3 GetPos(Vector3 corner) => Bounds.Instance.Bound(corner + UnityEngine.Random.insideUnitCircle.XZ(), 1f);
+    if (!SpawnManager.Instance.PlayerAlive)
+      yield return new WaitUntil(() => SpawnManager.Instance.PlayerAlive);
     if (IncludeBlackHole)
       corners.ForEach(c => SpawnBlackHole(GetPos(c)));
     for (int i = 0; i < NumMobs; i++) {
