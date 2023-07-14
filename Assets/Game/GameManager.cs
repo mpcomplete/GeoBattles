@@ -93,7 +93,7 @@ public class GameManager : SingletonBehavior<GameManager> {
   }
 
   void OnPlayerSpawn(Character character) {
-    DespawnMobsSafe(c => true);
+    // DespawnMobsSafe(c => true);
     Players.Add(character);
   }
 
@@ -123,12 +123,12 @@ public class GameManager : SingletonBehavior<GameManager> {
   }
 
   void OnPreGame() {
-    DespawnMobsSafe(c => true);
+    // DespawnMobsSafe(c => true);
     GameState = GameState.PreGame;
   }
 
   void OnLevelStart() {
-    DespawnMobsSafe(c => true);
+    // DespawnMobsSafe(c => true);
     GameState = GameState.InGame;
   }
 
