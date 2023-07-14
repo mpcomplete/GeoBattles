@@ -1657,6 +1657,8 @@ MonoBehaviour:
   ExplodeHealth: 16
   MaxDistance: 10
   EatDistance: 0.5
+  ProjectileBurstDistance: 4
+  ProjectileBurstForce: 10
   DeathSpawn: {fileID: 8532192614350128779, guid: 13c54f585ccea8a42a6ecd0819638766, type: 3}
   GridForce: {fileID: 4353}
   Activated: 0

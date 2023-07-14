@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BlackHole : MonoBehaviour {
@@ -15,6 +16,8 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] int ExplodeHealth = 15;
   [SerializeField] float MaxDistance = 5f;
   [SerializeField] float EatDistance = 1f;
+  [SerializeField] float ProjectileBurstDistance = 3f;
+  [SerializeField] float ProjectileBurstForce = 10f;
   [SerializeField] GameObject DeathSpawn;
   [SerializeField] GridForce GridForce;
 
@@ -28,6 +31,23 @@ public class BlackHole : MonoBehaviour {
       BaseForceMagnitude = GridForce.Magnitude;
       //OrbitParticles.Play();
       //OrbitParticles.GetComponent<ParticleSystemForceField>().enabled = true;
+    } else {
+      // Apply an outwards burst force on orbiting blackhole systems when one gets hit.
+      var activatedHoles = GameManager.Instance.Mobs.Select(m => m.GetComponent<BlackHole>()).Where(b => b != null && b.Activated && (b.transform.position - transform.position).sqrMagnitude < ProjectileBurstDistance.Sqr());
+      var avgPos = Vector3.zero;
+      var numHoles = 0;
+      foreach (var hole in activatedHoles) {  // includes self
+        avgPos += hole.transform.position;
+        numHoles++;
+      }
+      if (numHoles > 1) {
+        avgPos /= numHoles;
+        foreach (var hole in activatedHoles) {
+          var away = (hole.transform.position - avgPos).normalized;
+          Debug.Log($"Bursting {hole.gameObject.name} {ProjectileBurstForce} {away}");
+          hole.GetComponent<Controller>().AddPhysicsVelocity(ProjectileBurstForce * away);
+        }
+      }
     }
   }
 

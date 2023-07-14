@@ -27,7 +27,7 @@ public class Controller : MonoBehaviour {
     PhysicsVelocity *= factor;
   }
   public void AddPhysicsAccel(Vector3 da) {
-    PhysicsAccel = da;
+    PhysicsAccel += da;
   }
 
   void DoMove(Vector3 delta) {
