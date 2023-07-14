@@ -52,7 +52,7 @@ public class UI : SingletonBehavior<UI> {
     MainMenu.gameObject.SetActive(false);
     GameOverMenu.gameObject.SetActive(true);
     PauseMenu.gameObject.SetActive(false);
-    FinalScore.text = $"Final Score: {ScoreManager.Instance.Score}";
+    FinalScore.text = $"Final Score: {ScoreManager.Instance.Score.ToString("N0")}";
   }
 
   void StartGame() {
