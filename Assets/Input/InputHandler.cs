@@ -19,27 +19,19 @@ public class InputHandler : MonoBehaviour {
     Inputs.Dispose();
   }
 
-  Vector2 LastAim;
-  Vector2 LastMousePos;
   bool MouseFiring = false;
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
     OnMove?.Invoke(move.XZ());
-    var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
-    if (aim != LastAim) {
-      LastAim = aim;
-      OnAim?.Invoke(aim.XZ());
-    } else if (MouseFiring) {
+    if (MouseFiring && GameManager.Instance.Players.Count > 0) {
       var mousePos = Inputs.GamePlay.MouseAim.ReadValue<Vector2>();
-      if (LastMousePos != mousePos && GameManager.Instance.Players.Count > 0) {
-        LastMousePos = mousePos;
-        var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y)).XZ();
-        var playerPos = GameManager.Instance.Players[0].transform.position;
-        var mouseAim = (worldPos - playerPos).XZ().normalized;
-        OnAim?.Invoke(mouseAim.XZ());
-      }
+      var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y)).XZ();
+      var playerPos = GameManager.Instance.Players[0].transform.position;
+      var mouseAim = (worldPos - playerPos).XZ().normalized;
+      OnAim?.Invoke(mouseAim.XZ());
     } else {
-      OnAim?.Invoke(Vector3.zero);
+      var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
+      OnAim?.Invoke(aim.XZ());
     }
     if (Inputs.GamePlay.MouseFireToggle.WasPerformedThisFrame())
       MouseFiring = !MouseFiring;
