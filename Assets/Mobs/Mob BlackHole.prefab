@@ -1192,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9469547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1200,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.416361
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1650149504989482347, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1289,11 +1289,11 @@ PrefabInstance:
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[0]
       value: 
-      objectReference: {fileID: 4372}
+      objectReference: {fileID: 7009610265233726413}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Abilities.Array.data[1]
       value: 
-      objectReference: {fileID: 7009610265233726413}
+      objectReference: {fileID: 4372}
     - target: {fileID: 3265846026471704419, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1645,8 +1645,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Gravity: 125
-  ExplodeHealth: 15
+  Gravity: 2000
+  ExplodeHealth: 555
   MaxDistance: 10
   EatDistance: 0.5
   DeathSpawn: {fileID: 8532192614350128779, guid: 13c54f585ccea8a42a6ecd0819638766, type: 3}

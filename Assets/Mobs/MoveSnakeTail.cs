@@ -1,9 +1,10 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
 public class MoveSnakeTail : MonoBehaviour {
-  public Transform SnakeHead;
-  public Transform[] TailBones;
+  public Controller SnakeHead;
+  public Controller[] TailBones;
   public float TailBoneSeparationDist = .1f;
 
   public bool TailEaten => TailEatenIndex >= 0;
@@ -34,7 +35,13 @@ public class MoveSnakeTail : MonoBehaviour {
     }
 
     for (int i = TailBones.Length - 1; i >= 0; i--)
-      MoveTailBone(TailBones[i].transform, i > 0 ? TailBones[i-1].transform : SnakeHead, false);
+      MoveTailBone(TailBones[i], i > 0 ? TailBones[i-1] : SnakeHead, false);
+  }
+
+  public void SetMoveSpeed(float maxSpeed) {
+    for (var i = 0; i < TailBones.Length; i++) {
+      TailBones[i].SetMaxMoveSpeed(maxSpeed);
+    }
   }
 
   void SuckToTail() {
@@ -48,18 +55,19 @@ public class MoveSnakeTail : MonoBehaviour {
       return;
     }
     for (int i = TailBones.Length-1; i > TailEatenIndex; i--)
-      MoveTailBone(TailBones[i].transform, i > 0 ? TailBones[i-1].transform : SnakeHead, false);
+      MoveTailBone(TailBones[i], i > 0 ? TailBones[i-1] : SnakeHead, false);
     for (int i = TailEatenIndex; i >= 0; i--)
-      MoveTailBone(i > 0 ? TailBones[i-1].transform : SnakeHead, TailBones[i].transform, true);
+      MoveTailBone(i > 0 ? TailBones[i-1] : SnakeHead, TailBones[i], true);
   }
 
-  void MoveTailBone(Transform tb, Transform tbNext, bool reversed) {
+  void MoveTailBone(Controller tb, Controller tbNext, bool reversed) {
     if (!tb || !tbNext) return; // might have gotten eaten
-    var oldPos = tb.position;
-    tb.position = Vector3.Lerp(tb.position, tbNext.position, Time.fixedDeltaTime / TailBoneSeparationDist);
-    var forward = tb.position - oldPos;
+    var oldPos = tb.transform.position;
+    var pos = Vector3.Lerp(tb.transform.position, tbNext.transform.position, Time.fixedDeltaTime / TailBoneSeparationDist);
+    var forward = pos - oldPos;
+    tb.MoveV(forward / Time.fixedDeltaTime);
     if (forward.sqrMagnitude > .001f)
-      tb.forward = reversed ? -forward : forward;
+      tb.Rotation(Quaternion.LookRotation(reversed ? -forward : forward));
   }
 
   public void OnTailEaten(BlackHole hole, int index) {

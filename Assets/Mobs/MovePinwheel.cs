@@ -20,7 +20,7 @@ public class MovePinwheel : MonoBehaviour {
     Velocity += MaxSpeed * Time.fixedDeltaTime * Accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
       Velocity = MaxSpeed * Velocity.normalized;
-    Controller.Move(Time.fixedDeltaTime * Velocity);
+    Controller.MoveV(Velocity);
   }
 
   void OnBoundsHit(BoundHit hit) {

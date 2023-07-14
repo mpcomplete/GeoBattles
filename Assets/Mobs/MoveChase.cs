@@ -22,6 +22,6 @@ public class MoveChase : MonoBehaviour {
     Velocity += MaxSpeed * Time.fixedDeltaTime * accel;
     if (Velocity.sqrMagnitude > MaxSpeed.Sqr())
       Velocity = MaxSpeed * Velocity.normalized;
-    Controller.Move(Time.fixedDeltaTime * Velocity);
+    Controller.MoveV(Velocity);
   }
 }

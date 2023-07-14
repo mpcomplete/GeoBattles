@@ -12,6 +12,12 @@ public class MoveRedboxCircle : MonoBehaviour {
   void Start() {
     Controller.SetMaxMoveSpeed(CircleMoveSpeed);
     Angle = Random.Range(0, 360f);
+    Invoke("SetSpeed", .01f);
+  }
+
+  // Hack since we also have MoveChase which sets the movespeed.
+  void SetSpeed() {
+    Controller.SetMaxMoveSpeed(CircleMoveSpeed + 2f);
   }
 
   void FixedUpdate() {
@@ -23,6 +29,6 @@ public class MoveRedboxCircle : MonoBehaviour {
     Velocity = CircleMoveSpeed * Accel;
     if (Velocity.sqrMagnitude > CircleMoveSpeed.Sqr())
       Velocity = CircleMoveSpeed * Velocity.normalized;
-    Controller.Move(Time.fixedDeltaTime * Velocity);
+    Controller.MoveV(Velocity);
   }
 }
