@@ -19,12 +19,14 @@ public class InputHandler : MonoBehaviour {
     Inputs.Dispose();
   }
 
+  Vector2 LastAim;
   Vector2 LastMousePos;
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
     OnMove?.Invoke(move.XZ());
     var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
-    if (aim != Vector2.zero) {
+    if (aim != LastAim) {
+      LastAim = aim;
       OnAim?.Invoke(aim.XZ());
     } else {
       var mousePos = Inputs.GamePlay.MouseAim.ReadValue<Vector2>();

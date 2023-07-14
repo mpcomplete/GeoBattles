@@ -420,12 +420,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
+      propertyPath: NumMobs
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: DifferentMob
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2119513112941387471, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: GlobalCooldown
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2234234269754380474, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
@@ -505,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236511464266891737, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9156812860480553776, guid: bbc7a24a96ab6e94eb2af5bb0b5657df, type: 3}
       propertyPath: m_Name
@@ -653,7 +657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1434695462
 Transform:
   m_ObjectHideFlags: 0
