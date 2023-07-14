@@ -18,6 +18,7 @@ public class UI : SingletonBehavior<UI> {
   [Header("GameOver")]
   [SerializeField] RectTransform GameOverMenu;
   [SerializeField] TextMeshProUGUI FinalScore;
+  [SerializeField] Button RestartButton;
 
   [Header("Pause")]
   [SerializeField] RectTransform PauseMenu;
@@ -33,6 +34,8 @@ public class UI : SingletonBehavior<UI> {
     GameManager.Instance.LevelChange += LevelChange;
     PauseManager.Instance.OnPause += Pause;
     PauseManager.Instance.OnUnpause += UnPause;
+    PlayButton.onClick.AddListener(OnPlay);
+    RestartButton.onClick.AddListener(OnRestart);
   }
 
   void LevelChange() {
@@ -49,9 +52,9 @@ public class UI : SingletonBehavior<UI> {
     MainMenu.gameObject.SetActive(true);
     GameOverMenu.gameObject.SetActive(false);
     PauseMenu.gameObject.SetActive(false);
-    PlayButton.onClick.AddListener(OnPlay);
-    EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
+    Invoke("SelectPlayFuckers", .01f);
   }
+  void SelectPlayFuckers() => EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
 
   void OnPlay() {
     GameManager.Instance.LoadLevel();
@@ -63,6 +66,12 @@ public class UI : SingletonBehavior<UI> {
     GameOverMenu.gameObject.SetActive(true);
     PauseMenu.gameObject.SetActive(false);
     FinalScore.text = $"Final Score: {ScoreManager.Instance.Score.ToString("N0")}";
+    Invoke("SelectRestartFuckers", .01f);
+  }
+  void SelectRestartFuckers() => EventSystem.current.SetSelectedGameObject(RestartButton.gameObject);
+
+  void OnRestart() {
+    GameManager.Instance.LoadMainMenu();
   }
 
   void StartGame() {
