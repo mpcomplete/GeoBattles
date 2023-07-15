@@ -55,6 +55,7 @@ MonoBehaviour:
   SoundSource: {fileID: 606629654797806918}
   ProjectileSource: {fileID: 7838150660817657992}
   BombSource: {fileID: 7195416084343712750}
+  SoundCooldown: 0.05
 --- !u!1 &3710949154482439713
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6653807384225677892, guid: da95145cc0e9a4e41a4ef7c4bf0e8ecc, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
