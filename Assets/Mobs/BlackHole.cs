@@ -8,7 +8,7 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] MonoBehaviour[] ActivationAbilities;
   [SerializeField] ParticleSystem OrbitParticles;
   [SerializeField] float PulseRate = 5f;
-  [SerializeField] float PulseRateHealthFactor = 1.5f;
+  [SerializeField] AnimationCurve HealthToPulseRate;
   [SerializeField] AnimationCurve PulseSize;
   [SerializeField] float GridPulseRate = .5f;
   [SerializeField] AnimationCurve GridPulseSize;
@@ -57,7 +57,7 @@ public class BlackHole : MonoBehaviour {
 
   float BaseForceMagnitude;
   void Pulse() {
-    var healthFactor = 1f + PulseRateHealthFactor*ExplodePct;
+    var healthFactor = HealthToPulseRate.Evaluate(ExplodePct);
     var t = (Time.fixedTime * PulseRate * healthFactor) % 1f;
     var s = PulseSize.Evaluate(t);
     transform.localScale *= s;

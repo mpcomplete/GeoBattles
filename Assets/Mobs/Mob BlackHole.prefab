@@ -1272,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: Health
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: BaseScore
@@ -1280,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: MaxHealth
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2991393538610301684, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: ExplosionForce
@@ -1556,7 +1556,49 @@ MonoBehaviour:
   - {fileID: 1452420966552380892}
   OrbitParticles: {fileID: 1129220373161633823}
   PulseRate: 5
-  PulseRateHealthFactor: 1.5
+  PulseRateHealthFactor: 4
+  HealthToPulseRate:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.009446557
+      value: 1.00187
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6959321
+      value: 2.031946
+      inSlope: 2.926253
+      outSlope: 2.926253
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.077330515
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.88483113
+      value: 2.9353347
+      inSlope: -0.07890192
+      outSlope: -0.07890192
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6739452
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 2.9350781
+      inSlope: -0.11243674
+      outSlope: -0.11243674
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   PulseSize:
     serializedVersion: 2
     m_Curve:
@@ -1659,7 +1701,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   Gravity: 2000
   ExplodeHealth: 16
-  GlowMaterial: {fileID: 2100000, guid: d22b706479ab53846a91f15d98ba98a5, type: 2}
   GlowColor: {r: 3.5471697, g: 2.9336653, b: 2.9336653, a: 0}
   GlowCurve:
     serializedVersion: 2
