@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class BlackHole : MonoBehaviour {
   [SerializeField] AnimationCurve HealthToSize;
   [SerializeField] float Gravity = 125f;
   [SerializeField] int ExplodeHealth = 15;
+  [SerializeField] [ColorUsage(true, true)] Color GlowColor;
+  [SerializeField] AnimationCurve GlowCurve;
   [SerializeField] float MaxDistance = 5f;
   [SerializeField] float EatDistance = 1f;
   [SerializeField] float ProjectileBurstDistance = 3f;
@@ -25,6 +28,8 @@ public class BlackHole : MonoBehaviour {
   float ExplodePct => (float)Character.Health / ExplodeHealth;
 
   void OnHurt() {
+    SetGlowColor();
+
     if (!Activated) {
       Activated = true;
       ActivationAbilities.ForEach(a => { a.gameObject.SetActive(true); a.enabled = true; });
@@ -87,10 +92,20 @@ public class BlackHole : MonoBehaviour {
     c.OnEaten(this);
     if (c.TryGetComponent(out Mob m)) {
       Character.Health += 1;
+      SetGlowColor();
       GetComponent<Mob>().BaseScore += 100;
       if (Character.Health >= ExplodeHealth)
         Explode();
     }
+  }
+
+  Color? BaseColor;
+  void SetGlowColor() {
+    if (BaseColor == null)
+      BaseColor = GetComponentInChildren<Segment>().GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
+    var color = Color.Lerp(BaseColor.Value, GlowColor, GlowCurve.Evaluate(ExplodePct));
+    foreach (var segment in GetComponentsInChildren<Segment>())
+      segment.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", color);
   }
 
   [ContextMenu("Explode")]
@@ -98,6 +113,10 @@ public class BlackHole : MonoBehaviour {
     // TODO: Particles?
     Instantiate(DeathSpawn, transform.position, Quaternion.identity);
     Destroy(gameObject);
+  }
+
+  void Start() {
+    SetGlowColor();
   }
 
   void FixedUpdate() {

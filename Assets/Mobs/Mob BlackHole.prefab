@@ -1659,6 +1659,50 @@ MonoBehaviour:
     m_RotationOrder: 4
   Gravity: 2000
   ExplodeHealth: 16
+  GlowMaterial: {fileID: 2100000, guid: d22b706479ab53846a91f15d98ba98a5, type: 2}
+  GlowColor: {r: 3.5471697, g: 2.9336653, b: 2.9336653, a: 0}
+  GlowCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9125078
+      value: 0.2717458
+      inSlope: 0.8764619
+      outSlope: 0.8764619
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.073018394
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9460616
+      value: 1
+      inSlope: -0.03648641
+      outSlope: -0.03648641
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9965753
+      value: 0.9976415
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   MaxDistance: 10
   EatDistance: 0.5
   ProjectileBurstDistance: 4
