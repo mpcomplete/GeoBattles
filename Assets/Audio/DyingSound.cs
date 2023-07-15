@@ -17,6 +17,6 @@ public class DeathSound : MonoBehaviour {
   }
 
   void PlaySound() {
-    AudioManager.Instance.PlaySound(Source.clip);
+    AudioManager.Instance.PlaySoundWithCooldown(Source.clip);
   }
 }

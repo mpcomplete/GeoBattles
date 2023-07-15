@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class AudioExtensions {
@@ -17,6 +18,7 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   public AudioSource SoundSource;
   public AudioSource ProjectileSource;
   public AudioSource BombSource;
+  public float SoundCooldown = .05f;
 
   protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += PreGame;
@@ -28,5 +30,13 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   void StartGame() => MusicSource.Play(InGameMusic);
   void PostGame() => MusicSource.Play(GameOverMusic);
 
-  public void PlaySound(AudioClip clip) => SoundSource.PlayOneShot(clip);
+  Dictionary<AudioClip, float> SoundLastPlayed = new();
+  public void PlaySoundWithCooldown(AudioClip clip) {
+    if (!clip) return;
+    var lastPlayed = SoundLastPlayed.GetValueOrDefault(clip);
+    if (Time.time < lastPlayed + SoundCooldown)
+      return;
+    SoundLastPlayed[clip] = Time.time;
+    SoundSource.PlayOneShot(clip);
+  }
 }
