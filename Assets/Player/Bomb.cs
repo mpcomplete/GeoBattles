@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour {
   [SerializeField] InputHandler InputHandler;
   [SerializeField] BombShockwave Shockwave;
-  [SerializeField] AudioSource AudioSource;
+  [SerializeField] AudioClip AudioClip;
 
   void Start() {
     InputHandler.OnBomb += TryDetonate;
@@ -15,7 +15,7 @@ public class Bomb : MonoBehaviour {
 
   void TryDetonate() {
     if (BombManager.Instance.TryDetonateBomb()) {
-      AudioSource.PlayOneShot(AudioSource.clip);
+      AudioManager.Instance.BombSource.PlayOneShot(AudioClip);
       Instantiate(Shockwave, transform.position, Quaternion.identity);
     }
   }

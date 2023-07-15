@@ -15,6 +15,8 @@ public class AudioManager : SingletonBehavior<AudioManager> {
 
   public AudioSource MusicSource;
   public AudioSource SoundSource;
+  public AudioSource ProjectileSource;
+  public AudioSource BombSource;
 
   protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += PreGame;

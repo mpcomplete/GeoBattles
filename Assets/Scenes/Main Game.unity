@@ -1430,14 +1430,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2527922805618980881, guid: ac5441b98ba3f9e4f8aff38cfb3396a7, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6653807384225677892, guid: da95145cc0e9a4e41a4ef7c4bf0e8ecc, type: 2}
-    - target: {fileID: 6524107121456981108, guid: ac5441b98ba3f9e4f8aff38cfb3396a7, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6653807384225677892, guid: da95145cc0e9a4e41a4ef7c4bf0e8ecc, type: 2}
     - target: {fileID: 9169056448960460778, guid: ac5441b98ba3f9e4f8aff38cfb3396a7, type: 3}
       propertyPath: m_RootOrder
       value: 3
