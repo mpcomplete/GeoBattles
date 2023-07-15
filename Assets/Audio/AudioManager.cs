@@ -14,9 +14,7 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   [SerializeField] AudioClip GameOverMusic;
 
   public AudioSource MusicSource;
-  public AudioSource PlayerSource;
-  public AudioSource MobSource;
-  public AudioSource ProjectileSource;
+  public AudioSource SoundSource;
 
   protected override void AwakeSingleton() {
     GameManager.Instance.PreGame += PreGame;
@@ -27,4 +25,6 @@ public class AudioManager : SingletonBehavior<AudioManager> {
   void PreGame() => MusicSource.Play(MenuMusic);
   void StartGame() => MusicSource.Play(InGameMusic);
   void PostGame() => MusicSource.Play(GameOverMusic);
+
+  public void PlaySound(AudioClip clip) => SoundSource.PlayOneShot(clip);
 }

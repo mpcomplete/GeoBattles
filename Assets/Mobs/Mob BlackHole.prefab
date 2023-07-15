@@ -1258,6 +1258,10 @@ PrefabInstance:
       propertyPath: ParticleSystemPrefabs.Array.data[5]
       value: 
       objectReference: {fileID: 1496879830164715938, guid: 04d2c7eef9647804ab13c9fca1150d99, type: 3}
+    - target: {fileID: 2873587728359490375, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b339f481fa7a44c1ab2bd7ee2431772, type: 3}
     - target: {fileID: 2885970369253241296, guid: 215e0973afbe37144bd383c17cd1a4a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

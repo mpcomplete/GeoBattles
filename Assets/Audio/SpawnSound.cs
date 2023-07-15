@@ -15,6 +15,6 @@ public class SpawnSound : MonoBehaviour {
   }
 
   void PlaySound() {
-    Source.PlayOneShot(Source.clip);
+    AudioManager.Instance.PlaySound(Source.clip);
   }
 }
