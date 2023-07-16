@@ -36,7 +36,7 @@ public class InputHandler : MonoBehaviour {
     if (Inputs.GamePlay.MouseFireToggle.WasPerformedThisFrame())
       MouseFiring = !MouseFiring;
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
-      OnBomb();
+      OnBomb?.Invoke();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())
       OnDebugShot?.Invoke();
   }
