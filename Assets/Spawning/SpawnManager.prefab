@@ -822,7 +822,7 @@ MonoBehaviour:
   DifferentMob: 0
   GlobalCooldown: 20
   SelfCooldown: 0
-  ChooseWeight: 10
+  ChooseWeight: 44444
   TimeFirstAvailable: 0
   TimeLastAvailable: Infinity
 --- !u!1 &3634057897464840762
