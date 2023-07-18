@@ -19,11 +19,10 @@ public class InputHandler : MonoBehaviour {
     Inputs.Dispose();
   }
 
-  bool MouseFiring = false;
   void FixedUpdate() {
     var move = Inputs.GamePlay.Move.ReadValue<Vector2>();
     OnMove?.Invoke(move.XZ());
-    if (MouseFiring && GameManager.Instance.Players.Count > 0) {
+    if (Inputs.GamePlay.MouseFireToggle.IsPressed() && GameManager.Instance.Players.Count > 0) {
       var mousePos = Inputs.GamePlay.MouseAim.ReadValue<Vector2>();
       var worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y)).XZ();
       var playerPos = GameManager.Instance.Players[0].transform.position;
@@ -33,8 +32,6 @@ public class InputHandler : MonoBehaviour {
       var aim = Inputs.GamePlay.Aim.ReadValue<Vector2>();
       OnAim?.Invoke(aim.XZ());
     }
-    if (Inputs.GamePlay.MouseFireToggle.WasPerformedThisFrame())
-      MouseFiring = !MouseFiring;
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
       OnBomb();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())
