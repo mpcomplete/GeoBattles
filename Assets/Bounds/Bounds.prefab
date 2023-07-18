@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1836942606938893958
 Transform:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5975a37fcc827cb4c96e3d1528a6c9be, type: 2}
+  - {fileID: 2100000, guid: a9164f875ef47534785b353a6d94c76f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mesh: {fileID: 6715718586033330561}
-  GridSpacing: {x: 0.125, y: 0.125}
+  GridSpacing: {x: 0.5, y: 0.5}
   SpringK: 20
   SpringDamping: 4
   Mass: 1
@@ -613,8 +613,9 @@ Transform:
   - {fileID: 7499671869151683833}
   - {fileID: 6929774885019832545}
   - {fileID: 1836942606938893958}
+  - {fileID: 5099677963321486254}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221561932186950712
 MonoBehaviour:
@@ -870,3 +871,109 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9411765, y: 11, z: 18}
   m_Center: {x: 0, y: 5, z: -8.5}
+--- !u!1 &8787594154857234004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5099677963321486254}
+  - component: {fileID: 8188978412720222228}
+  - component: {fileID: 7322534126170353430}
+  - component: {fileID: 3064360169352016220}
+  m_Layer: 0
+  m_Name: Background Grid Shader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &5099677963321486254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787594154857234004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5490377314702584707}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &8188978412720222228
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787594154857234004}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 3f16e88eab95a9149bc4b600567d6ef1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 2
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &7322534126170353430
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787594154857234004}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &3064360169352016220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787594154857234004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489dbb796b011b74bab73ef0cac2fe88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RenderHorizontalLines: {fileID: 2100000, guid: 3f16e88eab95a9149bc4b600567d6ef1, type: 2}
+  UpdateSprings: {fileID: 2100000, guid: 094a5826912a3704fb5c36685c4d38e1, type: 2}
+  GridSpacing: {x: 0.5, y: 0.5}
+  SpringK: 20
+  SpringDamping: 4
+  Mass: 1
+  LineHalfWidth: 0.25
+  FatLineHalfWidth: 0.8
+  LineColor: {r: 0, g: 0, b: 1, a: 0.2627451}
+  FatLineColor: {r: 0.05490196, g: 0.03529412, b: 0.6313726, a: 0.19215687}
