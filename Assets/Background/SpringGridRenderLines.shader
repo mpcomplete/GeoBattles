@@ -6,14 +6,6 @@ Shader "SpringGridRenderLines"
   Properties
   {
       _MainTex("Source Texture", 2D) = "white" {}
-      _Positions("Source Texture", 2D) = "white" {}
-      _XPoints("Code prop", Integer) = 36
-      _ZPoints("Code prop", Integer) = 24
-      _BoundsMin("Code prop", Vector) = (1, 0, 1, 0)
-      _BoundsMax("Code prop", Vector) = (1, 0, 1, 0)
-      _GridSpacing("Code prop", Vector) = (1, 0, 1, 0)
-      _LineHalfWidth("Code prop", Float) = .25
-      _Dir("Code prop", Vector) = (0, 0, 1, 0)
   }
 
   SubShader
@@ -71,17 +63,17 @@ Shader "SpringGridRenderLines"
               float4 pos : COLOR0;
           };
 
-          int2 GridIndex(int vi) {
+          uint2 GridIndex(uint vi) {
             return float2(vi % _XPoints, vi / _XPoints);
           }
-          float2 GridUV(int2 gridPos) {
+          float2 GridUV(uint2 gridPos) {
             return float2(gridPos + .5) / float2(_XPoints, _ZPoints);
           }
-          float4 TexIndex(int2 gridPos) {
+          float4 TexIndex(uint2 gridPos) {
             return float4(GridUV(gridPos), 0, 0);
           }
 
-          float3 VertexToPosition(float3 v, int2 startPoint, int2 endPoint) {
+          float3 VertexToPosition(float3 v, uint2 startPoint, uint2 endPoint) {
             float4 start = tex2Dlod(_Positions, TexIndex(startPoint));
             float4 end = tex2Dlod(_Positions, TexIndex(endPoint));
             float4 delta = end - start;
@@ -100,10 +92,10 @@ Shader "SpringGridRenderLines"
               UNITY_SETUP_INSTANCE_ID(v);
 
               v2f OUT;
-              int startIndex = UNITY_ACCESS_INSTANCED_PROP(Props, _StartIndex);
-              int endIndex = UNITY_ACCESS_INSTANCED_PROP(Props, _EndIndex);
-              int2 startPoint = GridIndex(startIndex);
-              int2 endPoint = GridIndex(endIndex);
+              uint startIndex = UNITY_ACCESS_INSTANCED_PROP(Props, _StartIndex);
+              uint endIndex = UNITY_ACCESS_INSTANCED_PROP(Props, _EndIndex);
+              uint2 startPoint = GridIndex(startIndex);
+              uint2 endPoint = GridIndex(endIndex);
               OUT.pos = UnityObjectToClipPos(VertexToPosition(v.vertex, startPoint, endPoint));
               OUT.uv = v.texcoord.xy;
               bool fat = _Dir.x > 0 ? (startPoint.y % 4 == 0) : (startPoint.x % 4 == 0);

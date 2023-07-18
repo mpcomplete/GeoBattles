@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mesh: {fileID: 6715718586033330561}
-  GridSpacing: {x: 0.5, y: 0.5}
+  GridSpacing: {x: 0.25, y: 0.25}
   SpringK: 20
   SpringDamping: 4
   Mass: 1
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RenderHorizontalLines: {fileID: 2100000, guid: 3f16e88eab95a9149bc4b600567d6ef1, type: 2}
   UpdateSprings: {fileID: 2100000, guid: 094a5826912a3704fb5c36685c4d38e1, type: 2}
-  GridSpacing: {x: 0.5, y: 0.5}
+  GridSpacing: {x: 0.25, y: 0.25}
   SpringK: 20
   SpringDamping: 4
   Mass: 1
