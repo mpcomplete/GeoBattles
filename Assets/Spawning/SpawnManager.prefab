@@ -988,7 +988,7 @@ MonoBehaviour:
   GlobalCooldown: 8
   SelfCooldown: 0
   ChooseWeight: 5
-  TimeFirstAvailable: 180
+  TimeFirstAvailable: 0
   TimeLastAvailable: Infinity
 --- !u!1 &4944353907055107996
 GameObject:
