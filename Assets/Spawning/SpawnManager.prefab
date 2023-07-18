@@ -816,11 +816,11 @@ MonoBehaviour:
   Spawn:
     Possible:
     - {fileID: 4677667772216431250, guid: b6d3ae0c9d223a94ba5d077180a95807, type: 3}
-  IncludeBlackHole: {fileID: 0}
-  NumMobs: 3
-  DelayBetweenMobs: 0.1
+  IncludeBlackHole: {fileID: 4677667772216431250, guid: 726fe92c673e4c046a024e5f0d3ee9bf, type: 3}
+  NumMobs: 7
+  DelayBetweenMobs: 1
   DifferentMob: 0
-  GlobalCooldown: 3
+  GlobalCooldown: 20
   SelfCooldown: 0
   ChooseWeight: 10
   TimeFirstAvailable: 0
@@ -1036,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7617576131521992787
 Transform:
   m_ObjectHideFlags: 0
@@ -1778,7 +1778,7 @@ Transform:
   - {fileID: 5334277019021092026}
   - {fileID: 1735044676226698444}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &407395935812594685
 MonoBehaviour:
@@ -1793,6 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugStartTime: 0
+  AwakeTime: 0
   PlayerAlive: 0
 --- !u!1 &9189627429215282157
 GameObject:
