@@ -33,7 +33,7 @@ public class InputHandler : MonoBehaviour {
       OnAim?.Invoke(aim.XZ());
     }
     if (Inputs.GamePlay.Bomb.WasPerformedThisFrame())
-      OnBomb();
+      OnBomb?.Invoke();
     if (Inputs.GamePlay.NextShot.WasPerformedThisFrame())
       OnDebugShot?.Invoke();
   }
