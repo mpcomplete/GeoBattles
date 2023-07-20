@@ -4913,6 +4913,7 @@ GameObject:
   - component: {fileID: 8437649724420726065}
   - component: {fileID: 5332476724379010560}
   - component: {fileID: 8321201404800596634}
+  - component: {fileID: 1679186329631446182}
   m_Layer: 0
   m_Name: Mob Blackhole Damage Particles
   m_TagString: Untagged
@@ -9803,3 +9804,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1679186329631446182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217569605089656756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aff434c3090d9b4dbce8f1befdd565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

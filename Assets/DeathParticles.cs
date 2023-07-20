@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DeathParticles : MonoBehaviour {
@@ -16,7 +17,17 @@ public class DeathParticles : MonoBehaviour {
     Character.OnDespawn -= SpawnParticles;
   }
 
+  static int NumParticles = 0;
+  const int MaxParticles = 20;
   void SpawnParticles() {
-    Instantiate(ParticleSystemPrefabs.Random(), transform.position, transform.rotation);
+    if (NumParticles >= MaxParticles)
+      return;
+    NumParticles++;
+    var obj = Instantiate(ParticleSystemPrefabs.Random(), transform.position, transform.rotation);
+    obj.GetComponent<ObjectTracker>().OnDestroyed += ParticlesDestroyed;
+  }
+
+  void ParticlesDestroyed() {
+    NumParticles--;
   }
 }
