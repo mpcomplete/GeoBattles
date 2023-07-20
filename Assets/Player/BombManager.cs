@@ -19,7 +19,7 @@ public class BombManager : LevelManager<BombManager> {
     }
   }
 
-  void Start() {
+  void AwakeSingleton() {
     GameManager.Instance.StartGame += SetBombCount;
     ScoreManager.Instance.ScoreChange += TryAwardExtraBomb;
   }

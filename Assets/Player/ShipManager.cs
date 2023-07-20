@@ -8,11 +8,13 @@ public class ShipManager : LevelManager<ShipManager> {
   [SerializeField] int InitialShipCount = 3;
 
   int ShipCount;
+  Vector3 RespawnPosition;
 
   public UnityAction<int> ShipCountChange;
 
   protected override void Awake() {
     base.Awake();
+    GameManager.Instance.PlayerDying += ShipDying;
     GameManager.Instance.PlayerDeath += ShipDeath;
     GameManager.Instance.StartGame += StartGame;
   }
@@ -22,6 +24,7 @@ public class ShipManager : LevelManager<ShipManager> {
   }
 
   void OnDestroy() {
+    GameManager.Instance.PlayerDying -= ShipDying;
     GameManager.Instance.PlayerDeath -= ShipDeath;
     GameManager.Instance.StartGame -= StartGame;
     ScoreManager.Instance.ScoreChange -= TryAwardExtraShip;
@@ -34,13 +37,17 @@ public class ShipManager : LevelManager<ShipManager> {
     ShipCountChange?.Invoke(ShipCount);
   }
 
+  void ShipDying(Character c) {
+    RespawnPosition = c.transform.position;
+  }
+
   void ShipDeath(Character c) {
     if (ShipCount <= 0) {
       GameManager.Instance.PostGame?.Invoke();
     } else {
       ShipCount -= 1;
       ShipCountChange?.Invoke(ShipCount);
-      StartCoroutine(Respawn(c.transform.position, c.transform.rotation));
+      StartCoroutine(Respawn(RespawnPosition, Quaternion.identity));
     }
   }
 
