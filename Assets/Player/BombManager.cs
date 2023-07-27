@@ -21,6 +21,9 @@ public class BombManager : LevelManager<BombManager> {
 
   void AwakeSingleton() {
     GameManager.Instance.StartGame += SetBombCount;
+  }
+
+  void Start() {
     ScoreManager.Instance.ScoreChange += TryAwardExtraBomb;
   }
 
